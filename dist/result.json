@@ -1,0 +1,43 @@
+{
+  "body": {
+    "Type": "slot",
+    "name": "Item",
+    "tag": "",
+    "components": [
+      {
+        "Type": "component",
+        "name": "Grabbable",
+        "members": [
+          {
+            "type": "FrooxEngine.Sync`1[System.Boolean]",
+            "name": "Scalable"
+          }
+        ]
+      }
+    ],
+    "children": [
+      {
+        "Type": "slot",
+        "name": "Collider",
+        "tag": "",
+        "components": [
+          {
+            "Type": "component",
+            "name": "BoxCollider",
+            "members": [
+              {
+                "type": "FrooxEngine.Sync`1[System.Boolean]",
+                "name": "CharacterCollider"
+              },
+              {
+                "type": "FrooxEngine.Sync`1[BaseX.float3]",
+                "name": "Size"
+              }
+            ]
+          }
+        ],
+        "children": []
+      }
+    ]
+  }
+}
