@@ -1,6 +1,5 @@
 const _ = require("lodash");
 const fs = require("fs");
-const util = require("util");
 
 const compNames = [
   "BoxCollider",
@@ -55,9 +54,6 @@ const createFile = (outPath, filename, data) => {
 };
 
 componentDataList.forEach(({ name, fullName, pathName, syncmembers }) => {
-  const rootPath = _.map(_.split(pathName, "/"), (v, i) =>
-    i != 0 ? "../" : ""
-  ).join("");
   const members = _(syncmembers)
     .reject(({ name }) => name === "persistent")
     .value();
@@ -77,7 +73,7 @@ componentDataList.forEach(({ name, fullName, pathName, syncmembers }) => {
     })
     .join("\n");
   const data = `import React, { FC } from "react";
-  import { member, Member } from "${rootPath}Member";
+  import { member, Member } from "lib/core/Member";
   
   declare global {
     namespace JSX {

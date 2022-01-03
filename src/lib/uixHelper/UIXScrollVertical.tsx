@@ -1,11 +1,11 @@
 import React, { FC } from "react";
 import _ from "lodash";
-import Image from "../core/components/UIX/Graphics/Image";
-import VerticalLayout from "../core/components/UIX/Layout/VerticalLayout";
+import Image from "lib/core/components/UIX/Graphics/Image";
+import VerticalLayout from "lib/core/components/UIX/Layout/VerticalLayout";
 import UIXElement from "./UIXElement";
-import Mask from "../core/components/UIX/Graphics/Mask";
-import ScrollRect from "../core/components/UIX/Interaction/ScrollRect";
-import ContentSizeFitter from "../core/components/UIX/Layout/ContentSizeFitter";
+import Mask from "lib/core/components/UIX/Graphics/Mask";
+import ScrollRect from "lib/core/components/UIX/Interaction/ScrollRect";
+import ContentSizeFitter from "lib/core/components/UIX/Layout/ContentSizeFitter";
 
 interface UIXScrollVerticalInput {
   name?: string;

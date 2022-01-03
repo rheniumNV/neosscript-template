@@ -1,8 +1,8 @@
 import React, { FC } from "react";
-import Slot from "../core/Slot";
+import Slot from "lib/core/Slot";
 import _ from "lodash";
-import LayoutElement from "../core/components/UIX/Layout/LayoutElement";
-import HorizontalLayout from "../core/components/UIX/Layout/HorizontalLayout";
+import LayoutElement from "lib/core/components/UIX/Layout/LayoutElement";
+import HorizontalLayout from "lib/core/components/UIX/Layout/HorizontalLayout";
 
 type space = [number, "Min"] | [number, "Preferred"] | [number, "Flexible"];
 
