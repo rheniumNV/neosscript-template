@@ -1,204 +1,74 @@
 const _ = require("lodash");
 const fs = require("fs");
 const util = require("util");
-
-const componentDataList = [
-  {
-    name: "BoxCollider",
-    pathName: "/Physics/Colliders/BoxCollider",
-    fullName: "FrooxEngine.BoxCollider",
-    syncmembers: [
-      {
-        name: "persistent",
-        type: "FrooxEngine.Sync`1[System.Boolean]",
-        default: "False",
-      },
-      {
-        name: "UpdateOrder",
-        type: "FrooxEngine.Sync`1[System.Int32]",
-        default: "0",
-      },
-      {
-        name: "Enabled",
-        type: "FrooxEngine.Sync`1[System.Boolean]",
-        default: "False",
-      },
-      {
-        name: "Offset",
-        type: "FrooxEngine.Sync`1[BaseX.float3]",
-        default: "[0; 0; 0]",
-      },
-      {
-        name: "Type",
-        type: "FrooxEngine.Sync`1[FrooxEngine.ColliderType]",
-        default: "NoCollision",
-      },
-      {
-        name: "Mass",
-        type: "FrooxEngine.Sync`1[System.Single]",
-        default: "0",
-      },
-      {
-        name: "CharacterCollider",
-        type: "FrooxEngine.Sync`1[System.Boolean]",
-        default: "False",
-      },
-      {
-        name: "IgnoreRaycasts",
-        type: "FrooxEngine.Sync`1[System.Boolean]",
-        default: "False",
-      },
-      {
-        name: "Size",
-        type: "FrooxEngine.Sync`1[BaseX.float3]",
-        default: "[0; 0; 0]",
-      },
-    ],
-  },
-  {
-    name: "Grabbable",
-    pathName: "/Transform/Interaction/Grabbable",
-    fullName: "FrooxEngine.Grabbable",
-    syncmembers: [
-      {
-        name: "persistent",
-        type: "FrooxEngine.Sync`1[System.Boolean]",
-        default: "False",
-      },
-      {
-        name: "UpdateOrder",
-        type: "FrooxEngine.Sync`1[System.Int32]",
-        default: "0",
-      },
-      {
-        name: "Enabled",
-        type: "FrooxEngine.Sync`1[System.Boolean]",
-        default: "False",
-      },
-      {
-        name: "ReparentOnRelease",
-        type: "FrooxEngine.Sync`1[System.Boolean]",
-        default: "False",
-      },
-      {
-        name: "PreserveUserSpace",
-        type: "FrooxEngine.Sync`1[System.Boolean]",
-        default: "False",
-      },
-      {
-        name: "DestroyOnRelease",
-        type: "FrooxEngine.Sync`1[System.Boolean]",
-        default: "False",
-      },
-      {
-        name: "GrabPriority",
-        type: "FrooxEngine.Sync`1[System.Int32]",
-        default: "0",
-      },
-      {
-        name: "GrabPriorityWhenGrabbed",
-        type: "FrooxEngine.Sync`1[System.Nullable`1[System.Int32]]",
-        default: "<i>null</i>",
-      },
-      {
-        name: "CustomCanGrabCheck",
-        type: "FrooxEngine.SyncDelegate`1[FrooxEngine.GrabCheck]",
-        default: "FrooxEngine.WorldDelegate",
-      },
-      {
-        name: "EditModeOnly",
-        type: "FrooxEngine.Sync`1[System.Boolean]",
-        default: "False",
-      },
-      {
-        name: "AllowSteal",
-        type: "FrooxEngine.Sync`1[System.Boolean]",
-        default: "False",
-      },
-      {
-        name: "DropOnDisable",
-        type: "FrooxEngine.Sync`1[System.Boolean]",
-        default: "False",
-      },
-      {
-        name: "ActiveUserFilter",
-        type: "FrooxEngine.Sync`1[FrooxEngine.ActiveUserHandling]",
-        default: "Disabled",
-      },
-      {
-        name: "Scalable",
-        type: "FrooxEngine.Sync`1[System.Boolean]",
-        default: "False",
-      },
-      {
-        name: "Receivable",
-        type: "FrooxEngine.Sync`1[System.Boolean]",
-        default: "False",
-      },
-      {
-        name: "AllowOnlyPhysicalGrab",
-        type: "FrooxEngine.Sync`1[System.Boolean]",
-        default: "False",
-      },
-      {
-        name: "_grabber",
-        type: "FrooxEngine.SyncRef`1[FrooxEngine.Grabber]",
-        default: "ID0",
-      },
-      {
-        name: "_lastParent",
-        type: "FrooxEngine.SyncRef`1[FrooxEngine.Slot]",
-        default: "ID0",
-      },
-      {
-        name: "_lastParentIsUserSpace",
-        type: "FrooxEngine.Sync`1[System.Boolean]",
-        default: "False",
-      },
-      {
-        name: "__legacyActiveUserRootOnly",
-        type: "FrooxEngine.Sync`1[System.Boolean]",
-        default: "False",
-      },
-    ],
-  },
-];
+const compNames = ["BoxCollider", "Grabbable", "ObjectRoot", ""];
+const componentDataList = _(require("./componentDataList.json")).filter(
+  ({ name, pathName }) =>
+    _.includes(compNames, name) ||
+    (_.includes(pathName, "/UIX/") && !_.includes(pathName, "<"))
+);
 
 const TypeMap = {
   "FrooxEngine.Sync`1[System.Boolean]": {
     define: "boolean",
-    parser: (value) => false,
+    parser: ({ value }) => false,
   },
   "FrooxEngine.Sync`1[System.Int32]": {
     define: "number",
-    parser: (value) => value,
+    parser: ({ value }) => value,
   },
   "FrooxEngine.Sync`1[System.Single]": {
     define: "number",
-    parser: (value) => value,
+    parser: ({ value }) => value,
   },
   "FrooxEngine.Sync`1[BaseX.float3]": {
-    define: "{x:number, y:number, z:number}",
-    parser: (value) => ({ x: 0, y: 0, z: 0 }),
+    define: "[number, number, number]",
+    parser: ({ value }) => [0, 0, 0],
   },
 };
 const anyType = {
   define: "any",
-  parser: (value) => value,
+  parser: ({ value }) => value,
 };
 
-componentDataList.forEach(({ name, syncmembers }) => {
-  const interfaceUnit = _(syncmembers)
+const createFile = (outPath, filename, data) => {
+  const filePath = outPath + filename;
+
+  fs.writeFile(filePath, data, (err) => {
+    // ディレクトリ作成できなかったとき
+    if (err && err.code === "ENOENT") {
+      // ディレクトリ部分だけ切り取り
+      const dir = filePath.substring(0, filePath.lastIndexOf("/"));
+
+      // 親ディレクトリ作成
+      fs.mkdir(dir, { recursive: true }, (err) => {
+        if (err) throw err;
+        createFile(outPath, filename, data);
+      });
+      return;
+    }
+    console.log("created", filePath);
+  });
+};
+
+componentDataList.forEach(({ name, fullName, pathName, syncmembers }) => {
+  const rootPath = _.map(_.split(pathName, "/"), (v, i) =>
+    i != 0 ? "../" : ""
+  ).join("");
+  const members = _(syncmembers)
+    .reject(({ name }) => name === "persistent")
+    .value();
+  const interfaceUnit = _(members)
     .map(({ name, type }) => {
       return `${name}?: member<${_.get(TypeMap, type, anyType).define}>;`;
     })
     .join("\n");
-  const propsUnit = _(syncmembers)
+  const propsUnit = _(members)
     .map(({ name, type }) => {
       return `${name},`;
     })
     .join("\n");
-  const memberUnit = _(syncmembers)
+  const memberUnit = _(members)
     .map(({ name, type }) => {
       return util.format(
         '<Member type="%s" name="%s" content={%s}/>',
@@ -209,7 +79,7 @@ componentDataList.forEach(({ name, syncmembers }) => {
     })
     .join("\n");
   const data = `import React, { FC } from "react";
-  import { member, Member } from "../Member";
+  import { member, Member } from "${rootPath}Member";
   
   declare global {
     namespace JSX {
@@ -219,14 +89,16 @@ componentDataList.forEach(({ name, syncmembers }) => {
     }
   }
   interface ${name}Input {
+      id?:string;
+      persistentId?:string;
       ${interfaceUnit}
   }
   
   const ${name}: FC<${name}Input> = (props: ${name}Input) => {
-    const { ${propsUnit} } = props;
+    const { id, persistentId, ${propsUnit} } = props;
   
     return (
-      <component name="${name}">
+      <component name="${fullName}" id={id} persistentId={persistentId}>
       ${memberUnit}
       </component>
     );
@@ -235,12 +107,9 @@ componentDataList.forEach(({ name, syncmembers }) => {
   export default ${name};
   
   `;
-  fs.writeFile(
-    util.format("src/lib/core/components/%s.tsx", name),
-    data,
-    (err) => {
-      if (err) throw err;
-      console.log("exported ", name);
-    }
-  );
+  const outPath =
+    "src/lib/core/components" +
+    _(_.split(pathName, "/")).slice(0, -1).join("/") +
+    "/";
+  createFile(outPath, name + ".tsx", data);
 });

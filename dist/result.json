@@ -1,42 +1,204 @@
 {
-  "body": {
-    "Type": "slot",
-    "name": "Item",
-    "tag": "",
-    "components": [
-      {
-        "Type": "component",
-        "name": "Grabbable",
-        "members": [
-          {
-            "type": "FrooxEngine.Sync`1[System.Boolean]",
-            "name": "Scalable"
+  "Object": {
+    "ID": "0c83390b-19db-462c-90d1-e809a8830443",
+    "Persistent-ID": "48206f3a-0f59-43ff-9581-5f124704d7c8",
+    "Name": {
+      "ID": "f94779bf-0419-40b9-bac8-fc13b373852d",
+      "Data": "Item"
+    },
+    "Tag": {
+      "ID": "4ac17135-f46b-4d1b-afb8-2fefaf39abae",
+      "Data": ""
+    },
+    "Active": {
+      "ID": "63080da7-3378-4022-8a5e-a017a2b97ed1",
+      "Data": true
+    },
+    "Position": {
+      "ID": "9ada7f8d-e316-4ae4-adcf-92bd07dea347",
+      "Data": [
+        0,
+        0,
+        0
+      ]
+    },
+    "Rotation": {
+      "ID": "343fb320-ee71-431a-8202-5e012eda4817",
+      "Data": [
+        0,
+        0,
+        0
+      ]
+    },
+    "Scale": {
+      "ID": "69c5b4f1-bf22-4b36-8e8e-62b1a0e0229f",
+      "Data": [
+        1,
+        1,
+        1
+      ]
+    },
+    "OrderOffset": {
+      "ID": "4bfe6528-4389-4af8-808e-cae4706e86b2",
+      "Data": 0
+    },
+    "ParentReference": null,
+    "Components": {
+      "ID": "4e7652ba-8d55-43c8-a2b5-a7ae06eace49",
+      "Data": [
+        {
+          "Type": "FrooxEngine.Grabbable",
+          "Data": {
+            "ID": "da27cb3b-f428-4fbd-9df0-1fa21bb5ae70",
+            "persistent-ID": "a648bddc-378a-4915-aa54-4da5e29859ec",
+            "UpdateOrder": {
+              "ID": "5b376018-bcfd-451a-97d6-2e51804b481b",
+              "Data": 0
+            },
+            "Enabled": {
+              "ID": "78abf3bd-9b4d-4e74-88a0-39521751e518",
+              "Data": true
+            },
+            "Scalable": {
+              "ID": "cb0a0d5b-05a2-47be-a0d9-519a277e57f3",
+              "Data": true
+            }
           }
-        ]
-      }
-    ],
-    "children": [
+        }
+      ]
+    },
+    "Children": [
       {
-        "Type": "slot",
-        "name": "Collider",
-        "tag": "",
-        "components": [
-          {
-            "Type": "component",
-            "name": "BoxCollider",
-            "members": [
-              {
-                "type": "FrooxEngine.Sync`1[System.Boolean]",
-                "name": "CharacterCollider"
-              },
-              {
-                "type": "FrooxEngine.Sync`1[BaseX.float3]",
-                "name": "Size"
+        "ID": "c5821fe0-903b-4983-acc6-d4ebaf91ba1c",
+        "Persistent-ID": "f29b4354-c456-4ba6-89f2-5f91641317ad",
+        "Name": {
+          "ID": "dab5d5cc-0aaf-4280-a9d1-6fcca1bd65b2",
+          "Data": "DV"
+        },
+        "Tag": {
+          "ID": "592fcec2-8e51-4bdf-8026-9e5dba75b878",
+          "Data": ""
+        },
+        "Active": {
+          "ID": "a7506114-bb2e-4406-b7d0-2480730dbb74",
+          "Data": true
+        },
+        "Position": {
+          "ID": "ddc651f0-f394-4242-9559-6a59eb030d31",
+          "Data": [
+            0,
+            0,
+            0
+          ]
+        },
+        "Rotation": {
+          "ID": "de2d2d66-83a2-40ca-9031-4fe8938eb18a",
+          "Data": [
+            0,
+            0,
+            0
+          ]
+        },
+        "Scale": {
+          "ID": "5d83ffe6-0c1e-4a51-9b9e-c2343b3b3496",
+          "Data": [
+            1,
+            1,
+            1
+          ]
+        },
+        "OrderOffset": {
+          "ID": "8c1dee6f-5eb1-4b9d-9e7d-9d7b7b76c638",
+          "Data": 0
+        },
+        "ParentReference": "0c83390b-19db-462c-90d1-e809a8830443",
+        "Components": {
+          "ID": "e60d9d1f-a6b4-4dea-8393-d51f4f6510aa",
+          "Data": []
+        },
+        "Children": []
+      },
+      {
+        "ID": "b6239c9b-ecaa-47f3-8dd4-22e2ebf632ac",
+        "Persistent-ID": "22643ed5-cfb7-4b65-950e-d96db5678383",
+        "Name": {
+          "ID": "47f26c16-2541-494c-be05-6bd66e450813",
+          "Data": "Collider"
+        },
+        "Tag": {
+          "ID": "243bf3a9-83e9-4465-a7a1-0cf7d91cbc0a",
+          "Data": ""
+        },
+        "Active": {
+          "ID": "f65a1164-4800-4cbb-99e9-bc125bde14f0",
+          "Data": true
+        },
+        "Position": {
+          "ID": "41fb1d8f-6d7b-4f16-97f2-a0a52b86fbc6",
+          "Data": [
+            0,
+            0,
+            0
+          ]
+        },
+        "Rotation": {
+          "ID": "01e0c107-ac54-4536-9617-370b188ec2c0",
+          "Data": [
+            0,
+            0,
+            0
+          ]
+        },
+        "Scale": {
+          "ID": "4a72b1aa-d1e2-4803-a90a-b2438ac45325",
+          "Data": [
+            1,
+            1,
+            1
+          ]
+        },
+        "OrderOffset": {
+          "ID": "f8becc2b-d41c-461e-91c9-aeac84204e6b",
+          "Data": 0
+        },
+        "ParentReference": "0c83390b-19db-462c-90d1-e809a8830443",
+        "Components": {
+          "ID": "1ebb13a0-922d-4bbc-ad7d-fd4cf3bf5fa3",
+          "Data": [
+            {
+              "Type": "FrooxEngine.BoxCollider",
+              "Data": {
+                "ID": "ada858fc-6029-43e0-b849-1093934c042f",
+                "persistent-ID": "184142f0-d9df-4fce-bacd-cdb54cd3f7c4",
+                "UpdateOrder": {
+                  "ID": "d88344b8-97ed-4d5e-91af-94915ff0679b",
+                  "Data": 0
+                },
+                "Enabled": {
+                  "ID": "d5c5d94a-0f3c-48b9-8f3c-40e088a19de9",
+                  "Data": true
+                },
+                "Type": {
+                  "ID": "357c792e-425c-4f1a-86b2-593810ef0d1b",
+                  "Data": "Static"
+                },
+                "CharacterCollider": {
+                  "ID": "fae60919-5389-466b-9a7d-db7186fd37c8",
+                  "Data": true
+                },
+                "Size": {
+                  "ID": "b830f07a-3264-49e5-b4e2-8132c5ae3adb",
+                  "Data": [
+                    1,
+                    2,
+                    3
+                  ]
+                }
               }
-            ]
-          }
-        ],
-        "children": []
+            }
+          ]
+        },
+        "Children": []
       }
     ]
   }

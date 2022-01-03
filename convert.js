@@ -2,6 +2,7 @@ import { unified } from "unified";
 import parse from "rehype-parse";
 import fs from "fs";
 import _ from "lodash";
+import { v4 as uuidv4 } from "uuid";
 
 const data = fs.readFileSync("dist/index.html");
 
@@ -14,11 +15,13 @@ const hasAllKey = (list, requireKeys) => {
     .every();
 };
 
+const generateId = (id) => (id ? id : uuidv4());
+
 const result = JSON.stringify(
   mdast,
   (key, value) => {
     if (hasAllKey(value, ["type", "tagName", "children", "properties"])) {
-      const { tagName, children, properties } = value;
+      const { tagName, children, properties, parenId } = value;
       if (tagName == "slot") {
         const { children: comps } = _.find(
           children,
@@ -28,26 +31,59 @@ const result = JSON.stringify(
           children,
           ({ tagName }) => tagName == "children"
         );
+        const slotData = _.find(
+          children,
+          ({ tagName }) => tagName == "slotdata"
+        );
+        const { id = generateId() } = properties;
+        const slotId = generateId(id);
+        const persistentId = _.get(slotData, ["properties", "persistentId"]);
         return {
-          type: tagName,
-          ...properties,
-          components: comps,
-          children: chills,
+          ID: slotId,
+          "Persistent-ID": generateId(persistentId),
+          ..._(_.get(slotData, "children", [])).reduce((prev, curr) => {
+            const { name, value, id } = _.get(curr, ["properties"], {});
+            return {
+              ...prev,
+              ...{ [name]: { ID: generateId(id), Data: JSON.parse(value) } },
+            };
+          }, {}),
+          ParentReference: parenId ? parenId : null,
+          Components: { ID: generateId(), Data: comps },
+          Children: _(chills).map((slot) => ({
+            ...slot,
+            ...{ parenId: slotId },
+          })),
         };
       } else if (tagName == "component") {
-        return { type: tagName, ...properties, members: children };
-      } else if (tagName == "member") {
-        console.log(children);
+        const { name } = properties;
+        return {
+          Type: name,
+          Data: {
+            ID: generateId(),
+            "persistent-ID": generateId(),
+            UpdateOrder: { ID: generateId(), Data: 0 },
+            Enabled: { ID: generateId(), Data: true },
+            ..._(children).reduce((prev, curr) => {
+              const { name, value, id } = _.get(curr, ["children", 0], {});
+              return {
+                ...prev,
+                ...{ [name]: { ID: generateId(id), Data: JSON.parse(value) } },
+              };
+            }, {}),
+          },
+        };
+      } else if (tagName == "member" && false) {
         return { type: tagName, ...properties, ..._.get(children, 0, {}) };
       }
     }
     if (_.includes(["offset", "column", "line", "end", "position"], key)) {
       return undefined;
     }
-    const { type } = value;
+    const { type } = value ? value : {};
     if (type === "root") {
       return {
-        body: _(_.get(value, "children", []))
+        Object: _(_.get(value, "children", []))
           .filter(
             ({ type, tagName }) => type === "element" && tagName === "slot"
           )

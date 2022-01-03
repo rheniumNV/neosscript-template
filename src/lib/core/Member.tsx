@@ -11,7 +11,7 @@ declare global {
 
 export type id<T> = string;
 
-export type member<T> = T | { value: T; id: id<T> };
+export type member<T> = { value: T; id: id<T> } | T;
 
 interface MemberInput {
   type: string;
@@ -25,7 +25,9 @@ export const Member: FC<MemberInput> = ({ type, name, content }) => {
   }
   const { value, id } = content;
   if (id == undefined) {
-    return <member id={id} name={name} type={type} value={value} />;
+    return (
+      <member id={id} name={name} type={type} value={JSON.stringify(content)} />
+    );
   }
-  return <member name={name} type={type} value={content} />;
+  return <member name={name} type={type} value={JSON.stringify(value)} />;
 };
