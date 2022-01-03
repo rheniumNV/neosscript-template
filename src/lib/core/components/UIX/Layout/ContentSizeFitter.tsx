@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { member, Member } from "../../../Member";
+import { member, Member } from "lib/core/Member";
 
 declare global {
   namespace JSX {
@@ -32,22 +32,22 @@ const ContentSizeFitter: FC<ContentSizeFitterInput> = (
       <Member
         type="FrooxEngine.Sync`1[System.Int32]"
         name="UpdateOrder"
-        content={UpdateOrder}
+        content={UpdateOrder} /* default: 0 */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="Enabled"
-        content={Enabled}
+        content={Enabled} /* default: False */
       />
       <Member
         type="FrooxEngine.Sync`1[FrooxEngine.UIX.SizeFit]"
         name="HorizontalFit"
-        content={HorizontalFit}
+        content={HorizontalFit} /* default: Disabled */
       />
       <Member
         type="FrooxEngine.Sync`1[FrooxEngine.UIX.SizeFit]"
         name="VerticalFit"
-        content={VerticalFit}
+        content={VerticalFit} /* default: Disabled */
       />
     </component>
   );

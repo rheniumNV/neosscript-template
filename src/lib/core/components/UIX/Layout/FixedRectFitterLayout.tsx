@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { member, Member } from "../../../Member";
+import { member, Member } from "lib/core/Member";
 
 declare global {
   namespace JSX {
@@ -44,37 +44,37 @@ const FixedRectFitterLayout: FC<FixedRectFitterLayoutInput> = (
       <Member
         type="FrooxEngine.Sync`1[System.Int32]"
         name="UpdateOrder"
-        content={UpdateOrder}
+        content={UpdateOrder} /* default: 0 */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="Enabled"
-        content={Enabled}
+        content={Enabled} /* default: False */
       />
       <Member
         type="FrooxEngine.Sync`1[FrooxEngine.UIX.LayoutHorizontalAlignment]"
         name="HorizontalAlign"
-        content={HorizontalAlign}
+        content={HorizontalAlign} /* default: Left */
       />
       <Member
         type="FrooxEngine.Sync`1[FrooxEngine.UIX.LayoutVerticalAlignment]"
         name="VerticalAlign"
-        content={VerticalAlign}
+        content={VerticalAlign} /* default: Top */
       />
       <Member
         type="FrooxEngine.Sync`1[FrooxEngine.UIX.FixedRectFitterLayout+FitMode]"
         name="Mode"
-        content={Mode}
+        content={Mode} /* default: FitLongerSide */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="AllowShrink"
-        content={AllowShrink}
+        content={AllowShrink} /* default: False */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="AllowGrow"
-        content={AllowGrow}
+        content={AllowGrow} /* default: False */
       />
     </component>
   );

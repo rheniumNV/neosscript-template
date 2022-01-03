@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { member, Member } from "../../../Member";
+import { member, Member } from "lib/core/Member";
 
 declare global {
   namespace JSX {
@@ -44,42 +44,42 @@ const BoxCollider: FC<BoxColliderInput> = (props: BoxColliderInput) => {
       <Member
         type="FrooxEngine.Sync`1[System.Int32]"
         name="UpdateOrder"
-        content={UpdateOrder}
+        content={UpdateOrder} /* default: 0 */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="Enabled"
-        content={Enabled}
+        content={Enabled} /* default: False */
       />
       <Member
         type="FrooxEngine.Sync`1[BaseX.float3]"
         name="Offset"
-        content={Offset}
+        content={Offset} /* default: [0; 0; 0] */
       />
       <Member
         type="FrooxEngine.Sync`1[FrooxEngine.ColliderType]"
         name="Type"
-        content={Type}
+        content={Type} /* default: NoCollision */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Single]"
         name="Mass"
-        content={Mass}
+        content={Mass} /* default: 0 */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="CharacterCollider"
-        content={CharacterCollider}
+        content={CharacterCollider} /* default: False */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="IgnoreRaycasts"
-        content={IgnoreRaycasts}
+        content={IgnoreRaycasts} /* default: False */
       />
       <Member
         type="FrooxEngine.Sync`1[BaseX.float3]"
         name="Size"
-        content={Size}
+        content={Size} /* default: [0; 0; 0] */
       />
     </component>
   );

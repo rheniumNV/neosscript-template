@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { member, Member } from "../../../Member";
+import { member, Member } from "lib/core/Member";
 
 declare global {
   namespace JSX {
@@ -46,47 +46,47 @@ const TiledRawImage: FC<TiledRawImageInput> = (props: TiledRawImageInput) => {
       <Member
         type="FrooxEngine.Sync`1[System.Int32]"
         name="UpdateOrder"
-        content={UpdateOrder}
+        content={UpdateOrder} /* default: 0 */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="Enabled"
-        content={Enabled}
+        content={Enabled} /* default: False */
       />
       <Member
         type="FrooxEngine.AssetRef`1[FrooxEngine.ITexture2D]"
         name="Texture"
-        content={Texture}
+        content={Texture} /* default: ID0 */
       />
       <Member
         type="FrooxEngine.AssetRef`1[FrooxEngine.Material]"
         name="Material"
-        content={Material}
+        content={Material} /* default: ID0 */
       />
       <Member
         type="FrooxEngine.Sync`1[BaseX.color]"
         name="Tint"
-        content={Tint}
+        content={Tint} /* default: [0; 0; 0; 0] */
       />
       <Member
         type="FrooxEngine.Sync`1[FrooxEngine.UIX.TiledRawImage+TileSizeBasis]"
         name="SizeBasis"
-        content={SizeBasis}
+        content={SizeBasis} /* default: Absolute */
       />
       <Member
         type="FrooxEngine.Sync`1[BaseX.float2]"
         name="TileSize"
-        content={TileSize}
+        content={TileSize} /* default: [0; 0] */
       />
       <Member
         type="FrooxEngine.Sync`1[BaseX.float2]"
         name="TileOffset"
-        content={TileOffset}
+        content={TileOffset} /* default: [0; 0] */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="InteractionTarget"
-        content={InteractionTarget}
+        content={InteractionTarget} /* default: False */
       />
     </component>
   );

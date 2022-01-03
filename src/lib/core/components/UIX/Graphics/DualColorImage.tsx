@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { member, Member } from "../../../Member";
+import { member, Member } from "lib/core/Member";
 
 declare global {
   namespace JSX {
@@ -50,52 +50,52 @@ const DualColorImage: FC<DualColorImageInput> = (
       <Member
         type="FrooxEngine.Sync`1[System.Int32]"
         name="UpdateOrder"
-        content={UpdateOrder}
+        content={UpdateOrder} /* default: 0 */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="Enabled"
-        content={Enabled}
+        content={Enabled} /* default: False */
       />
       <Member
         type="FrooxEngine.AssetRef`1[FrooxEngine.Sprite]"
         name="Sprite"
-        content={Sprite}
+        content={Sprite} /* default: ID0 */
       />
       <Member
         type="FrooxEngine.AssetRef`1[FrooxEngine.Material]"
         name="Material"
-        content={Material}
+        content={Material} /* default: ID0 */
       />
       <Member
         type="FrooxEngine.Sync`1[BaseX.color]"
         name="Tint"
-        content={Tint}
+        content={Tint} /* default: [0; 0; 0; 0] */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="PreserveAspect"
-        content={PreserveAspect}
+        content={PreserveAspect} /* default: False */
       />
       <Member
         type="FrooxEngine.Sync`1[FrooxEngine.UIX.NineSliceSizing]"
         name="NineSliceSizing"
-        content={NineSliceSizing}
+        content={NineSliceSizing} /* default: TextureSize */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="InteractionTarget"
-        content={InteractionTarget}
+        content={InteractionTarget} /* default: False */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="__legacyZWrite"
-        content={__legacyZWrite}
+        content={__legacyZWrite} /* default: False */
       />
       <Member
         type="FrooxEngine.Sync`1[BaseX.color]"
         name="SecondaryTint"
-        content={SecondaryTint}
+        content={SecondaryTint} /* default: [0; 0; 0; 0] */
       />
     </component>
   );

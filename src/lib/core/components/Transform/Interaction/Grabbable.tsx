@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { member, Member } from "../../../Member";
+import { member, Member } from "lib/core/Member";
 
 declare global {
   namespace JSX {
@@ -62,97 +62,97 @@ const Grabbable: FC<GrabbableInput> = (props: GrabbableInput) => {
       <Member
         type="FrooxEngine.Sync`1[System.Int32]"
         name="UpdateOrder"
-        content={UpdateOrder}
+        content={UpdateOrder} /* default: 0 */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="Enabled"
-        content={Enabled}
+        content={Enabled} /* default: False */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="ReparentOnRelease"
-        content={ReparentOnRelease}
+        content={ReparentOnRelease} /* default: False */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="PreserveUserSpace"
-        content={PreserveUserSpace}
+        content={PreserveUserSpace} /* default: False */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="DestroyOnRelease"
-        content={DestroyOnRelease}
+        content={DestroyOnRelease} /* default: False */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Int32]"
         name="GrabPriority"
-        content={GrabPriority}
+        content={GrabPriority} /* default: 0 */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Nullable`1[System.Int32]]"
         name="GrabPriorityWhenGrabbed"
-        content={GrabPriorityWhenGrabbed}
+        content={GrabPriorityWhenGrabbed} /* default: <i>null</i> */
       />
       <Member
         type="FrooxEngine.SyncDelegate`1[FrooxEngine.GrabCheck]"
         name="CustomCanGrabCheck"
-        content={CustomCanGrabCheck}
+        content={CustomCanGrabCheck} /* default: FrooxEngine.WorldDelegate */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="EditModeOnly"
-        content={EditModeOnly}
+        content={EditModeOnly} /* default: False */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="AllowSteal"
-        content={AllowSteal}
+        content={AllowSteal} /* default: False */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="DropOnDisable"
-        content={DropOnDisable}
+        content={DropOnDisable} /* default: False */
       />
       <Member
         type="FrooxEngine.Sync`1[FrooxEngine.ActiveUserHandling]"
         name="ActiveUserFilter"
-        content={ActiveUserFilter}
+        content={ActiveUserFilter} /* default: Disabled */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="Scalable"
-        content={Scalable}
+        content={Scalable} /* default: False */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="Receivable"
-        content={Receivable}
+        content={Receivable} /* default: False */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="AllowOnlyPhysicalGrab"
-        content={AllowOnlyPhysicalGrab}
+        content={AllowOnlyPhysicalGrab} /* default: False */
       />
       <Member
         type="FrooxEngine.SyncRef`1[FrooxEngine.Grabber]"
         name="_grabber"
-        content={_grabber}
+        content={_grabber} /* default: ID0 */
       />
       <Member
         type="FrooxEngine.SyncRef`1[FrooxEngine.Slot]"
         name="_lastParent"
-        content={_lastParent}
+        content={_lastParent} /* default: ID0 */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="_lastParentIsUserSpace"
-        content={_lastParentIsUserSpace}
+        content={_lastParentIsUserSpace} /* default: False */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="__legacyActiveUserRootOnly"
-        content={__legacyActiveUserRootOnly}
+        content={__legacyActiveUserRootOnly} /* default: False */
       />
     </component>
   );

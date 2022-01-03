@@ -9,6 +9,7 @@
     "jsx": "react",
     "moduleResolution": "node",
     "lib": ["ES2020", "DOM"],
+    "baseUrl": "./src",
     "allowSyntheticDefaultImports": true
   }
 }

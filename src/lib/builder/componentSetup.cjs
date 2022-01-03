@@ -1,8 +1,14 @@
 const _ = require("lodash");
 const fs = require("fs");
-const util = require("util");
 
-const compNames = ["BoxCollider", "Grabbable", "ObjectRoot", ""];
+const compNames = [
+  "BoxCollider",
+  "Grabbable",
+  "ObjectRoot",
+  "UI_UnlitMaterial",
+  "SpriteProvider",
+  "StaticTexture2D",
+];
 const componentDataList = _(require("./componentDataList.json")).filter(
   ({ name, pathName }) =>
     _.includes(compNames, name) ||
@@ -50,9 +56,6 @@ const createFile = (outPath, filename, data) => {
 };
 
 componentDataList.forEach(({ name, fullName, pathName, syncmembers }) => {
-  const rootPath = _.map(_.split(pathName, "/"), (v, i) =>
-    i != 0 ? "../" : ""
-  ).join("");
   const members = _(syncmembers)
     .reject(({ name }) => name === "persistent")
     .value();
@@ -67,17 +70,12 @@ componentDataList.forEach(({ name, fullName, pathName, syncmembers }) => {
     })
     .join("\n");
   const memberUnit = _(members)
-    .map(({ name, type }) => {
-      return util.format(
-        '<Member type="%s" name="%s" content={%s}/>',
-        type,
-        name,
-        name
-      );
+    .map(({ name, type, default: def }) => {
+      return `<Member type="${type}" name="${name}" content={${name}} /* default: ${def} */ />`;
     })
     .join("\n");
   const data = `import React, { FC } from "react";
-  import { member, Member } from "${rootPath}Member";
+  import { member, Member } from "lib/core/Member";
   
   declare global {
     namespace JSX {

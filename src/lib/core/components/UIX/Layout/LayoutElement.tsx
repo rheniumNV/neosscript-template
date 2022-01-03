@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { member, Member } from "../../../Member";
+import { member, Member } from "lib/core/Member";
 
 declare global {
   namespace JSX {
@@ -50,57 +50,57 @@ const LayoutElement: FC<LayoutElementInput> = (props: LayoutElementInput) => {
       <Member
         type="FrooxEngine.Sync`1[System.Int32]"
         name="UpdateOrder"
-        content={UpdateOrder}
+        content={UpdateOrder} /* default: 0 */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="Enabled"
-        content={Enabled}
+        content={Enabled} /* default: False */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Single]"
         name="MinWidth"
-        content={MinWidth}
+        content={MinWidth} /* default: 0 */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Single]"
         name="PreferredWidth"
-        content={PreferredWidth}
+        content={PreferredWidth} /* default: 0 */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Single]"
         name="FlexibleWidth"
-        content={FlexibleWidth}
+        content={FlexibleWidth} /* default: 0 */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Single]"
         name="MinHeight"
-        content={MinHeight}
+        content={MinHeight} /* default: 0 */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Single]"
         name="PreferredHeight"
-        content={PreferredHeight}
+        content={PreferredHeight} /* default: 0 */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Single]"
         name="FlexibleHeight"
-        content={FlexibleHeight}
+        content={FlexibleHeight} /* default: 0 */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Single]"
         name="Area"
-        content={Area}
+        content={Area} /* default: 0 */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Int32]"
         name="Priority"
-        content={Priority}
+        content={Priority} /* default: 0 */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="UseZeroMetrics"
-        content={UseZeroMetrics}
+        content={UseZeroMetrics} /* default: False */
       />
     </component>
   );

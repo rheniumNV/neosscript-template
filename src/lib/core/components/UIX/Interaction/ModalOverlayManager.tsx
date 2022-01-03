@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { member, Member } from "../../../Member";
+import { member, Member } from "lib/core/Member";
 
 declare global {
   namespace JSX {
@@ -44,37 +44,37 @@ const ModalOverlayManager: FC<ModalOverlayManagerInput> = (
       <Member
         type="FrooxEngine.Sync`1[System.Int32]"
         name="UpdateOrder"
-        content={UpdateOrder}
+        content={UpdateOrder} /* default: 0 */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="Enabled"
-        content={Enabled}
+        content={Enabled} /* default: False */
       />
       <Member
         type="FrooxEngine.SyncRef`1[FrooxEngine.UIX.ModalOverlay]"
         name="Template"
-        content={Template}
+        content={Template} /* default: ID0 */
       />
       <Member
         type="FrooxEngine.SyncDelegate`1[FrooxEngine.ModalOverlayConstructor]"
         name="Constructor"
-        content={Constructor}
+        content={Constructor} /* default: FrooxEngine.WorldDelegate */
       />
       <Member
         type="FrooxEngine.SyncDelegate`1[System.Action`1[FrooxEngine.ModalOverlayManager]]"
         name="ModalOverlayRequested"
-        content={ModalOverlayRequested}
+        content={ModalOverlayRequested} /* default: FrooxEngine.WorldDelegate */
       />
       <Member
         type="FrooxEngine.SyncDelegate`1[System.Action`2[FrooxEngine.ModalOverlayManager,FrooxEngine.UIX.ModalOverlay]]"
         name="ModalOverlayGenerated"
-        content={ModalOverlayGenerated}
+        content={ModalOverlayGenerated} /* default: FrooxEngine.WorldDelegate */
       />
       <Member
         type="FrooxEngine.SyncRef`1[FrooxEngine.Slot]"
         name="SpawnRoot"
-        content={SpawnRoot}
+        content={SpawnRoot} /* default: ID0 */
       />
     </component>
   );

@@ -17,6 +17,7 @@ interface MemberInput {
   type: string;
   name: string;
   content: member<any>;
+  default?: any;
 }
 
 export const Member: FC<MemberInput> = ({ type, name, content }) => {

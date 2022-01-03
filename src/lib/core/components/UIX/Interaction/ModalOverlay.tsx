@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { member, Member } from "../../../Member";
+import { member, Member } from "lib/core/Member";
 
 declare global {
   namespace JSX {
@@ -42,37 +42,37 @@ const ModalOverlay: FC<ModalOverlayInput> = (props: ModalOverlayInput) => {
       <Member
         type="FrooxEngine.Sync`1[System.Int32]"
         name="UpdateOrder"
-        content={UpdateOrder}
+        content={UpdateOrder} /* default: 0 */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="Enabled"
-        content={Enabled}
+        content={Enabled} /* default: False */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Single]"
         name="ShowLerp"
-        content={ShowLerp}
+        content={ShowLerp} /* default: 0 */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Single]"
         name="AnimationTime"
-        content={AnimationTime}
+        content={AnimationTime} /* default: 0 */
       />
       <Member
         type="FrooxEngine.SyncRef`1[FrooxEngine.UIX.RectTransform]"
         name="SizeRoot"
-        content={SizeRoot}
+        content={SizeRoot} /* default: ID0 */
       />
       <Member
         type="FrooxEngine.SyncRef`1[FrooxEngine.UIX.RectTransform]"
         name="ContentRoot"
-        content={ContentRoot}
+        content={ContentRoot} /* default: ID0 */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="CloseOnContextMenuAction"
-        content={CloseOnContextMenuAction}
+        content={CloseOnContextMenuAction} /* default: False */
       />
     </component>
   );

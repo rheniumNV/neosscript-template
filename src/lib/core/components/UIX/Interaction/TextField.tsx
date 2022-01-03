@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { member, Member } from "../../../Member";
+import { member, Member } from "lib/core/Member";
 
 declare global {
   namespace JSX {
@@ -42,37 +42,37 @@ const TextField: FC<TextFieldInput> = (props: TextFieldInput) => {
       <Member
         type="FrooxEngine.Sync`1[System.Int32]"
         name="UpdateOrder"
-        content={UpdateOrder}
+        content={UpdateOrder} /* default: 0 */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="Enabled"
-        content={Enabled}
+        content={Enabled} /* default: False */
       />
       <Member
         type="FrooxEngine.SyncRef`1[FrooxEngine.TextEditor]"
         name="Editor"
-        content={Editor}
+        content={Editor} /* default: ID0 */
       />
       <Member
         type="FrooxEngine.SyncRef`1[FrooxEngine.UIX.Text]"
         name="__text"
-        content={__text}
+        content={__text} /* default: ID0 */
       />
       <Member
         type="FrooxEngine.SyncDelegate`1[System.Action`1[FrooxEngine.TextEditor]]"
         name="EditingStarted"
-        content={EditingStarted}
+        content={EditingStarted} /* default: FrooxEngine.WorldDelegate */
       />
       <Member
         type="FrooxEngine.SyncDelegate`1[System.Action`1[FrooxEngine.TextEditor]]"
         name="EditingChanged"
-        content={EditingChanged}
+        content={EditingChanged} /* default: FrooxEngine.WorldDelegate */
       />
       <Member
         type="FrooxEngine.SyncDelegate`1[System.Action`1[FrooxEngine.TextEditor]]"
         name="EditingFinished"
-        content={EditingFinished}
+        content={EditingFinished} /* default: FrooxEngine.WorldDelegate */
       />
     </component>
   );

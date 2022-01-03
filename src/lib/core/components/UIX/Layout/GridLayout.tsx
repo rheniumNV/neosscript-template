@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { member, Member } from "../../../Member";
+import { member, Member } from "lib/core/Member";
 
 declare global {
   namespace JSX {
@@ -54,67 +54,67 @@ const GridLayout: FC<GridLayoutInput> = (props: GridLayoutInput) => {
       <Member
         type="FrooxEngine.Sync`1[System.Int32]"
         name="UpdateOrder"
-        content={UpdateOrder}
+        content={UpdateOrder} /* default: 0 */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="Enabled"
-        content={Enabled}
+        content={Enabled} /* default: False */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Single]"
         name="PaddingTop"
-        content={PaddingTop}
+        content={PaddingTop} /* default: 0 */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Single]"
         name="PaddingRight"
-        content={PaddingRight}
+        content={PaddingRight} /* default: 0 */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Single]"
         name="PaddingBottom"
-        content={PaddingBottom}
+        content={PaddingBottom} /* default: 0 */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Single]"
         name="PaddingLeft"
-        content={PaddingLeft}
+        content={PaddingLeft} /* default: 0 */
       />
       <Member
         type="FrooxEngine.Sync`1[BaseX.float2]"
         name="CellSize"
-        content={CellSize}
+        content={CellSize} /* default: [0; 0] */
       />
       <Member
         type="FrooxEngine.Sync`1[BaseX.float2]"
         name="Spacing"
-        content={Spacing}
+        content={Spacing} /* default: [0; 0] */
       />
       <Member
         type="FrooxEngine.Sync`1[FrooxEngine.UIX.LayoutHorizontalAlignment]"
         name="HorizontalAlign"
-        content={HorizontalAlign}
+        content={HorizontalAlign} /* default: Left */
       />
       <Member
         type="FrooxEngine.Sync`1[FrooxEngine.UIX.LayoutVerticalAlignment]"
         name="VerticalAlign"
-        content={VerticalAlign}
+        content={VerticalAlign} /* default: Top */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="ExpandWidthToFit"
-        content={ExpandWidthToFit}
+        content={ExpandWidthToFit} /* default: False */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="PreserveAspectOnExpand"
-        content={PreserveAspectOnExpand}
+        content={PreserveAspectOnExpand} /* default: False */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="AlignLastRowIndividually"
-        content={AlignLastRowIndividually}
+        content={AlignLastRowIndividually} /* default: False */
       />
     </component>
   );

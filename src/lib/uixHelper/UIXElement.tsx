@@ -1,9 +1,9 @@
 import React, { FC } from "react";
-import Slot from "../core/Slot";
-import ReactTransform from "../core/components/UIX/RectTransform";
+import Slot from "lib/core/Slot";
+import ReactTransform from "lib/core/components/UIX/RectTransform";
 import LayoutElement, {
   LayoutElementInput,
-} from "../core/components/UIX/Layout/LayoutElement";
+} from "lib/core/components/UIX/Layout/LayoutElement";
 
 interface UIXElementInput {
   name?: string;

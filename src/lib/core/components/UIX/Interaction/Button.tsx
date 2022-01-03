@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { member, Member } from "../../../Member";
+import { member, Member } from "lib/core/Member";
 
 declare global {
   namespace JSX {
@@ -78,127 +78,127 @@ const Button: FC<ButtonInput> = (props: ButtonInput) => {
       <Member
         type="FrooxEngine.Sync`1[System.Int32]"
         name="UpdateOrder"
-        content={UpdateOrder}
+        content={UpdateOrder} /* default: 0 */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="Enabled"
-        content={Enabled}
+        content={Enabled} /* default: False */
       />
       <Member
         type="FrooxEngine.Sync`1[BaseX.color]"
         name="BaseColor"
-        content={BaseColor}
+        content={BaseColor} /* default: [0; 0; 0; 0] */
       />
       <Member
         type="FrooxEngine.Sync`1[BaseX.color]"
         name="__legacy_NormalColor"
-        content={__legacy_NormalColor}
+        content={__legacy_NormalColor} /* default: [0; 0; 0; 0] */
       />
       <Member
         type="FrooxEngine.Sync`1[BaseX.color]"
         name="__legacy_HighlightColor"
-        content={__legacy_HighlightColor}
+        content={__legacy_HighlightColor} /* default: [0; 0; 0; 0] */
       />
       <Member
         type="FrooxEngine.Sync`1[BaseX.color]"
         name="__legacy_PressColor"
-        content={__legacy_PressColor}
+        content={__legacy_PressColor} /* default: [0; 0; 0; 0] */
       />
       <Member
         type="FrooxEngine.Sync`1[BaseX.color]"
         name="__legacy_DisabledColor"
-        content={__legacy_DisabledColor}
+        content={__legacy_DisabledColor} /* default: [0; 0; 0; 0] */
       />
       <Member
         type="FrooxEngine.Sync`1[FrooxEngine.UIX.InteractionElement+ColorMode]"
         name="__legacy_TintColorMode"
-        content={__legacy_TintColorMode}
+        content={__legacy_TintColorMode} /* default: Explicit */
       />
       <Member
         type="FrooxEngine.FieldDrive`1[BaseX.color]"
         name="__legacy_ColorDrive"
-        content={__legacy_ColorDrive}
+        content={__legacy_ColorDrive} /* default: ID0 */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="IsPressed"
-        content={IsPressed}
+        content={IsPressed} /* default: False */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="IsHovering"
-        content={IsHovering}
+        content={IsHovering} /* default: False */
       />
       <Member
         type="FrooxEngine.Sync`1[FrooxEngine.VibratePreset]"
         name="HoverVibrate"
-        content={HoverVibrate}
+        content={HoverVibrate} /* default: None */
       />
       <Member
         type="FrooxEngine.Sync`1[FrooxEngine.VibratePreset]"
         name="PressVibrate"
-        content={PressVibrate}
+        content={PressVibrate} /* default: None */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="ClearFocusOnPress"
-        content={ClearFocusOnPress}
+        content={ClearFocusOnPress} /* default: False */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="PassThroughHorizontalMovement"
-        content={PassThroughHorizontalMovement}
+        content={PassThroughHorizontalMovement} /* default: False */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="PassThroughVerticalMovement"
-        content={PassThroughVerticalMovement}
+        content={PassThroughVerticalMovement} /* default: False */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="RequireLockInToPress"
-        content={RequireLockInToPress}
+        content={RequireLockInToPress} /* default: False */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="RequireInitialPress"
-        content={RequireInitialPress}
+        content={RequireInitialPress} /* default: False */
       />
       <Member
         type="FrooxEngine.Sync`1[BaseX.float2]"
         name="PressPoint"
-        content={PressPoint}
+        content={PressPoint} /* default: [0; 0] */
       />
       <Member
         type="FrooxEngine.SyncDelegate`1[FrooxEngine.ButtonEventHandler]"
         name="Pressed"
-        content={Pressed}
+        content={Pressed} /* default: FrooxEngine.WorldDelegate */
       />
       <Member
         type="FrooxEngine.SyncDelegate`1[FrooxEngine.ButtonEventHandler]"
         name="Pressing"
-        content={Pressing}
+        content={Pressing} /* default: FrooxEngine.WorldDelegate */
       />
       <Member
         type="FrooxEngine.SyncDelegate`1[FrooxEngine.ButtonEventHandler]"
         name="Released"
-        content={Released}
+        content={Released} /* default: FrooxEngine.WorldDelegate */
       />
       <Member
         type="FrooxEngine.SyncDelegate`1[FrooxEngine.ButtonEventHandler]"
         name="HoverEnter"
-        content={HoverEnter}
+        content={HoverEnter} /* default: FrooxEngine.WorldDelegate */
       />
       <Member
         type="FrooxEngine.SyncDelegate`1[FrooxEngine.ButtonEventHandler]"
         name="HoverStay"
-        content={HoverStay}
+        content={HoverStay} /* default: FrooxEngine.WorldDelegate */
       />
       <Member
         type="FrooxEngine.SyncDelegate`1[FrooxEngine.ButtonEventHandler]"
         name="HoverLeave"
-        content={HoverLeave}
+        content={HoverLeave} /* default: FrooxEngine.WorldDelegate */
       />
     </component>
   );
