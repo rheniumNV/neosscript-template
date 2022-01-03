@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "webpack && prettier --write dist/index.html && node convert.js",
-    "setup": "node ./src/lib/builder/build.cjs && prettier --write ./src/lib/core/components"
+    "setup": "node ./src/lib/builder/componentDataList.cjs && prettier --write ./src/lib/core/components"
   },
   "author": "",
   "license": "ISC",

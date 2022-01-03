@@ -56,11 +56,11 @@ const result = JSON.stringify(
           })),
         };
       } else if (tagName == "component") {
-        const { name } = properties;
+        const { name, id } = properties;
         return {
           Type: name,
           Data: {
-            ID: generateId(),
+            ID: generateId(id),
             "persistent-ID": generateId(),
             UpdateOrder: { ID: generateId(), Data: 0 },
             Enabled: { ID: generateId(), Data: true },

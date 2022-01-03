@@ -1,6 +1,7 @@
 const _ = require("lodash");
 const fs = require("fs");
 const util = require("util");
+
 const compNames = ["BoxCollider", "Grabbable", "ObjectRoot", ""];
 const componentDataList = _(require("./componentDataList.json")).filter(
   ({ name, pathName }) =>
@@ -35,12 +36,9 @@ const createFile = (outPath, filename, data) => {
   const filePath = outPath + filename;
 
   fs.writeFile(filePath, data, (err) => {
-    // ディレクトリ作成できなかったとき
     if (err && err.code === "ENOENT") {
-      // ディレクトリ部分だけ切り取り
       const dir = filePath.substring(0, filePath.lastIndexOf("/"));
 
-      // 親ディレクトリ作成
       fs.mkdir(dir, { recursive: true }, (err) => {
         if (err) throw err;
         createFile(outPath, filename, data);
@@ -88,7 +86,7 @@ componentDataList.forEach(({ name, fullName, pathName, syncmembers }) => {
       }
     }
   }
-  interface ${name}Input {
+  export interface ${name}Input {
       id?:string;
       persistentId?:string;
       ${interfaceUnit}

@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, ReactNode } from "react";
 import { Member, member } from "./Member";
 
 declare global {
@@ -21,7 +21,7 @@ interface SlotInput {
   scale?: member<[number, number, number]>;
   orderOffset?: member<number>;
   components?: JSX.Element | Array<JSX.Element>;
-  children?: JSX.Element | Array<JSX.Element>;
+  children?: ReactNode | JSX.Element | Array<JSX.Element>;
 }
 
 const Slot: FC<SlotInput> = ({

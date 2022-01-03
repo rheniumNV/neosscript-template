@@ -25,9 +25,9 @@ export const Member: FC<MemberInput> = ({ type, name, content }) => {
   }
   const { value, id } = content;
   if (id == undefined) {
-    return (
-      <member id={id} name={name} type={type} value={JSON.stringify(content)} />
-    );
+    return <member name={name} type={type} value={JSON.stringify(content)} />;
   }
-  return <member name={name} type={type} value={JSON.stringify(value)} />;
+  return (
+    <member id={id} name={name} type={type} value={JSON.stringify(value)} />
+  );
 };
