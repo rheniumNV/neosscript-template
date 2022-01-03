@@ -7,22 +7,26 @@ import Image from "lib/core/components/UIX/Graphics/Image";
 import Text from "lib/core/components/UIX/Graphics/Text";
 import UIXCanvas from "lib/uixHelper/UIXCanvas";
 import UIXHorizontal from "lib/uixHelper/UIXHorizontal";
-import UI_UnlitMaterial from "lib/core/components/Assets/Materials/UI/UI_UnlitMaterial";
-import { generateId } from "lib/core/util";
 import UIXBackground from "lib/uixHelper/UIXBackground";
 
 export default () => {
   return (
     <Slot name="Item" components={[<Grabbable Scalable={true} />]}>
       <UIXCanvas name="UI" canvas={{ Size: [300, 600] }}>
+        <UIXBackground />
         <UIXVertical
+          layout={{
+            PaddingBottom: 10,
+            PaddingLeft: 10,
+            PaddingRight: 10,
+            PaddingTop: 10,
+          }}
           templates={[
             [100, "Min"],
             [1, "Flexible"],
             [50, "Min"],
           ]}
         >
-          <UIXBackground />
           <UIXElement components={[<Image Tint={[1, 0, 0, 1]} />]}>
             <UIXElement components={[<Text Content={"HelloWorld"} />]} />
           </UIXElement>

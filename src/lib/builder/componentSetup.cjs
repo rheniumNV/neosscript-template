@@ -6,6 +6,8 @@ const compNames = [
   "Grabbable",
   "ObjectRoot",
   "UI_UnlitMaterial",
+  "SpriteProvider",
+  "StaticTexture2D",
 ];
 const componentDataList = _(require("./componentDataList.json")).filter(
   ({ name, pathName }) =>
