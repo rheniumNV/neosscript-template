@@ -38,27 +38,27 @@ const NestedCanvas: FC<NestedCanvasInput> = (props: NestedCanvasInput) => {
       <Member
         type="FrooxEngine.Sync`1[System.Int32]"
         name="UpdateOrder"
-        content={UpdateOrder}
+        content={UpdateOrder} /* default: 0 */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="Enabled"
-        content={Enabled}
+        content={Enabled} /* default: False */
       />
       <Member
         type="FrooxEngine.SyncRef`1[FrooxEngine.UIX.Canvas]"
         name="TargetCanvas"
-        content={TargetCanvas}
+        content={TargetCanvas} /* default: ID0 */
       />
       <Member
         type="FrooxEngine.FieldDrive`1[System.Int32]"
         name="_renderOffset"
-        content={_renderOffset}
+        content={_renderOffset} /* default: ID0 */
       />
       <Member
         type="FrooxEngine.FieldDrive`1[System.Int32]"
         name="_maskDepth"
-        content={_maskDepth}
+        content={_maskDepth} /* default: ID0 */
       />
     </component>
   );

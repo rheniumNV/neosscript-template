@@ -48,52 +48,52 @@ const OutlinedArc: FC<OutlinedArcInput> = (props: OutlinedArcInput) => {
       <Member
         type="FrooxEngine.Sync`1[System.Int32]"
         name="UpdateOrder"
-        content={UpdateOrder}
+        content={UpdateOrder} /* default: 0 */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="Enabled"
-        content={Enabled}
+        content={Enabled} /* default: False */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Single]"
         name="Arc"
-        content={Arc}
+        content={Arc} /* default: 0 */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Single]"
         name="Offset"
-        content={Offset}
+        content={Offset} /* default: 0 */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Single]"
         name="OuterRadiusRatio"
-        content={OuterRadiusRatio}
+        content={OuterRadiusRatio} /* default: 0 */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Single]"
         name="InnerRadiusRatio"
-        content={InnerRadiusRatio}
+        content={InnerRadiusRatio} /* default: 0 */
       />
       <Member
         type="FrooxEngine.Sync`1[BaseX.color]"
         name="FillColor"
-        content={FillColor}
+        content={FillColor} /* default: [0; 0; 0; 0] */
       />
       <Member
         type="FrooxEngine.Sync`1[BaseX.color]"
         name="OutlineColor"
-        content={OutlineColor}
+        content={OutlineColor} /* default: [0; 0; 0; 0] */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Single]"
         name="OutlineThickness"
-        content={OutlineThickness}
+        content={OutlineThickness} /* default: 0 */
       />
       <Member
         type="FrooxEngine.AssetRef`1[FrooxEngine.Material]"
         name="Material"
-        content={Material}
+        content={Material} /* default: ID0 */
       />
     </component>
   );

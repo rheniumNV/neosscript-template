@@ -54,67 +54,67 @@ const RawGraphic: FC<RawGraphicInput> = (props: RawGraphicInput) => {
       <Member
         type="FrooxEngine.Sync`1[System.Int32]"
         name="UpdateOrder"
-        content={UpdateOrder}
+        content={UpdateOrder} /* default: 0 */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="Enabled"
-        content={Enabled}
+        content={Enabled} /* default: False */
       />
       <Member
         type="FrooxEngine.AssetRef`1[FrooxEngine.Material]"
         name="Material"
-        content={Material}
+        content={Material} /* default: ID0 */
       />
       <Member
         type="FrooxEngine.AssetRef`1[FrooxEngine.MaterialPropertyBlock]"
         name="PropertyBlock"
-        content={PropertyBlock}
+        content={PropertyBlock} /* default: ID0 */
       />
       <Member
         type="FrooxEngine.Sync`1[BaseX.Rect]"
         name="FillRect"
-        content={FillRect}
+        content={FillRect} /* default: [X=0; Y=0; W=0; H=0] */
       />
       <Member
         type="FrooxEngine.Sync`1[BaseX.color]"
         name="Color"
-        content={Color}
+        content={Color} /* default: [0; 0; 0; 0] */
       />
       <Member
         type="FrooxEngine.Sync`1[BaseX.Rect]"
         name="UVRect"
-        content={UVRect}
+        content={UVRect} /* default: [X=0; Y=0; W=0; H=0] */
       />
       <Member
         type="FrooxEngine.Sync`1[BaseX.RectOrientation]"
         name="Orientation"
-        content={Orientation}
+        content={Orientation} /* default: Default */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Nullable`1[BaseX.float3]]"
         name="Normal"
-        content={Normal}
+        content={Normal} /* default: <i>null</i> */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Nullable`1[BaseX.float4]]"
         name="Tangent"
-        content={Tangent}
+        content={Tangent} /* default: <i>null</i> */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="HideWithNoMaterial"
-        content={HideWithNoMaterial}
+        content={HideWithNoMaterial} /* default: False */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="PreserveUVAspectRatio"
-        content={PreserveUVAspectRatio}
+        content={PreserveUVAspectRatio} /* default: False */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="InteractionTarget"
-        content={InteractionTarget}
+        content={InteractionTarget} /* default: False */
       />
     </component>
   );

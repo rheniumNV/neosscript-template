@@ -38,22 +38,22 @@ const InteractionBlock: FC<InteractionBlockInput> = (
       <Member
         type="FrooxEngine.Sync`1[System.Int32]"
         name="UpdateOrder"
-        content={UpdateOrder}
+        content={UpdateOrder} /* default: 0 */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="Enabled"
-        content={Enabled}
+        content={Enabled} /* default: False */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="TouchExitLock"
-        content={TouchExitLock}
+        content={TouchExitLock} /* default: False */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="TouchEnterLock"
-        content={TouchEnterLock}
+        content={TouchEnterLock} /* default: False */
       />
     </component>
   );

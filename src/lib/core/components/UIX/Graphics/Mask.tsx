@@ -24,17 +24,17 @@ const Mask: FC<MaskInput> = (props: MaskInput) => {
       <Member
         type="FrooxEngine.Sync`1[System.Int32]"
         name="UpdateOrder"
-        content={UpdateOrder}
+        content={UpdateOrder} /* default: 0 */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="Enabled"
-        content={Enabled}
+        content={Enabled} /* default: False */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="ShowMaskGraphic"
-        content={ShowMaskGraphic}
+        content={ShowMaskGraphic} /* default: False */
       />
     </component>
   );

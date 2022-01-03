@@ -44,42 +44,42 @@ const ArcLayout: FC<ArcLayoutInput> = (props: ArcLayoutInput) => {
       <Member
         type="FrooxEngine.Sync`1[System.Int32]"
         name="UpdateOrder"
-        content={UpdateOrder}
+        content={UpdateOrder} /* default: 0 */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="Enabled"
-        content={Enabled}
+        content={Enabled} /* default: False */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Single]"
         name="Arc"
-        content={Arc}
+        content={Arc} /* default: 0 */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Single]"
         name="Offset"
-        content={Offset}
+        content={Offset} /* default: 0 */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Single]"
         name="Separation"
-        content={Separation}
+        content={Separation} /* default: 0 */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="CenterAtSeparation"
-        content={CenterAtSeparation}
+        content={CenterAtSeparation} /* default: False */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="ProportionalSize"
-        content={ProportionalSize}
+        content={ProportionalSize} /* default: False */
       />
       <Member
         type="FrooxEngine.Sync`1[FrooxEngine.UIX.ArcLayout+Direction]"
         name="ItemDirection"
-        content={ItemDirection}
+        content={ItemDirection} /* default: Clockwise */
       />
     </component>
   );

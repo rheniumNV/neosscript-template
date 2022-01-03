@@ -42,37 +42,37 @@ const RectTransform: FC<RectTransformInput> = (props: RectTransformInput) => {
       <Member
         type="FrooxEngine.Sync`1[System.Int32]"
         name="UpdateOrder"
-        content={UpdateOrder}
+        content={UpdateOrder} /* default: 0 */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="Enabled"
-        content={Enabled}
+        content={Enabled} /* default: False */
       />
       <Member
         type="FrooxEngine.Sync`1[BaseX.float2]"
         name="AnchorMin"
-        content={AnchorMin}
+        content={AnchorMin} /* default: [0; 0] */
       />
       <Member
         type="FrooxEngine.Sync`1[BaseX.float2]"
         name="AnchorMax"
-        content={AnchorMax}
+        content={AnchorMax} /* default: [0; 0] */
       />
       <Member
         type="FrooxEngine.Sync`1[BaseX.float2]"
         name="OffsetMin"
-        content={OffsetMin}
+        content={OffsetMin} /* default: [0; 0] */
       />
       <Member
         type="FrooxEngine.Sync`1[BaseX.float2]"
         name="OffsetMax"
-        content={OffsetMax}
+        content={OffsetMax} /* default: [0; 0] */
       />
       <Member
         type="FrooxEngine.Sync`1[BaseX.float2]"
         name="Pivot"
-        content={Pivot}
+        content={Pivot} /* default: [0; 0] */
       />
     </component>
   );

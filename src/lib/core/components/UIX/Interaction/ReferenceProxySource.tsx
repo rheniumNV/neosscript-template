@@ -30,14 +30,18 @@ const ReferenceProxySource: FC<ReferenceProxySourceInput> = (
       <Member
         type="FrooxEngine.Sync`1[System.Int32]"
         name="UpdateOrder"
-        content={UpdateOrder}
+        content={UpdateOrder} /* default: 0 */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="Enabled"
-        content={Enabled}
+        content={Enabled} /* default: False */
       />
-      <Member type="FrooxEngine.SyncRef" name="Reference" content={Reference} />
+      <Member
+        type="FrooxEngine.SyncRef"
+        name="Reference"
+        content={Reference} /* default: ID0 */
+      />
     </component>
   );
 };

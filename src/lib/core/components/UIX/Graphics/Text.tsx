@@ -72,122 +72,122 @@ const Text: FC<TextInput> = (props: TextInput) => {
       <Member
         type="FrooxEngine.Sync`1[System.Int32]"
         name="UpdateOrder"
-        content={UpdateOrder}
+        content={UpdateOrder} /* default: 0 */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="Enabled"
-        content={Enabled}
+        content={Enabled} /* default: False */
       />
       <Member
         type="FrooxEngine.AssetRef`1[FrooxEngine.FontSet]"
         name="Font"
-        content={Font}
+        content={Font} /* default: ID0 */
       />
       <Member
         type="FrooxEngine.Sync`1[System.String]"
         name="Content"
-        content={Content}
+        content={Content} /* default: <i>null</i> */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="ParseRichText"
-        content={ParseRichText}
+        content={ParseRichText} /* default: False */
       />
       <Member
         type="FrooxEngine.Sync`1[System.String]"
         name="NullContent"
-        content={NullContent}
+        content={NullContent} /* default: <i>null</i> */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Single]"
         name="Size"
-        content={Size}
+        content={Size} /* default: 0 */
       />
       <Member
         type="FrooxEngine.Sync`1[CodeX.TextHorizontalAlignment]"
         name="HorizontalAlign"
-        content={HorizontalAlign}
+        content={HorizontalAlign} /* default: Left */
       />
       <Member
         type="FrooxEngine.Sync`1[CodeX.TextVerticalAlignment]"
         name="VerticalAlign"
-        content={VerticalAlign}
+        content={VerticalAlign} /* default: Top */
       />
       <Member
         type="FrooxEngine.Sync`1[CodeX.AlignmentMode]"
         name="AlignmentMode"
-        content={AlignmentMode}
+        content={AlignmentMode} /* default: Geometric */
       />
       <Member
         type="FrooxEngine.Sync`1[BaseX.color]"
         name="Color"
-        content={Color}
+        content={Color} /* default: [0; 0; 0; 0] */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Single]"
         name="LineHeight"
-        content={LineHeight}
+        content={LineHeight} /* default: 0 */
       />
       <Member
         type="FrooxEngine.Sync`1[System.String]"
         name="MaskPattern"
-        content={MaskPattern}
+        content={MaskPattern} /* default: <i>null</i> */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="HorizontalAutoSize"
-        content={HorizontalAutoSize}
+        content={HorizontalAutoSize} /* default: False */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="VerticalAutoSize"
-        content={VerticalAutoSize}
+        content={VerticalAutoSize} /* default: False */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Single]"
         name="AutoSizeMin"
-        content={AutoSizeMin}
+        content={AutoSizeMin} /* default: 0 */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Single]"
         name="AutoSizeMax"
-        content={AutoSizeMax}
+        content={AutoSizeMax} /* default: 0 */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Int32]"
         name="CaretPosition"
-        content={CaretPosition}
+        content={CaretPosition} /* default: 0 */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Int32]"
         name="SelectionStart"
-        content={SelectionStart}
+        content={SelectionStart} /* default: 0 */
       />
       <Member
         type="FrooxEngine.Sync`1[BaseX.color]"
         name="CaretColor"
-        content={CaretColor}
+        content={CaretColor} /* default: [0; 0; 0; 0] */
       />
       <Member
         type="FrooxEngine.Sync`1[BaseX.color]"
         name="SelectionColor"
-        content={SelectionColor}
+        content={SelectionColor} /* default: [0; 0; 0; 0] */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="InteractionTarget"
-        content={InteractionTarget}
+        content={InteractionTarget} /* default: False */
       />
       <Member
         type="FrooxEngine.SyncRef`1[FrooxEngine.FontMaterial]"
         name="_legacyFontMaterial"
-        content={_legacyFontMaterial}
+        content={_legacyFontMaterial} /* default: ID0 */
       />
       <Member
         type="FrooxEngine.Sync`1[BaseX.Alignment]"
         name="_legacyAlign"
-        content={_legacyAlign}
+        content={_legacyAlign} /* default: TopLeft */
       />
     </component>
   );

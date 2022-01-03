@@ -31,22 +31,22 @@ const RectTransformLerp: FC<RectTransformLerpInput> = (
       <Member
         type="FrooxEngine.Sync`1[System.Int32]"
         name="UpdateOrder"
-        content={UpdateOrder}
+        content={UpdateOrder} /* default: 0 */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="Enabled"
-        content={Enabled}
+        content={Enabled} /* default: False */
       />
       <Member
         type="FrooxEngine.Sync`1[System.Single]"
         name="Lerp"
-        content={Lerp}
+        content={Lerp} /* default: 0 */
       />
       <Member
         type="FrooxEngine.SyncRef`1[FrooxEngine.UIX.RectTransform]"
         name="SourceRect"
-        content={SourceRect}
+        content={SourceRect} /* default: ID0 */
       />
     </component>
   );
