@@ -20,6 +20,7 @@ export default () => {
             PaddingLeft: 10,
             PaddingRight: 10,
             PaddingTop: 10,
+            Spacing: 5,
           }}
           templates={[
             [100, "Min"],
@@ -31,6 +32,7 @@ export default () => {
             <UIXElement components={[<Text Content={"HelloWorld"} />]} />
           </UIXElement>
           <UIXHorizontal
+            layout={{ Spacing: 5 }}
             templates={[
               [100, "Min"],
               [1, "Flexible"],

@@ -2,22 +2,26 @@ import React, { FC } from "react";
 import Slot from "lib/core/Slot";
 import _ from "lodash";
 import LayoutElement from "lib/core/components/UIX/Layout/LayoutElement";
-import HorizontalLayout from "lib/core/components/UIX/Layout/HorizontalLayout";
+import HorizontalLayout, {
+  HorizontalLayoutInput,
+} from "lib/core/components/UIX/Layout/HorizontalLayout";
 
 type space = [number, "Min"] | [number, "Preferred"] | [number, "Flexible"];
 
 interface UIXHorizontalInput {
   name?: string;
+  layout?: HorizontalLayoutInput;
   templates: Array<space>;
 }
 
 const UIXHorizontal: FC<UIXHorizontalInput> = ({
   name = "Horizontal",
+  layout = {},
   templates,
   children,
 }) => {
   return (
-    <Slot name={name} components={[<HorizontalLayout />]}>
+    <Slot name={name} components={[<HorizontalLayout {...layout} />]}>
       {_.map(templates, ([value, type], i) => (
         <Slot
           name="Element"
