@@ -16,7 +16,14 @@ interface DVSlotInput {
 const generateVariable =
   (Component) =>
   ({ name, type, value }) => {
-    return <Component type={{ T: type }} VariableName={name} Value={value} />;
+    return (
+      <Component
+        type={{ T: type }}
+        VariableName={name}
+        Value={value}
+        Reference={value}
+      />
+    );
   };
 
 const DVSlot: FC<DVSlotInput> = ({

@@ -1,5 +1,5 @@
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server.js";
-import SpinBoxs from "samples/SpinBoxs";
+import UIXForm from "samples/form/index";
 
-export default () => renderToStaticMarkup(<SpinBoxs />);
+export default () => renderToStaticMarkup(<UIXForm />);

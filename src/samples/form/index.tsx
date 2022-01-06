@@ -13,8 +13,10 @@ import NeosType from "lib/core/types/NeosType";
 
 export default () => {
   const ItemName = "CalenderForm";
+  const rootSlotId = generateId();
   return (
     <Slot
+      id={rootSlotId}
       name={ItemName}
       components={[
         <Grabbable Scalable={true} />,
@@ -26,7 +28,9 @@ export default () => {
           { type: NeosType.Float, name: "StartTime", value: 100 },
           { type: NeosType.Color, name: "Main" },
         ]}
-        referenceVariables={[{ type: NeosType.Slot, name: "Root" }]}
+        referenceVariables={[
+          { type: NeosType.Slot, name: "Root", value: rootSlotId },
+        ]}
       />
     </Slot>
   );
