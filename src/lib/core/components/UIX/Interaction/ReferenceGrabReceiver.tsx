@@ -11,7 +11,8 @@ declare global {
 export interface ReferenceGrabReceiverInput {
   id?: string;
   persistentId?: string;
-  UpdateOrder?: member<number>;
+  updateOrderId?: string;
+  updateOrder?: number;
   Enabled?: member<boolean>;
   TargetReference?: member<any>;
 }
@@ -19,19 +20,23 @@ export interface ReferenceGrabReceiverInput {
 const ReferenceGrabReceiver: FC<ReferenceGrabReceiverInput> = (
   props: ReferenceGrabReceiverInput
 ) => {
-  const { id, persistentId, UpdateOrder, Enabled, TargetReference } = props;
+  const {
+    id,
+    persistentId,
+    updateOrderId,
+    updateOrder,
+    Enabled,
+    TargetReference,
+  } = props;
 
   return (
     <component
       name="FrooxEngine.UIX.ReferenceGrabReceiver"
       id={id}
       persistentId={persistentId}
+      updateOrderId={updateOrderId}
+      updateOrder={updateOrder}
     >
-      <Member
-        type="FrooxEngine.Sync`1[System.Int32]"
-        name="UpdateOrder"
-        content={UpdateOrder} /* default: 0 */
-      />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="Enabled"

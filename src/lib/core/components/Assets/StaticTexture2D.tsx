@@ -11,7 +11,8 @@ declare global {
 export interface StaticTexture2DInput {
   id?: string;
   persistentId?: string;
-  UpdateOrder?: member<number>;
+  updateOrderId?: string;
+  updateOrder?: number;
   Enabled?: member<boolean>;
   URL?: member<any>;
   FilterMode?: member<any>;
@@ -38,7 +39,8 @@ const StaticTexture2D: FC<StaticTexture2DInput> = (
   const {
     id,
     persistentId,
-    UpdateOrder,
+    updateOrderId,
+    updateOrder,
     Enabled,
     URL,
     FilterMode,
@@ -64,12 +66,9 @@ const StaticTexture2D: FC<StaticTexture2DInput> = (
       name="FrooxEngine.StaticTexture2D"
       id={id}
       persistentId={persistentId}
+      updateOrderId={updateOrderId}
+      updateOrder={updateOrder}
     >
-      <Member
-        type="FrooxEngine.Sync`1[System.Int32]"
-        name="UpdateOrder"
-        content={UpdateOrder} /* default: 0 */
-      />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="Enabled"

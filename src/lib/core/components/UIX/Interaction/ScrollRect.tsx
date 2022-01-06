@@ -11,9 +11,10 @@ declare global {
 export interface ScrollRectInput {
   id?: string;
   persistentId?: string;
-  UpdateOrder?: member<number>;
+  updateOrderId?: string;
+  updateOrder?: number;
   Enabled?: member<boolean>;
-  NormalizedPosition?: member<any>;
+  NormalizedPosition?: member<[number, number]>;
   HorizontalAlign?: member<any>;
   VerticalAlign?: member<any>;
   ViewportOverride?: member<any>;
@@ -24,7 +25,8 @@ const ScrollRect: FC<ScrollRectInput> = (props: ScrollRectInput) => {
   const {
     id,
     persistentId,
-    UpdateOrder,
+    updateOrderId,
+    updateOrder,
     Enabled,
     NormalizedPosition,
     HorizontalAlign,
@@ -38,12 +40,9 @@ const ScrollRect: FC<ScrollRectInput> = (props: ScrollRectInput) => {
       name="FrooxEngine.UIX.ScrollRect"
       id={id}
       persistentId={persistentId}
+      updateOrderId={updateOrderId}
+      updateOrder={updateOrder}
     >
-      <Member
-        type="FrooxEngine.Sync`1[System.Int32]"
-        name="UpdateOrder"
-        content={UpdateOrder} /* default: 0 */
-      />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="Enabled"

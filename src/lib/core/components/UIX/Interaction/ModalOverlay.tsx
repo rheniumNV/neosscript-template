@@ -11,7 +11,8 @@ declare global {
 export interface ModalOverlayInput {
   id?: string;
   persistentId?: string;
-  UpdateOrder?: member<number>;
+  updateOrderId?: string;
+  updateOrder?: number;
   Enabled?: member<boolean>;
   ShowLerp?: member<number>;
   AnimationTime?: member<number>;
@@ -24,7 +25,8 @@ const ModalOverlay: FC<ModalOverlayInput> = (props: ModalOverlayInput) => {
   const {
     id,
     persistentId,
-    UpdateOrder,
+    updateOrderId,
+    updateOrder,
     Enabled,
     ShowLerp,
     AnimationTime,
@@ -38,12 +40,9 @@ const ModalOverlay: FC<ModalOverlayInput> = (props: ModalOverlayInput) => {
       name="FrooxEngine.UIX.ModalOverlay"
       id={id}
       persistentId={persistentId}
+      updateOrderId={updateOrderId}
+      updateOrder={updateOrder}
     >
-      <Member
-        type="FrooxEngine.Sync`1[System.Int32]"
-        name="UpdateOrder"
-        content={UpdateOrder} /* default: 0 */
-      />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="Enabled"

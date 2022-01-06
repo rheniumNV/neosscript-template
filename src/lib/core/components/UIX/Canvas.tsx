@@ -11,9 +11,10 @@ declare global {
 export interface CanvasInput {
   id?: string;
   persistentId?: string;
-  UpdateOrder?: member<number>;
+  updateOrderId?: string;
+  updateOrder?: number;
   Enabled?: member<boolean>;
-  Size?: member<any>;
+  Size?: member<[number, number]>;
   EditModeOnly?: member<boolean>;
   AcceptRemoteTouch?: member<boolean>;
   AcceptPhysicalTouch?: member<boolean>;
@@ -36,7 +37,8 @@ const Canvas: FC<CanvasInput> = (props: CanvasInput) => {
   const {
     id,
     persistentId,
-    UpdateOrder,
+    updateOrderId,
+    updateOrder,
     Enabled,
     Size,
     EditModeOnly,
@@ -62,12 +64,9 @@ const Canvas: FC<CanvasInput> = (props: CanvasInput) => {
       name="FrooxEngine.UIX.Canvas"
       id={id}
       persistentId={persistentId}
+      updateOrderId={updateOrderId}
+      updateOrder={updateOrder}
     >
-      <Member
-        type="FrooxEngine.Sync`1[System.Int32]"
-        name="UpdateOrder"
-        content={UpdateOrder} /* default: 0 */
-      />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="Enabled"

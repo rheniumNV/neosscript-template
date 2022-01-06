@@ -11,7 +11,8 @@ declare global {
 export interface LayoutElementInput {
   id?: string;
   persistentId?: string;
-  UpdateOrder?: member<number>;
+  updateOrderId?: string;
+  updateOrder?: number;
   Enabled?: member<boolean>;
   MinWidth?: member<number>;
   PreferredWidth?: member<number>;
@@ -28,7 +29,8 @@ const LayoutElement: FC<LayoutElementInput> = (props: LayoutElementInput) => {
   const {
     id,
     persistentId,
-    UpdateOrder,
+    updateOrderId,
+    updateOrder,
     Enabled,
     MinWidth,
     PreferredWidth,
@@ -46,12 +48,9 @@ const LayoutElement: FC<LayoutElementInput> = (props: LayoutElementInput) => {
       name="FrooxEngine.UIX.LayoutElement"
       id={id}
       persistentId={persistentId}
+      updateOrderId={updateOrderId}
+      updateOrder={updateOrder}
     >
-      <Member
-        type="FrooxEngine.Sync`1[System.Int32]"
-        name="UpdateOrder"
-        content={UpdateOrder} /* default: 0 */
-      />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="Enabled"

@@ -11,11 +11,12 @@ declare global {
 export interface ProgressBarInput {
   id?: string;
   persistentId?: string;
-  UpdateOrder?: member<number>;
+  updateOrderId?: string;
+  updateOrder?: number;
   Enabled?: member<boolean>;
   Progress?: member<number>;
-  AnchorMinOffset?: member<any>;
-  AnchorMaxOffset?: member<any>;
+  AnchorMinOffset?: member<[number, number]>;
+  AnchorMaxOffset?: member<[number, number]>;
   AnchorMin?: member<any>;
   AnchorMax?: member<any>;
   Power?: member<number>;
@@ -25,7 +26,8 @@ const ProgressBar: FC<ProgressBarInput> = (props: ProgressBarInput) => {
   const {
     id,
     persistentId,
-    UpdateOrder,
+    updateOrderId,
+    updateOrder,
     Enabled,
     Progress,
     AnchorMinOffset,
@@ -40,12 +42,9 @@ const ProgressBar: FC<ProgressBarInput> = (props: ProgressBarInput) => {
       name="FrooxEngine.UIX.ProgressBar"
       id={id}
       persistentId={persistentId}
+      updateOrderId={updateOrderId}
+      updateOrder={updateOrder}
     >
-      <Member
-        type="FrooxEngine.Sync`1[System.Int32]"
-        name="UpdateOrder"
-        content={UpdateOrder} /* default: 0 */
-      />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="Enabled"

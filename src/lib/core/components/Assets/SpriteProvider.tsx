@@ -11,7 +11,8 @@ declare global {
 export interface SpriteProviderInput {
   id?: string;
   persistentId?: string;
-  UpdateOrder?: member<number>;
+  updateOrderId?: string;
+  updateOrder?: number;
   Enabled?: member<boolean>;
   HighPriorityIntegration?: member<boolean>;
   Texture?: member<any>;
@@ -26,7 +27,8 @@ const SpriteProvider: FC<SpriteProviderInput> = (
   const {
     id,
     persistentId,
-    UpdateOrder,
+    updateOrderId,
+    updateOrder,
     Enabled,
     HighPriorityIntegration,
     Texture,
@@ -40,12 +42,9 @@ const SpriteProvider: FC<SpriteProviderInput> = (
       name="FrooxEngine.SpriteProvider"
       id={id}
       persistentId={persistentId}
+      updateOrderId={updateOrderId}
+      updateOrder={updateOrder}
     >
-      <Member
-        type="FrooxEngine.Sync`1[System.Int32]"
-        name="UpdateOrder"
-        content={UpdateOrder} /* default: 0 */
-      />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="Enabled"

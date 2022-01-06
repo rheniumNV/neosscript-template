@@ -11,7 +11,8 @@ declare global {
 export interface RectSlotDriverInput {
   id?: string;
   persistentId?: string;
-  UpdateOrder?: member<number>;
+  updateOrderId?: string;
+  updateOrder?: number;
   Enabled?: member<boolean>;
   _position?: member<any>;
 }
@@ -19,19 +20,17 @@ export interface RectSlotDriverInput {
 const RectSlotDriver: FC<RectSlotDriverInput> = (
   props: RectSlotDriverInput
 ) => {
-  const { id, persistentId, UpdateOrder, Enabled, _position } = props;
+  const { id, persistentId, updateOrderId, updateOrder, Enabled, _position } =
+    props;
 
   return (
     <component
       name="FrooxEngine.UIX.RectSlotDriver"
       id={id}
       persistentId={persistentId}
+      updateOrderId={updateOrderId}
+      updateOrder={updateOrder}
     >
-      <Member
-        type="FrooxEngine.Sync`1[System.Int32]"
-        name="UpdateOrder"
-        content={UpdateOrder} /* default: 0 */
-      />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="Enabled"

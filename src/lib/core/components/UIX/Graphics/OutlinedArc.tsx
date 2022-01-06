@@ -11,7 +11,8 @@ declare global {
 export interface OutlinedArcInput {
   id?: string;
   persistentId?: string;
-  UpdateOrder?: member<number>;
+  updateOrderId?: string;
+  updateOrder?: number;
   Enabled?: member<boolean>;
   Arc?: member<number>;
   Offset?: member<number>;
@@ -27,7 +28,8 @@ const OutlinedArc: FC<OutlinedArcInput> = (props: OutlinedArcInput) => {
   const {
     id,
     persistentId,
-    UpdateOrder,
+    updateOrderId,
+    updateOrder,
     Enabled,
     Arc,
     Offset,
@@ -44,12 +46,9 @@ const OutlinedArc: FC<OutlinedArcInput> = (props: OutlinedArcInput) => {
       name="FrooxEngine.UIX.OutlinedArc"
       id={id}
       persistentId={persistentId}
+      updateOrderId={updateOrderId}
+      updateOrder={updateOrder}
     >
-      <Member
-        type="FrooxEngine.Sync`1[System.Int32]"
-        name="UpdateOrder"
-        content={UpdateOrder} /* default: 0 */
-      />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="Enabled"

@@ -11,7 +11,8 @@ declare global {
 export interface DualColorImageInput {
   id?: string;
   persistentId?: string;
-  UpdateOrder?: member<number>;
+  updateOrderId?: string;
+  updateOrder?: number;
   Enabled?: member<boolean>;
   Sprite?: member<any>;
   Material?: member<any>;
@@ -29,7 +30,8 @@ const DualColorImage: FC<DualColorImageInput> = (
   const {
     id,
     persistentId,
-    UpdateOrder,
+    updateOrderId,
+    updateOrder,
     Enabled,
     Sprite,
     Material,
@@ -46,12 +48,9 @@ const DualColorImage: FC<DualColorImageInput> = (
       name="FrooxEngine.UIX.DualColorImage"
       id={id}
       persistentId={persistentId}
+      updateOrderId={updateOrderId}
+      updateOrder={updateOrder}
     >
-      <Member
-        type="FrooxEngine.Sync`1[System.Int32]"
-        name="UpdateOrder"
-        content={UpdateOrder} /* default: 0 */
-      />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="Enabled"

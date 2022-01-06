@@ -11,12 +11,13 @@ declare global {
 export interface ArcSegmentLayoutInput {
   id?: string;
   persistentId?: string;
-  UpdateOrder?: member<number>;
+  updateOrderId?: string;
+  updateOrder?: number;
   Enabled?: member<boolean>;
   Nested?: member<any>;
   NestedSizeRatio?: member<number>;
   Label?: member<any>;
-  LabelSize?: member<any>;
+  LabelSize?: member<[number, number]>;
   LabelDistance?: member<number>;
 }
 
@@ -26,7 +27,8 @@ const ArcSegmentLayout: FC<ArcSegmentLayoutInput> = (
   const {
     id,
     persistentId,
-    UpdateOrder,
+    updateOrderId,
+    updateOrder,
     Enabled,
     Nested,
     NestedSizeRatio,
@@ -40,12 +42,9 @@ const ArcSegmentLayout: FC<ArcSegmentLayoutInput> = (
       name="FrooxEngine.UIX.ArcSegmentLayout"
       id={id}
       persistentId={persistentId}
+      updateOrderId={updateOrderId}
+      updateOrder={updateOrder}
     >
-      <Member
-        type="FrooxEngine.Sync`1[System.Int32]"
-        name="UpdateOrder"
-        content={UpdateOrder} /* default: 0 */
-      />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="Enabled"

@@ -8,25 +8,25 @@ declare global {
     }
   }
 }
-export interface RectTransformInput {
+export interface ValueInput {
+  Type: string;
   id?: string;
   persistentId?: string;
-  updateOrderId?: string;
-  updateOrder?: number;
+  UpdateOrder?: member<number>;
   Enabled?: member<boolean>;
-  AnchorMin?: member<[number, number]>;
-  AnchorMax?: member<[number, number]>;
-  OffsetMin?: member<[number, number]>;
-  OffsetMax?: member<[number, number]>;
-  Pivot?: member<[number, number]>;
+  AnchorMin?: member<any>;
+  AnchorMax?: member<any>;
+  OffsetMin?: member<any>;
+  OffsetMax?: member<any>;
+  Pivot?: member<any>;
 }
 
-const RectTransform: FC<RectTransformInput> = (props: RectTransformInput) => {
+const Value: FC<ValueInput> = (props: ValueInput) => {
   const {
+    Type,
     id,
     persistentId,
-    updateOrderId,
-    updateOrder,
+    UpdateOrder,
     Enabled,
     AnchorMin,
     AnchorMax,
@@ -36,13 +36,12 @@ const RectTransform: FC<RectTransformInput> = (props: RectTransformInput) => {
   } = props;
 
   return (
-    <component
-      name="FrooxEngine.UIX.RectTransform"
-      id={id}
-      persistentId={persistentId}
-      updateOrderId={updateOrderId}
-      updateOrder={updateOrder}
-    >
+    <component name="FrooxEngine.UIX.Value" id={id} persistentId={persistentId}>
+      <Member
+        type="FrooxEngine.Sync`1[System.Int32]"
+        name="UpdateOrder"
+        content={UpdateOrder} /* default: 0 */
+      />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="Enabled"
@@ -77,4 +76,4 @@ const RectTransform: FC<RectTransformInput> = (props: RectTransformInput) => {
   );
 };
 
-export default RectTransform;
+export default Value;

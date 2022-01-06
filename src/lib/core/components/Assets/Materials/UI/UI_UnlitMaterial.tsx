@@ -11,7 +11,8 @@ declare global {
 export interface UI_UnlitMaterialInput {
   id?: string;
   persistentId?: string;
-  UpdateOrder?: member<number>;
+  updateOrderId?: string;
+  updateOrder?: number;
   Enabled?: member<boolean>;
   HighPriorityIntegration?: member<boolean>;
   Rect?: member<any>;
@@ -25,8 +26,8 @@ export interface UI_UnlitMaterialInput {
   RenderQueue?: member<number>;
   _shader?: member<any>;
   Texture?: member<any>;
-  TextureScale?: member<any>;
-  TextureOffset?: member<any>;
+  TextureScale?: member<[number, number]>;
+  TextureOffset?: member<[number, number]>;
   Tint?: member<any>;
   Overlay?: member<boolean>;
   OverlayTint?: member<any>;
@@ -34,8 +35,8 @@ export interface UI_UnlitMaterialInput {
   AlphaClip?: member<boolean>;
   TextureMode?: member<any>;
   MaskTexture?: member<any>;
-  MaskScale?: member<any>;
-  MaskOffset?: member<any>;
+  MaskScale?: member<[number, number]>;
+  MaskOffset?: member<[number, number]>;
   MaskMode?: member<any>;
   BlendMode?: member<any>;
   Sidedness?: member<any>;
@@ -51,7 +52,8 @@ const UI_UnlitMaterial: FC<UI_UnlitMaterialInput> = (
   const {
     id,
     persistentId,
-    UpdateOrder,
+    updateOrderId,
+    updateOrder,
     Enabled,
     HighPriorityIntegration,
     Rect,
@@ -90,12 +92,9 @@ const UI_UnlitMaterial: FC<UI_UnlitMaterialInput> = (
       name="FrooxEngine.UI_UnlitMaterial"
       id={id}
       persistentId={persistentId}
+      updateOrderId={updateOrderId}
+      updateOrder={updateOrder}
     >
-      <Member
-        type="FrooxEngine.Sync`1[System.Int32]"
-        name="UpdateOrder"
-        content={UpdateOrder} /* default: 0 */
-      />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="Enabled"

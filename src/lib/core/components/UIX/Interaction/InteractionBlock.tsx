@@ -11,7 +11,8 @@ declare global {
 export interface InteractionBlockInput {
   id?: string;
   persistentId?: string;
-  UpdateOrder?: member<number>;
+  updateOrderId?: string;
+  updateOrder?: number;
   Enabled?: member<boolean>;
   TouchExitLock?: member<boolean>;
   TouchEnterLock?: member<boolean>;
@@ -23,7 +24,8 @@ const InteractionBlock: FC<InteractionBlockInput> = (
   const {
     id,
     persistentId,
-    UpdateOrder,
+    updateOrderId,
+    updateOrder,
     Enabled,
     TouchExitLock,
     TouchEnterLock,
@@ -34,12 +36,9 @@ const InteractionBlock: FC<InteractionBlockInput> = (
       name="FrooxEngine.UIX.InteractionBlock"
       id={id}
       persistentId={persistentId}
+      updateOrderId={updateOrderId}
+      updateOrder={updateOrder}
     >
-      <Member
-        type="FrooxEngine.Sync`1[System.Int32]"
-        name="UpdateOrder"
-        content={UpdateOrder} /* default: 0 */
-      />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="Enabled"

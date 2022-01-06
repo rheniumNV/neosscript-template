@@ -11,7 +11,8 @@ declare global {
 export interface ButtonInput {
   id?: string;
   persistentId?: string;
-  UpdateOrder?: member<number>;
+  updateOrderId?: string;
+  updateOrder?: number;
   Enabled?: member<boolean>;
   BaseColor?: member<any>;
   __legacy_NormalColor?: member<any>;
@@ -29,7 +30,7 @@ export interface ButtonInput {
   PassThroughVerticalMovement?: member<boolean>;
   RequireLockInToPress?: member<boolean>;
   RequireInitialPress?: member<boolean>;
-  PressPoint?: member<any>;
+  PressPoint?: member<[number, number]>;
   Pressed?: member<any>;
   Pressing?: member<any>;
   Released?: member<any>;
@@ -42,7 +43,8 @@ const Button: FC<ButtonInput> = (props: ButtonInput) => {
   const {
     id,
     persistentId,
-    UpdateOrder,
+    updateOrderId,
+    updateOrder,
     Enabled,
     BaseColor,
     __legacy_NormalColor,
@@ -74,12 +76,9 @@ const Button: FC<ButtonInput> = (props: ButtonInput) => {
       name="FrooxEngine.UIX.Button"
       id={id}
       persistentId={persistentId}
+      updateOrderId={updateOrderId}
+      updateOrder={updateOrder}
     >
-      <Member
-        type="FrooxEngine.Sync`1[System.Int32]"
-        name="UpdateOrder"
-        content={UpdateOrder} /* default: 0 */
-      />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="Enabled"

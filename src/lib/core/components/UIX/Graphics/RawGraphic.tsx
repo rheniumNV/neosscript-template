@@ -11,7 +11,8 @@ declare global {
 export interface RawGraphicInput {
   id?: string;
   persistentId?: string;
-  UpdateOrder?: member<number>;
+  updateOrderId?: string;
+  updateOrder?: number;
   Enabled?: member<boolean>;
   Material?: member<any>;
   PropertyBlock?: member<any>;
@@ -30,7 +31,8 @@ const RawGraphic: FC<RawGraphicInput> = (props: RawGraphicInput) => {
   const {
     id,
     persistentId,
-    UpdateOrder,
+    updateOrderId,
+    updateOrder,
     Enabled,
     Material,
     PropertyBlock,
@@ -50,12 +52,9 @@ const RawGraphic: FC<RawGraphicInput> = (props: RawGraphicInput) => {
       name="FrooxEngine.UIX.RawGraphic"
       id={id}
       persistentId={persistentId}
+      updateOrderId={updateOrderId}
+      updateOrder={updateOrder}
     >
-      <Member
-        type="FrooxEngine.Sync`1[System.Int32]"
-        name="UpdateOrder"
-        content={UpdateOrder} /* default: 0 */
-      />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="Enabled"

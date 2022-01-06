@@ -11,7 +11,8 @@ declare global {
 export interface ImageInput {
   id?: string;
   persistentId?: string;
-  UpdateOrder?: member<number>;
+  updateOrderId?: string;
+  updateOrder?: number;
   Enabled?: member<boolean>;
   Sprite?: member<any>;
   Material?: member<any>;
@@ -26,7 +27,8 @@ const Image: FC<ImageInput> = (props: ImageInput) => {
   const {
     id,
     persistentId,
-    UpdateOrder,
+    updateOrderId,
+    updateOrder,
     Enabled,
     Sprite,
     Material,
@@ -38,12 +40,13 @@ const Image: FC<ImageInput> = (props: ImageInput) => {
   } = props;
 
   return (
-    <component name="FrooxEngine.UIX.Image" id={id} persistentId={persistentId}>
-      <Member
-        type="FrooxEngine.Sync`1[System.Int32]"
-        name="UpdateOrder"
-        content={UpdateOrder} /* default: 0 */
-      />
+    <component
+      name="FrooxEngine.UIX.Image"
+      id={id}
+      persistentId={persistentId}
+      updateOrderId={updateOrderId}
+      updateOrder={updateOrder}
+    >
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="Enabled"

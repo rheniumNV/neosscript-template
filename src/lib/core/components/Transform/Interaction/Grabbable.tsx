@@ -11,7 +11,8 @@ declare global {
 export interface GrabbableInput {
   id?: string;
   persistentId?: string;
-  UpdateOrder?: member<number>;
+  updateOrderId?: string;
+  updateOrder?: number;
   Enabled?: member<boolean>;
   ReparentOnRelease?: member<boolean>;
   PreserveUserSpace?: member<boolean>;
@@ -36,7 +37,8 @@ const Grabbable: FC<GrabbableInput> = (props: GrabbableInput) => {
   const {
     id,
     persistentId,
-    UpdateOrder,
+    updateOrderId,
+    updateOrder,
     Enabled,
     ReparentOnRelease,
     PreserveUserSpace,
@@ -58,12 +60,13 @@ const Grabbable: FC<GrabbableInput> = (props: GrabbableInput) => {
   } = props;
 
   return (
-    <component name="FrooxEngine.Grabbable" id={id} persistentId={persistentId}>
-      <Member
-        type="FrooxEngine.Sync`1[System.Int32]"
-        name="UpdateOrder"
-        content={UpdateOrder} /* default: 0 */
-      />
+    <component
+      name="FrooxEngine.Grabbable"
+      id={id}
+      persistentId={persistentId}
+      updateOrderId={updateOrderId}
+      updateOrder={updateOrder}
+    >
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="Enabled"

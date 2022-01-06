@@ -11,7 +11,8 @@ declare global {
 export interface RadiantModalOverlayInput {
   id?: string;
   persistentId?: string;
-  UpdateOrder?: member<number>;
+  updateOrderId?: string;
+  updateOrder?: number;
   Enabled?: member<boolean>;
   ShowLerp?: member<number>;
   AnimationTime?: member<number>;
@@ -39,7 +40,8 @@ const RadiantModalOverlay: FC<RadiantModalOverlayInput> = (
   const {
     id,
     persistentId,
-    UpdateOrder,
+    updateOrderId,
+    updateOrder,
     Enabled,
     ShowLerp,
     AnimationTime,
@@ -66,12 +68,9 @@ const RadiantModalOverlay: FC<RadiantModalOverlayInput> = (
       name="FrooxEngine.RadiantModalOverlay"
       id={id}
       persistentId={persistentId}
+      updateOrderId={updateOrderId}
+      updateOrder={updateOrder}
     >
-      <Member
-        type="FrooxEngine.Sync`1[System.Int32]"
-        name="UpdateOrder"
-        content={UpdateOrder} /* default: 0 */
-      />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="Enabled"

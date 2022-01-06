@@ -11,7 +11,8 @@ declare global {
 export interface ProjectedRectSlotDriverInput {
   id?: string;
   persistentId?: string;
-  UpdateOrder?: member<number>;
+  updateOrderId?: string;
+  updateOrder?: number;
   Enabled?: member<boolean>;
   _position?: member<any>;
   Target?: member<any>;
@@ -27,7 +28,8 @@ const ProjectedRectSlotDriver: FC<ProjectedRectSlotDriverInput> = (
   const {
     id,
     persistentId,
-    UpdateOrder,
+    updateOrderId,
+    updateOrder,
     Enabled,
     _position,
     Target,
@@ -42,12 +44,9 @@ const ProjectedRectSlotDriver: FC<ProjectedRectSlotDriverInput> = (
       name="FrooxEngine.UIX.ProjectedRectSlotDriver"
       id={id}
       persistentId={persistentId}
+      updateOrderId={updateOrderId}
+      updateOrder={updateOrder}
     >
-      <Member
-        type="FrooxEngine.Sync`1[System.Int32]"
-        name="UpdateOrder"
-        content={UpdateOrder} /* default: 0 */
-      />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="Enabled"

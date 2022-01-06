@@ -11,7 +11,8 @@ declare global {
 export interface CheckboxInput {
   id?: string;
   persistentId?: string;
-  UpdateOrder?: member<number>;
+  updateOrderId?: string;
+  updateOrder?: number;
   Enabled?: member<boolean>;
   State?: member<boolean>;
   TargetState?: member<any>;
@@ -22,7 +23,8 @@ const Checkbox: FC<CheckboxInput> = (props: CheckboxInput) => {
   const {
     id,
     persistentId,
-    UpdateOrder,
+    updateOrderId,
+    updateOrder,
     Enabled,
     State,
     TargetState,
@@ -34,12 +36,9 @@ const Checkbox: FC<CheckboxInput> = (props: CheckboxInput) => {
       name="FrooxEngine.UIX.Checkbox"
       id={id}
       persistentId={persistentId}
+      updateOrderId={updateOrderId}
+      updateOrder={updateOrder}
     >
-      <Member
-        type="FrooxEngine.Sync`1[System.Int32]"
-        name="UpdateOrder"
-        content={UpdateOrder} /* default: 0 */
-      />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="Enabled"

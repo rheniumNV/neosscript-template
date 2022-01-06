@@ -11,7 +11,8 @@ declare global {
 export interface RectTransformLerpInput {
   id?: string;
   persistentId?: string;
-  UpdateOrder?: member<number>;
+  updateOrderId?: string;
+  updateOrder?: number;
   Enabled?: member<boolean>;
   Lerp?: member<number>;
   SourceRect?: member<any>;
@@ -20,19 +21,24 @@ export interface RectTransformLerpInput {
 const RectTransformLerp: FC<RectTransformLerpInput> = (
   props: RectTransformLerpInput
 ) => {
-  const { id, persistentId, UpdateOrder, Enabled, Lerp, SourceRect } = props;
+  const {
+    id,
+    persistentId,
+    updateOrderId,
+    updateOrder,
+    Enabled,
+    Lerp,
+    SourceRect,
+  } = props;
 
   return (
     <component
       name="FrooxEngine.UIX.RectTransformLerp"
       id={id}
       persistentId={persistentId}
+      updateOrderId={updateOrderId}
+      updateOrder={updateOrder}
     >
-      <Member
-        type="FrooxEngine.Sync`1[System.Int32]"
-        name="UpdateOrder"
-        content={UpdateOrder} /* default: 0 */
-      />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="Enabled"

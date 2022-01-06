@@ -11,14 +11,15 @@ declare global {
 export interface TiledRawImageInput {
   id?: string;
   persistentId?: string;
-  UpdateOrder?: member<number>;
+  updateOrderId?: string;
+  updateOrder?: number;
   Enabled?: member<boolean>;
   Texture?: member<any>;
   Material?: member<any>;
   Tint?: member<any>;
   SizeBasis?: member<any>;
-  TileSize?: member<any>;
-  TileOffset?: member<any>;
+  TileSize?: member<[number, number]>;
+  TileOffset?: member<[number, number]>;
   InteractionTarget?: member<boolean>;
 }
 
@@ -26,7 +27,8 @@ const TiledRawImage: FC<TiledRawImageInput> = (props: TiledRawImageInput) => {
   const {
     id,
     persistentId,
-    UpdateOrder,
+    updateOrderId,
+    updateOrder,
     Enabled,
     Texture,
     Material,
@@ -42,12 +44,9 @@ const TiledRawImage: FC<TiledRawImageInput> = (props: TiledRawImageInput) => {
       name="FrooxEngine.UIX.TiledRawImage"
       id={id}
       persistentId={persistentId}
+      updateOrderId={updateOrderId}
+      updateOrder={updateOrder}
     >
-      <Member
-        type="FrooxEngine.Sync`1[System.Int32]"
-        name="UpdateOrder"
-        content={UpdateOrder} /* default: 0 */
-      />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="Enabled"

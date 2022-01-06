@@ -11,7 +11,8 @@ declare global {
 export interface VerticalLayoutInput {
   id?: string;
   persistentId?: string;
-  UpdateOrder?: member<number>;
+  updateOrderId?: string;
+  updateOrder?: number;
   Enabled?: member<boolean>;
   PaddingTop?: member<number>;
   PaddingRight?: member<number>;
@@ -30,7 +31,8 @@ const VerticalLayout: FC<VerticalLayoutInput> = (
   const {
     id,
     persistentId,
-    UpdateOrder,
+    updateOrderId,
+    updateOrder,
     Enabled,
     PaddingTop,
     PaddingRight,
@@ -48,12 +50,9 @@ const VerticalLayout: FC<VerticalLayoutInput> = (
       name="FrooxEngine.UIX.VerticalLayout"
       id={id}
       persistentId={persistentId}
+      updateOrderId={updateOrderId}
+      updateOrder={updateOrder}
     >
-      <Member
-        type="FrooxEngine.Sync`1[System.Int32]"
-        name="UpdateOrder"
-        content={UpdateOrder} /* default: 0 */
-      />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="Enabled"

@@ -11,7 +11,8 @@ declare global {
 export interface FixedRectFitterLayoutInput {
   id?: string;
   persistentId?: string;
-  UpdateOrder?: member<number>;
+  updateOrderId?: string;
+  updateOrder?: number;
   Enabled?: member<boolean>;
   HorizontalAlign?: member<any>;
   VerticalAlign?: member<any>;
@@ -26,7 +27,8 @@ const FixedRectFitterLayout: FC<FixedRectFitterLayoutInput> = (
   const {
     id,
     persistentId,
-    UpdateOrder,
+    updateOrderId,
+    updateOrder,
     Enabled,
     HorizontalAlign,
     VerticalAlign,
@@ -40,12 +42,9 @@ const FixedRectFitterLayout: FC<FixedRectFitterLayoutInput> = (
       name="FrooxEngine.UIX.FixedRectFitterLayout"
       id={id}
       persistentId={persistentId}
+      updateOrderId={updateOrderId}
+      updateOrder={updateOrder}
     >
-      <Member
-        type="FrooxEngine.Sync`1[System.Int32]"
-        name="UpdateOrder"
-        content={UpdateOrder} /* default: 0 */
-      />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="Enabled"

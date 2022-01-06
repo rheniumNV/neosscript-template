@@ -11,14 +11,15 @@ declare global {
 export interface GridLayoutInput {
   id?: string;
   persistentId?: string;
-  UpdateOrder?: member<number>;
+  updateOrderId?: string;
+  updateOrder?: number;
   Enabled?: member<boolean>;
   PaddingTop?: member<number>;
   PaddingRight?: member<number>;
   PaddingBottom?: member<number>;
   PaddingLeft?: member<number>;
-  CellSize?: member<any>;
-  Spacing?: member<any>;
+  CellSize?: member<[number, number]>;
+  Spacing?: member<[number, number]>;
   HorizontalAlign?: member<any>;
   VerticalAlign?: member<any>;
   ExpandWidthToFit?: member<boolean>;
@@ -30,7 +31,8 @@ const GridLayout: FC<GridLayoutInput> = (props: GridLayoutInput) => {
   const {
     id,
     persistentId,
-    UpdateOrder,
+    updateOrderId,
+    updateOrder,
     Enabled,
     PaddingTop,
     PaddingRight,
@@ -50,12 +52,9 @@ const GridLayout: FC<GridLayoutInput> = (props: GridLayoutInput) => {
       name="FrooxEngine.UIX.GridLayout"
       id={id}
       persistentId={persistentId}
+      updateOrderId={updateOrderId}
+      updateOrder={updateOrder}
     >
-      <Member
-        type="FrooxEngine.Sync`1[System.Int32]"
-        name="UpdateOrder"
-        content={UpdateOrder} /* default: 0 */
-      />
       <Member
         type="FrooxEngine.Sync`1[System.Boolean]"
         name="Enabled"
