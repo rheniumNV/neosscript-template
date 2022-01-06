@@ -21,7 +21,8 @@ const targetComponents = _(components).filter(
       ],
       name
     ) ||
-    (_.includes(pathName, "/UIX/") && !_.includes(pathName, "<"))
+    _.includes(pathName, "/UIX/") ||
+    _.includes(pathName, "/Transform/Drivers/")
 );
 
 targetComponents.forEach(({ name, fullName, pathName, syncmembers }) => {
@@ -29,8 +30,19 @@ targetComponents.forEach(({ name, fullName, pathName, syncmembers }) => {
     .reject(({ name }) => name === "persistent" || name === "UpdateOrder")
     .value();
 
-  const types = _.endsWith(name, "<T>") ? ["T"] : [];
-  const fixedName = _.replace(_.replace(name, "<", "_"), ">", "");
+  const types = _.filter(
+    _.split(
+      _.map(_.get(_.split(name, "<"), 1, ""), (str) => _.replace(str, ">", "")),
+      ","
+    ),
+    (str) => str
+  );
+  const fixedName = _.replace(
+    _.replace(_.replace(name, "<", "_"), ">", ""),
+    ",",
+    "_"
+  );
+  console.log(types);
 
   const componentString = generateComponent({
     name,
