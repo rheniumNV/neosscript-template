@@ -8,20 +8,20 @@ declare global {
     }
   }
 }
-export interface ReferenceCopy_TInput {
+export interface DynamicReference_TInput {
   type: { T: { name: string } };
   id?: string;
   persistentId?: string;
   updateOrderId?: string;
   updateOrder?: number;
   Enabled?: member<boolean>;
-  Source?: member<any>;
-  Target?: member<any>;
-  WriteBack?: member<boolean>;
+  VariableName?: member<any>;
+  TargetReference?: member<any>;
+  OverrideOnLink?: member<boolean>;
 }
 
-const ReferenceCopy_T: FC<ReferenceCopy_TInput> = (
-  props: ReferenceCopy_TInput
+const DynamicReference_T: FC<DynamicReference_TInput> = (
+  props: DynamicReference_TInput
 ) => {
   const {
     type: {
@@ -32,14 +32,14 @@ const ReferenceCopy_T: FC<ReferenceCopy_TInput> = (
     updateOrderId,
     updateOrder,
     Enabled,
-    Source,
-    Target,
-    WriteBack,
+    VariableName,
+    TargetReference,
+    OverrideOnLink,
   } = props;
 
   return (
     <component
-      name={`FrooxEngine.ReferenceCopy\`1[${[T]}]`}
+      name={`FrooxEngine.DynamicReference\`1[${[T]}]`}
       id={id}
       persistentId={persistentId}
       updateOrderId={updateOrderId}
@@ -51,22 +51,22 @@ const ReferenceCopy_T: FC<ReferenceCopy_TInput> = (
         content={Enabled} /* default: False */
       />
       <Member
-        type={`FrooxEngine.RelayRef\`1[FrooxEngine.SyncRef\`1[${T}]]`}
-        name="Source"
-        content={Source} /* default: null */
+        type={`FrooxEngine.Sync\`1[System.String]`}
+        name="VariableName"
+        content={VariableName} /* default: null */
       />
       <Member
-        type={`FrooxEngine.RefDrive\`1[${T}]`}
-        name="Target"
-        content={Target} /* default: null */
+        type={`FrooxEngine.RelayRef\`1[FrooxEngine.SyncRef\`1[${T}]]`}
+        name="TargetReference"
+        content={TargetReference} /* default: null */
       />
       <Member
         type={`FrooxEngine.Sync\`1[System.Boolean]`}
-        name="WriteBack"
-        content={WriteBack} /* default: null */
+        name="OverrideOnLink"
+        content={OverrideOnLink} /* default: null */
       />
     </component>
   );
 };
 
-export default ReferenceCopy_T;
+export default DynamicReference_T;

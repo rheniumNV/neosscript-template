@@ -9,7 +9,7 @@ declare global {
   }
 }
 export interface BooleanValueDriver_TInput {
-  type: { T: string };
+  type: { T: { name: string } };
   id?: string;
   persistentId?: string;
   updateOrderId?: string;
@@ -25,7 +25,9 @@ const BooleanValueDriver_T: FC<BooleanValueDriver_TInput> = (
   props: BooleanValueDriver_TInput
 ) => {
   const {
-    type: { T },
+    type: {
+      T: { name: T },
+    },
     id,
     persistentId,
     updateOrderId,

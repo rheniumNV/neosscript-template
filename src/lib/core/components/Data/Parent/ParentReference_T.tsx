@@ -8,20 +8,19 @@ declare global {
     }
   }
 }
-export interface ReferenceCopy_TInput {
+export interface ParentReference_TInput {
   type: { T: { name: string } };
   id?: string;
   persistentId?: string;
   updateOrderId?: string;
   updateOrder?: number;
   Enabled?: member<boolean>;
-  Source?: member<any>;
-  Target?: member<any>;
-  WriteBack?: member<boolean>;
+  Tag?: member<any>;
+  Reference?: member<any>;
 }
 
-const ReferenceCopy_T: FC<ReferenceCopy_TInput> = (
-  props: ReferenceCopy_TInput
+const ParentReference_T: FC<ParentReference_TInput> = (
+  props: ParentReference_TInput
 ) => {
   const {
     type: {
@@ -32,14 +31,13 @@ const ReferenceCopy_T: FC<ReferenceCopy_TInput> = (
     updateOrderId,
     updateOrder,
     Enabled,
-    Source,
-    Target,
-    WriteBack,
+    Tag,
+    Reference,
   } = props;
 
   return (
     <component
-      name={`FrooxEngine.ReferenceCopy\`1[${[T]}]`}
+      name={`FrooxEngine.ParentReference\`1[${[T]}]`}
       id={id}
       persistentId={persistentId}
       updateOrderId={updateOrderId}
@@ -51,22 +49,17 @@ const ReferenceCopy_T: FC<ReferenceCopy_TInput> = (
         content={Enabled} /* default: False */
       />
       <Member
-        type={`FrooxEngine.RelayRef\`1[FrooxEngine.SyncRef\`1[${T}]]`}
-        name="Source"
-        content={Source} /* default: null */
+        type={`FrooxEngine.Sync\`1[System.String]`}
+        name="Tag"
+        content={Tag} /* default: null */
       />
       <Member
-        type={`FrooxEngine.RefDrive\`1[${T}]`}
-        name="Target"
-        content={Target} /* default: null */
-      />
-      <Member
-        type={`FrooxEngine.Sync\`1[System.Boolean]`}
-        name="WriteBack"
-        content={WriteBack} /* default: null */
+        type={`FrooxEngine.SyncRef\`1[${T}]`}
+        name="Reference"
+        content={Reference} /* default: null */
       />
     </component>
   );
 };
 
-export default ReferenceCopy_T;
+export default ParentReference_T;

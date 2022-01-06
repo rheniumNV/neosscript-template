@@ -61,15 +61,19 @@ exports.generateComponent = ({ fixedName, fullName, members, types }) => {
     .join("\n");
 
   const typeInterfaceStr = _(types)
-    .map((str) => `${str}: string,`)
+    .map((str) => `${str}: {name: string},`)
     .join("\n");
   const typeInterfaceUnit =
     _.size(types) > 0 ? `type:{${typeInterfaceStr}},` : "";
 
   const typePropStr = _(types)
-    .map((str) => `${str},`)
+    .map((str) => `${str}:{name: ${str}},`)
     .join("\n");
   const typePropUnit = _.size(types) > 0 ? `type:{${typePropStr}},` : "";
+
+  const typeNameStr = _(types)
+    .map((str) => `${str},`)
+    .join("\n");
 
   const propsUnit = _(members)
     .map(({ name, type }) => {
@@ -92,7 +96,7 @@ exports.generateComponent = ({ fixedName, fullName, members, types }) => {
           fullName,
           new RegExp("`", "g"),
           "\\`"
-        )}[\${[${typePropStr}]}]\`}`
+        )}[\${[${typeNameStr}]}]\`}`
       : `"${fullName}"`;
 
   const data = `import React, { FC } from "react";

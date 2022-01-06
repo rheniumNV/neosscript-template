@@ -9,7 +9,7 @@ declare global {
   }
 }
 export interface SmoothValue_TInput {
-  type: { T: string };
+  type: { T: { name: string } };
   id?: string;
   persistentId?: string;
   updateOrderId?: string;
@@ -23,7 +23,9 @@ export interface SmoothValue_TInput {
 
 const SmoothValue_T: FC<SmoothValue_TInput> = (props: SmoothValue_TInput) => {
   const {
-    type: { T },
+    type: {
+      T: { name: T },
+    },
     id,
     persistentId,
     updateOrderId,

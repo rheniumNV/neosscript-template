@@ -7,6 +7,7 @@ import BoxMesh from "lib/core/components/Assets/Procedural Meshes/BoxMesh";
 import MeshRenderer from "lib/core/components/Rendering/MeshRenderer";
 import ValueCopy_T from "lib/core/components/Transform/Drivers/ValueCopy_T";
 import PBS_Metallic from "lib/core/components/Assets/Materials/PBS_Metallic";
+import NeosType from "lib/core/types/NeosType";
 
 export default () => {
   const meshId = generateId();
@@ -15,7 +16,6 @@ export default () => {
   const materialId = generateId();
 
   const Materials = [{ Data: materialId, ID: generateId() }];
-
   return (
     <Slot
       name="Box"
@@ -26,7 +26,7 @@ export default () => {
         <MeshRenderer Mesh={meshId} Materials={Materials} />,
         <ValueCopy_T
           type={{
-            T: "[BaseX.float3, BaseX]",
+            T: NeosType.Float3,
           }}
           Target={sizeTargetId}
           Source={sizeSourceId}

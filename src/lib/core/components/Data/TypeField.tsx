@@ -8,32 +8,21 @@ declare global {
     }
   }
 }
-export interface RectMesh_MInput {
-  type: { M: { name: string } };
+export interface TypeFieldInput {
   id?: string;
   persistentId?: string;
   updateOrderId?: string;
   updateOrder?: number;
   Enabled?: member<boolean>;
-  Mesh?: member<any>;
+  Type?: member<any>;
 }
 
-const RectMesh_M: FC<RectMesh_MInput> = (props: RectMesh_MInput) => {
-  const {
-    type: {
-      M: { name: M },
-    },
-    id,
-    persistentId,
-    updateOrderId,
-    updateOrder,
-    Enabled,
-    Mesh,
-  } = props;
+const TypeField: FC<TypeFieldInput> = (props: TypeFieldInput) => {
+  const { id, persistentId, updateOrderId, updateOrder, Enabled, Type } = props;
 
   return (
     <component
-      name={`FrooxEngine.UIX.RectMesh\`1[${[M]}]`}
+      name="FrooxEngine.TypeField"
       id={id}
       persistentId={persistentId}
       updateOrderId={updateOrderId}
@@ -45,14 +34,12 @@ const RectMesh_M: FC<RectMesh_MInput> = (props: RectMesh_MInput) => {
         content={Enabled} /* default: False */
       />
       <Member
-        type={`FrooxEngine.AudioSourceWaveformMesh`}
-        name="Mesh"
-        content={
-          Mesh
-        } /* default: Element:\ ID0,\ Type:\ FrooxEngine\.AudioSourceWaveformMesh,\ World:\ null,\ IsRemoved:\ False,\ Name:\ \r\n */
+        type={`FrooxEngine.SyncType`}
+        name="Type"
+        content={Type} /* default: <i>null</i> */
       />
     </component>
   );
 };
 
-export default RectMesh_M;
+export default TypeField;

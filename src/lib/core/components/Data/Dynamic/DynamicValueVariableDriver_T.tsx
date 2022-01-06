@@ -8,20 +8,20 @@ declare global {
     }
   }
 }
-export interface ReferenceCopy_TInput {
+export interface DynamicValueVariableDriver_TInput {
   type: { T: { name: string } };
   id?: string;
   persistentId?: string;
   updateOrderId?: string;
   updateOrder?: number;
   Enabled?: member<boolean>;
-  Source?: member<any>;
+  VariableName?: member<any>;
   Target?: member<any>;
-  WriteBack?: member<boolean>;
+  DefaultValue?: member<any>;
 }
 
-const ReferenceCopy_T: FC<ReferenceCopy_TInput> = (
-  props: ReferenceCopy_TInput
+const DynamicValueVariableDriver_T: FC<DynamicValueVariableDriver_TInput> = (
+  props: DynamicValueVariableDriver_TInput
 ) => {
   const {
     type: {
@@ -32,14 +32,14 @@ const ReferenceCopy_T: FC<ReferenceCopy_TInput> = (
     updateOrderId,
     updateOrder,
     Enabled,
-    Source,
+    VariableName,
     Target,
-    WriteBack,
+    DefaultValue,
   } = props;
 
   return (
     <component
-      name={`FrooxEngine.ReferenceCopy\`1[${[T]}]`}
+      name={`FrooxEngine.DynamicValueVariableDriver\`1[${[T]}]`}
       id={id}
       persistentId={persistentId}
       updateOrderId={updateOrderId}
@@ -51,22 +51,22 @@ const ReferenceCopy_T: FC<ReferenceCopy_TInput> = (
         content={Enabled} /* default: False */
       />
       <Member
-        type={`FrooxEngine.RelayRef\`1[FrooxEngine.SyncRef\`1[${T}]]`}
-        name="Source"
-        content={Source} /* default: null */
+        type={`FrooxEngine.Sync\`1[System.String]`}
+        name="VariableName"
+        content={VariableName} /* default: null */
       />
       <Member
-        type={`FrooxEngine.RefDrive\`1[${T}]`}
+        type={`FrooxEngine.FieldDrive\`1[${T}]`}
         name="Target"
         content={Target} /* default: null */
       />
       <Member
-        type={`FrooxEngine.Sync\`1[System.Boolean]`}
-        name="WriteBack"
-        content={WriteBack} /* default: null */
+        type={`FrooxEngine.Sync\`1[${T}]`}
+        name="DefaultValue"
+        content={DefaultValue} /* default: null */
       />
     </component>
   );
 };
 
-export default ReferenceCopy_T;
+export default DynamicValueVariableDriver_T;

@@ -21,6 +21,7 @@ const targetComponents = _(components).filter(
       ],
       name
     ) ||
+    _.includes(pathName, "/Data") ||
     _.includes(pathName, "/UIX/") ||
     _.includes(pathName, "/Transform/Drivers/")
 );

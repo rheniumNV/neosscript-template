@@ -9,7 +9,7 @@ declare global {
   }
 }
 export interface UserDistanceValueDriver_TInput {
-  type: { T: string };
+  type: { T: { name: string } };
   id?: string;
   persistentId?: string;
   updateOrderId?: string;
@@ -26,7 +26,9 @@ const UserDistanceValueDriver_T: FC<UserDistanceValueDriver_TInput> = (
   props: UserDistanceValueDriver_TInput
 ) => {
   const {
-    type: { T },
+    type: {
+      T: { name: T },
+    },
     id,
     persistentId,
     updateOrderId,

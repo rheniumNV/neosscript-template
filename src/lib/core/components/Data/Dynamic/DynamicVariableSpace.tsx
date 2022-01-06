@@ -8,38 +8,32 @@ declare global {
     }
   }
 }
-export interface ReferenceCopy_TInput {
-  type: { T: { name: string } };
+export interface DynamicVariableSpaceInput {
   id?: string;
   persistentId?: string;
   updateOrderId?: string;
   updateOrder?: number;
   Enabled?: member<boolean>;
-  Source?: member<any>;
-  Target?: member<any>;
-  WriteBack?: member<boolean>;
+  SpaceName?: member<any>;
+  OnlyDirectBinding?: member<boolean>;
 }
 
-const ReferenceCopy_T: FC<ReferenceCopy_TInput> = (
-  props: ReferenceCopy_TInput
+const DynamicVariableSpace: FC<DynamicVariableSpaceInput> = (
+  props: DynamicVariableSpaceInput
 ) => {
   const {
-    type: {
-      T: { name: T },
-    },
     id,
     persistentId,
     updateOrderId,
     updateOrder,
     Enabled,
-    Source,
-    Target,
-    WriteBack,
+    SpaceName,
+    OnlyDirectBinding,
   } = props;
 
   return (
     <component
-      name={`FrooxEngine.ReferenceCopy\`1[${[T]}]`}
+      name="FrooxEngine.DynamicVariableSpace"
       id={id}
       persistentId={persistentId}
       updateOrderId={updateOrderId}
@@ -51,22 +45,17 @@ const ReferenceCopy_T: FC<ReferenceCopy_TInput> = (
         content={Enabled} /* default: False */
       />
       <Member
-        type={`FrooxEngine.RelayRef\`1[FrooxEngine.SyncRef\`1[${T}]]`}
-        name="Source"
-        content={Source} /* default: null */
-      />
-      <Member
-        type={`FrooxEngine.RefDrive\`1[${T}]`}
-        name="Target"
-        content={Target} /* default: null */
+        type={`FrooxEngine.Sync\`1[System.String]`}
+        name="SpaceName"
+        content={SpaceName} /* default: <i>null</i> */
       />
       <Member
         type={`FrooxEngine.Sync\`1[System.Boolean]`}
-        name="WriteBack"
-        content={WriteBack} /* default: null */
+        name="OnlyDirectBinding"
+        content={OnlyDirectBinding} /* default: False */
       />
     </component>
   );
 };
 
-export default ReferenceCopy_T;
+export default DynamicVariableSpace;

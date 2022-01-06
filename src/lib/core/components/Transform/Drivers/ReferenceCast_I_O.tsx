@@ -9,7 +9,7 @@ declare global {
   }
 }
 export interface ReferenceCast_I_OInput {
-  type: { I: string; O: string };
+  type: { I: { name: string }; O: { name: string } };
   id?: string;
   persistentId?: string;
   updateOrderId?: string;
@@ -24,7 +24,10 @@ const ReferenceCast_I_O: FC<ReferenceCast_I_OInput> = (
   props: ReferenceCast_I_OInput
 ) => {
   const {
-    type: { I, O },
+    type: {
+      I: { name: I },
+      O: { name: O },
+    },
     id,
     persistentId,
     updateOrderId,
@@ -49,7 +52,7 @@ const ReferenceCast_I_O: FC<ReferenceCast_I_OInput> = (
         content={Enabled} /* default: False */
       />
       <Member
-        type={`FrooxEngine.SyncRef\`1[${I}]`}
+        type={`FrooxEngine.SyncRef\`1[I]`}
         name="Source"
         content={Source} /* default: False */
       />

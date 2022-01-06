@@ -9,7 +9,7 @@ declare global {
   }
 }
 export interface ReferenceRadio_TInput {
-  type: { T: string };
+  type: { T: { name: string } };
   id?: string;
   persistentId?: string;
   updateOrderId?: string;
@@ -24,7 +24,9 @@ const ReferenceRadio_T: FC<ReferenceRadio_TInput> = (
   props: ReferenceRadio_TInput
 ) => {
   const {
-    type: { T },
+    type: {
+      T: { name: T },
+    },
     id,
     persistentId,
     updateOrderId,
