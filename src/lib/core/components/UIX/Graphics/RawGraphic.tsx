@@ -56,62 +56,62 @@ const RawGraphic: FC<RawGraphicInput> = (props: RawGraphicInput) => {
       updateOrder={updateOrder}
     >
       <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="Enabled"
         content={Enabled} /* default: False */
       />
       <Member
-        type="FrooxEngine.AssetRef`1[FrooxEngine.Material]"
+        type={`FrooxEngine.AssetRef\`1[FrooxEngine.Material]`}
         name="Material"
         content={Material} /* default: ID0 */
       />
       <Member
-        type="FrooxEngine.AssetRef`1[FrooxEngine.MaterialPropertyBlock]"
+        type={`FrooxEngine.AssetRef\`1[FrooxEngine.MaterialPropertyBlock]`}
         name="PropertyBlock"
         content={PropertyBlock} /* default: ID0 */
       />
       <Member
-        type="FrooxEngine.Sync`1[BaseX.Rect]"
+        type={`FrooxEngine.Sync\`1[BaseX.Rect]`}
         name="FillRect"
         content={FillRect} /* default: [X=0; Y=0; W=0; H=0] */
       />
       <Member
-        type="FrooxEngine.Sync`1[BaseX.color]"
+        type={`FrooxEngine.Sync\`1[BaseX.color]`}
         name="Color"
         content={Color} /* default: [0; 0; 0; 0] */
       />
       <Member
-        type="FrooxEngine.Sync`1[BaseX.Rect]"
+        type={`FrooxEngine.Sync\`1[BaseX.Rect]`}
         name="UVRect"
         content={UVRect} /* default: [X=0; Y=0; W=0; H=0] */
       />
       <Member
-        type="FrooxEngine.Sync`1[BaseX.RectOrientation]"
+        type={`FrooxEngine.Sync\`1[BaseX.RectOrientation]`}
         name="Orientation"
         content={Orientation} /* default: Default */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Nullable`1[BaseX.float3]]"
+        type={`FrooxEngine.Sync\`1[System.Nullable\`1[BaseX.float3]]`}
         name="Normal"
         content={Normal} /* default: <i>null</i> */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Nullable`1[BaseX.float4]]"
+        type={`FrooxEngine.Sync\`1[System.Nullable\`1[BaseX.float4]]`}
         name="Tangent"
         content={Tangent} /* default: <i>null</i> */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="HideWithNoMaterial"
         content={HideWithNoMaterial} /* default: False */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="PreserveUVAspectRatio"
         content={PreserveUVAspectRatio} /* default: False */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="InteractionTarget"
         content={InteractionTarget} /* default: False */
       />

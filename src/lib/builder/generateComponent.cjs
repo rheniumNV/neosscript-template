@@ -27,12 +27,24 @@ const anyType = {
   parser: ({ value }) => value,
 };
 
-exports.generateComponent = ({ name, fixedName, fullName, members }) => {
+exports.generateComponent = ({ fixedName, fullName, members, types }) => {
   const interfaceUnit = _(members)
     .map(({ name, type }) => {
       return `${name}?: member<${_.get(TypeMap, type, anyType).define}>;`;
     })
     .join("\n");
+
+  const typeInterfaceStr = _(types)
+    .map((str) => `${str}: string,`)
+    .join("\n");
+  const typeInterfaceUnit =
+    _.size(types) > 0 ? `type:{${typeInterfaceStr}},` : "";
+
+  const typePropStr = _(types)
+    .map((str) => `${str},`)
+    .join("\n");
+  const typePropUnit = _.size(types) > 0 ? `type:{${typePropStr}},` : "";
+
   const propsUnit = _(members)
     .map(({ name, type }) => {
       return `${name},`;
@@ -40,9 +52,23 @@ exports.generateComponent = ({ name, fixedName, fullName, members }) => {
     .join("\n");
   const memberUnit = _(members)
     .map(({ name, type, default: def }) => {
-      return `<Member type="${type}" name="${name}" content={${name}} /* default: ${def} */ />`;
+      return `<Member type={\`${_.replace(
+        _.replace(type, new RegExp("`", "g"), "\\`"),
+        "[T]",
+        "[${T}]"
+      )}\`} name="${name}" content={${name}} /* default: ${def} */ />`;
     })
     .join("\n");
+
+  const componentClassName =
+    _.size(types) > 0
+      ? `{\`${_.replace(
+          fullName,
+          new RegExp("`", "g"),
+          "\\`"
+        )}[\${[${typePropStr}]}]\`}`
+      : `"${fullName}"`;
+
   const data = `import React, { FC } from "react";
     import { member, Member } from "lib/core/Member";
     
@@ -54,6 +80,7 @@ exports.generateComponent = ({ name, fixedName, fullName, members }) => {
       }
     }
     export interface ${fixedName}Input {
+        ${typeInterfaceUnit}
         id?:string;
         persistentId?:string;
         updateOrderId?:string;
@@ -62,10 +89,10 @@ exports.generateComponent = ({ name, fixedName, fullName, members }) => {
     }
     
     const ${fixedName}: FC<${fixedName}Input> = (props: ${fixedName}Input) => {
-      const { id, persistentId, updateOrderId, updateOrder, ${propsUnit} } = props;
+      const {${typePropUnit} id, persistentId, updateOrderId, updateOrder, ${propsUnit} } = props;
     
       return (
-        <component name="${fullName}" id={id} persistentId={persistentId} updateOrderId={updateOrderId} updateOrder={updateOrder}>
+        <component name=${componentClassName} id={id} persistentId={persistentId} updateOrderId={updateOrderId} updateOrder={updateOrder}>
         ${memberUnit}
         </component>
       );

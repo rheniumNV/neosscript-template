@@ -54,52 +54,52 @@ const HorizontalLayout: FC<HorizontalLayoutInput> = (
       updateOrder={updateOrder}
     >
       <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="Enabled"
         content={Enabled} /* default: False */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Single]"
+        type={`FrooxEngine.Sync\`1[System.Single]`}
         name="PaddingTop"
         content={PaddingTop} /* default: 0 */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Single]"
+        type={`FrooxEngine.Sync\`1[System.Single]`}
         name="PaddingRight"
         content={PaddingRight} /* default: 0 */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Single]"
+        type={`FrooxEngine.Sync\`1[System.Single]`}
         name="PaddingBottom"
         content={PaddingBottom} /* default: 0 */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Single]"
+        type={`FrooxEngine.Sync\`1[System.Single]`}
         name="PaddingLeft"
         content={PaddingLeft} /* default: 0 */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Single]"
+        type={`FrooxEngine.Sync\`1[System.Single]`}
         name="Spacing"
         content={Spacing} /* default: 0 */
       />
       <Member
-        type="FrooxEngine.Sync`1[FrooxEngine.UIX.LayoutHorizontalAlignment]"
+        type={`FrooxEngine.Sync\`1[FrooxEngine.UIX.LayoutHorizontalAlignment]`}
         name="HorizontalAlign"
         content={HorizontalAlign} /* default: Left */
       />
       <Member
-        type="FrooxEngine.Sync`1[FrooxEngine.UIX.LayoutVerticalAlignment]"
+        type={`FrooxEngine.Sync\`1[FrooxEngine.UIX.LayoutVerticalAlignment]`}
         name="VerticalAlign"
         content={VerticalAlign} /* default: Top */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="ForceExpandWidth"
         content={ForceExpandWidth} /* default: False */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="ForceExpandHeight"
         content={ForceExpandHeight} /* default: False */
       />

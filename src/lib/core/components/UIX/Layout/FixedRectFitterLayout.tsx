@@ -46,32 +46,32 @@ const FixedRectFitterLayout: FC<FixedRectFitterLayoutInput> = (
       updateOrder={updateOrder}
     >
       <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="Enabled"
         content={Enabled} /* default: False */
       />
       <Member
-        type="FrooxEngine.Sync`1[FrooxEngine.UIX.LayoutHorizontalAlignment]"
+        type={`FrooxEngine.Sync\`1[FrooxEngine.UIX.LayoutHorizontalAlignment]`}
         name="HorizontalAlign"
         content={HorizontalAlign} /* default: Left */
       />
       <Member
-        type="FrooxEngine.Sync`1[FrooxEngine.UIX.LayoutVerticalAlignment]"
+        type={`FrooxEngine.Sync\`1[FrooxEngine.UIX.LayoutVerticalAlignment]`}
         name="VerticalAlign"
         content={VerticalAlign} /* default: Top */
       />
       <Member
-        type="FrooxEngine.Sync`1[FrooxEngine.UIX.FixedRectFitterLayout+FitMode]"
+        type={`FrooxEngine.Sync\`1[FrooxEngine.UIX.FixedRectFitterLayout+FitMode]`}
         name="Mode"
         content={Mode} /* default: FitLongerSide */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="AllowShrink"
         content={AllowShrink} /* default: False */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="AllowGrow"
         content={AllowGrow} /* default: False */
       />

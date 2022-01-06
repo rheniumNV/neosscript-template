@@ -32,12 +32,12 @@ const ReferenceProxySource: FC<ReferenceProxySourceInput> = (
       updateOrder={updateOrder}
     >
       <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="Enabled"
         content={Enabled} /* default: False */
       />
       <Member
-        type="FrooxEngine.SyncRef"
+        type={`FrooxEngine.SyncRef`}
         name="Reference"
         content={Reference} /* default: ID0 */
       />

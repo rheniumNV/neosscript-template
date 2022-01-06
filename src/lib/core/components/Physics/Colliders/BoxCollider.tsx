@@ -46,37 +46,37 @@ const BoxCollider: FC<BoxColliderInput> = (props: BoxColliderInput) => {
       updateOrder={updateOrder}
     >
       <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="Enabled"
         content={Enabled} /* default: False */
       />
       <Member
-        type="FrooxEngine.Sync`1[BaseX.float3]"
+        type={`FrooxEngine.Sync\`1[BaseX.float3]`}
         name="Offset"
         content={Offset} /* default: [0; 0; 0] */
       />
       <Member
-        type="FrooxEngine.Sync`1[FrooxEngine.ColliderType]"
+        type={`FrooxEngine.Sync\`1[FrooxEngine.ColliderType]`}
         name="Type"
         content={Type} /* default: NoCollision */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Single]"
+        type={`FrooxEngine.Sync\`1[System.Single]`}
         name="Mass"
         content={Mass} /* default: 0 */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="CharacterCollider"
         content={CharacterCollider} /* default: False */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="IgnoreRaycasts"
         content={IgnoreRaycasts} /* default: False */
       />
       <Member
-        type="FrooxEngine.Sync`1[BaseX.float3]"
+        type={`FrooxEngine.Sync\`1[BaseX.float3]`}
         name="Size"
         content={Size} /* default: [0; 0; 0] */
       />

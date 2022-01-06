@@ -40,17 +40,17 @@ const ContentSizeFitter: FC<ContentSizeFitterInput> = (
       updateOrder={updateOrder}
     >
       <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="Enabled"
         content={Enabled} /* default: False */
       />
       <Member
-        type="FrooxEngine.Sync`1[FrooxEngine.UIX.SizeFit]"
+        type={`FrooxEngine.Sync\`1[FrooxEngine.UIX.SizeFit]`}
         name="HorizontalFit"
         content={HorizontalFit} /* default: Disabled */
       />
       <Member
-        type="FrooxEngine.Sync`1[FrooxEngine.UIX.SizeFit]"
+        type={`FrooxEngine.Sync\`1[FrooxEngine.UIX.SizeFit]`}
         name="VerticalFit"
         content={VerticalFit} /* default: Disabled */
       />

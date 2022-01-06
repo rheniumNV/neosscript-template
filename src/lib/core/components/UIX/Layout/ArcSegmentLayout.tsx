@@ -46,32 +46,32 @@ const ArcSegmentLayout: FC<ArcSegmentLayoutInput> = (
       updateOrder={updateOrder}
     >
       <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="Enabled"
         content={Enabled} /* default: False */
       />
       <Member
-        type="FrooxEngine.SyncRef`1[FrooxEngine.UIX.RectTransform]"
+        type={`FrooxEngine.SyncRef\`1[FrooxEngine.UIX.RectTransform]`}
         name="Nested"
         content={Nested} /* default: ID0 */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Single]"
+        type={`FrooxEngine.Sync\`1[System.Single]`}
         name="NestedSizeRatio"
         content={NestedSizeRatio} /* default: 0 */
       />
       <Member
-        type="FrooxEngine.SyncRef`1[FrooxEngine.UIX.Text]"
+        type={`FrooxEngine.SyncRef\`1[FrooxEngine.UIX.Text]`}
         name="Label"
         content={Label} /* default: ID0 */
       />
       <Member
-        type="FrooxEngine.Sync`1[BaseX.float2]"
+        type={`FrooxEngine.Sync\`1[BaseX.float2]`}
         name="LabelSize"
         content={LabelSize} /* default: [0; 0] */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Single]"
+        type={`FrooxEngine.Sync\`1[System.Single]`}
         name="LabelDistance"
         content={LabelDistance} /* default: 0 */
       />

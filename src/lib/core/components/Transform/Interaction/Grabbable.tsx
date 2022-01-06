@@ -24,6 +24,7 @@ export interface GrabbableInput {
   AllowSteal?: member<boolean>;
   DropOnDisable?: member<boolean>;
   ActiveUserFilter?: member<any>;
+  OnlyUsers?: member<any>;
   Scalable?: member<boolean>;
   Receivable?: member<boolean>;
   AllowOnlyPhysicalGrab?: member<boolean>;
@@ -50,6 +51,7 @@ const Grabbable: FC<GrabbableInput> = (props: GrabbableInput) => {
     AllowSteal,
     DropOnDisable,
     ActiveUserFilter,
+    OnlyUsers,
     Scalable,
     Receivable,
     AllowOnlyPhysicalGrab,
@@ -68,92 +70,99 @@ const Grabbable: FC<GrabbableInput> = (props: GrabbableInput) => {
       updateOrder={updateOrder}
     >
       <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="Enabled"
         content={Enabled} /* default: False */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="ReparentOnRelease"
         content={ReparentOnRelease} /* default: False */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="PreserveUserSpace"
         content={PreserveUserSpace} /* default: False */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="DestroyOnRelease"
         content={DestroyOnRelease} /* default: False */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Int32]"
+        type={`FrooxEngine.Sync\`1[System.Int32]`}
         name="GrabPriority"
         content={GrabPriority} /* default: 0 */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Nullable`1[System.Int32]]"
+        type={`FrooxEngine.Sync\`1[System.Nullable\`1[System.Int32]]`}
         name="GrabPriorityWhenGrabbed"
         content={GrabPriorityWhenGrabbed} /* default: <i>null</i> */
       />
       <Member
-        type="FrooxEngine.SyncDelegate`1[FrooxEngine.GrabCheck]"
+        type={`FrooxEngine.SyncDelegate\`1[FrooxEngine.GrabCheck]`}
         name="CustomCanGrabCheck"
         content={CustomCanGrabCheck} /* default: FrooxEngine.WorldDelegate */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="EditModeOnly"
         content={EditModeOnly} /* default: False */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="AllowSteal"
         content={AllowSteal} /* default: False */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="DropOnDisable"
         content={DropOnDisable} /* default: False */
       />
       <Member
-        type="FrooxEngine.Sync`1[FrooxEngine.ActiveUserHandling]"
+        type={`FrooxEngine.Sync\`1[FrooxEngine.ActiveUserHandling]`}
         name="ActiveUserFilter"
         content={ActiveUserFilter} /* default: Disabled */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.SyncList\`1[FrooxEngine.UserRef]`}
+        name="OnlyUsers"
+        content={
+          OnlyUsers
+        } /* default: FrooxEngine.SyncList`1[FrooxEngine.UserRef] */
+      />
+      <Member
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="Scalable"
         content={Scalable} /* default: False */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="Receivable"
         content={Receivable} /* default: False */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="AllowOnlyPhysicalGrab"
         content={AllowOnlyPhysicalGrab} /* default: False */
       />
       <Member
-        type="FrooxEngine.SyncRef`1[FrooxEngine.Grabber]"
+        type={`FrooxEngine.SyncRef\`1[FrooxEngine.Grabber]`}
         name="_grabber"
         content={_grabber} /* default: ID0 */
       />
       <Member
-        type="FrooxEngine.SyncRef`1[FrooxEngine.Slot]"
+        type={`FrooxEngine.SyncRef\`1[FrooxEngine.Slot]`}
         name="_lastParent"
         content={_lastParent} /* default: ID0 */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="_lastParentIsUserSpace"
         content={_lastParentIsUserSpace} /* default: False */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="__legacyActiveUserRootOnly"
         content={__legacyActiveUserRootOnly} /* default: False */
       />

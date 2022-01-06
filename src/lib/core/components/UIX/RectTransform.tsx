@@ -44,32 +44,32 @@ const RectTransform: FC<RectTransformInput> = (props: RectTransformInput) => {
       updateOrder={updateOrder}
     >
       <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="Enabled"
         content={Enabled} /* default: False */
       />
       <Member
-        type="FrooxEngine.Sync`1[BaseX.float2]"
+        type={`FrooxEngine.Sync\`1[BaseX.float2]`}
         name="AnchorMin"
         content={AnchorMin} /* default: [0; 0] */
       />
       <Member
-        type="FrooxEngine.Sync`1[BaseX.float2]"
+        type={`FrooxEngine.Sync\`1[BaseX.float2]`}
         name="AnchorMax"
         content={AnchorMax} /* default: [0; 0] */
       />
       <Member
-        type="FrooxEngine.Sync`1[BaseX.float2]"
+        type={`FrooxEngine.Sync\`1[BaseX.float2]`}
         name="OffsetMin"
         content={OffsetMin} /* default: [0; 0] */
       />
       <Member
-        type="FrooxEngine.Sync`1[BaseX.float2]"
+        type={`FrooxEngine.Sync\`1[BaseX.float2]`}
         name="OffsetMax"
         content={OffsetMax} /* default: [0; 0] */
       />
       <Member
-        type="FrooxEngine.Sync`1[BaseX.float2]"
+        type={`FrooxEngine.Sync\`1[BaseX.float2]`}
         name="Pivot"
         content={Pivot} /* default: [0; 0] */
       />

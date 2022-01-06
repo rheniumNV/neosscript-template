@@ -44,32 +44,32 @@ const ModalOverlay: FC<ModalOverlayInput> = (props: ModalOverlayInput) => {
       updateOrder={updateOrder}
     >
       <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="Enabled"
         content={Enabled} /* default: False */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Single]"
+        type={`FrooxEngine.Sync\`1[System.Single]`}
         name="ShowLerp"
         content={ShowLerp} /* default: 0 */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Single]"
+        type={`FrooxEngine.Sync\`1[System.Single]`}
         name="AnimationTime"
         content={AnimationTime} /* default: 0 */
       />
       <Member
-        type="FrooxEngine.SyncRef`1[FrooxEngine.UIX.RectTransform]"
+        type={`FrooxEngine.SyncRef\`1[FrooxEngine.UIX.RectTransform]`}
         name="SizeRoot"
         content={SizeRoot} /* default: ID0 */
       />
       <Member
-        type="FrooxEngine.SyncRef`1[FrooxEngine.UIX.RectTransform]"
+        type={`FrooxEngine.SyncRef\`1[FrooxEngine.UIX.RectTransform]`}
         name="ContentRoot"
         content={ContentRoot} /* default: ID0 */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="CloseOnContextMenuAction"
         content={CloseOnContextMenuAction} /* default: False */
       />

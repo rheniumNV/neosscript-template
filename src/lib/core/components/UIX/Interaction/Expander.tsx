@@ -30,12 +30,12 @@ const Expander: FC<ExpanderInput> = (props: ExpanderInput) => {
       updateOrder={updateOrder}
     >
       <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="Enabled"
         content={Enabled} /* default: False */
       />
       <Member
-        type="FrooxEngine.SyncRef`1[FrooxEngine.Slot]"
+        type={`FrooxEngine.SyncRef\`1[FrooxEngine.Slot]`}
         name="SectionRoot"
         content={SectionRoot} /* default: ID0 */
       />

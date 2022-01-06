@@ -38,12 +38,12 @@ const ReferenceGrabReceiver: FC<ReferenceGrabReceiverInput> = (
       updateOrder={updateOrder}
     >
       <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="Enabled"
         content={Enabled} /* default: False */
       />
       <Member
-        type="FrooxEngine.SyncRef`1[FrooxEngine.ISyncRef]"
+        type={`FrooxEngine.SyncRef\`1[FrooxEngine.ISyncRef]`}
         name="TargetReference"
         content={TargetReference} /* default: ID0 */
       />

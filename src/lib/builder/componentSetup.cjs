@@ -14,6 +14,10 @@ const targetComponents = _(components).filter(
         "UI_UnlitMaterial",
         "SpriteProvider",
         "StaticTexture2D",
+        "ValueCopy<T>",
+        "BoxMesh",
+        "MeshRenderer",
+        "PBS_Metallic",
       ],
       name
     ) ||
@@ -25,7 +29,7 @@ targetComponents.forEach(({ name, fullName, pathName, syncmembers }) => {
     .reject(({ name }) => name === "persistent" || name === "UpdateOrder")
     .value();
 
-  const genericTypes = _.endsWith(name, "<T>") ? ["T"] : [];
+  const types = _.endsWith(name, "<T>") ? ["T"] : [];
   const fixedName = _.replace(_.replace(name, "<", "_"), ">", "");
 
   const componentString = generateComponent({
@@ -33,7 +37,7 @@ targetComponents.forEach(({ name, fullName, pathName, syncmembers }) => {
     fixedName,
     fullName,
     members,
-    genericTypes,
+    types,
   });
 
   console.log(fixedName);

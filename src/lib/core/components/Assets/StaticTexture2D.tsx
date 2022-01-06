@@ -70,92 +70,92 @@ const StaticTexture2D: FC<StaticTexture2DInput> = (
       updateOrder={updateOrder}
     >
       <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="Enabled"
         content={Enabled} /* default: False */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Uri]"
+        type={`FrooxEngine.Sync\`1[System.Uri]`}
         name="URL"
         content={URL} /* default: <i>null</i> */
       />
       <Member
-        type="FrooxEngine.Sync`1[FrooxEngine.TextureFilterMode]"
+        type={`FrooxEngine.Sync\`1[FrooxEngine.TextureFilterMode]`}
         name="FilterMode"
         content={FilterMode} /* default: Point */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Int32]"
+        type={`FrooxEngine.Sync\`1[System.Int32]`}
         name="AnisotropicLevel"
         content={AnisotropicLevel} /* default: 0 */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="Uncompressed"
         content={Uncompressed} /* default: False */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="DirectLoad"
         content={DirectLoad} /* default: False */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="ForceExactVariant"
         content={ForceExactVariant} /* default: False */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Nullable`1[CodeX.TextureCompression]]"
+        type={`FrooxEngine.Sync\`1[System.Nullable\`1[CodeX.TextureCompression]]`}
         name="PreferredFormat"
         content={PreferredFormat} /* default: <i>null</i> */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Single]"
+        type={`FrooxEngine.Sync\`1[System.Single]`}
         name="MipMapBias"
         content={MipMapBias} /* default: 0 */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="IsNormalMap"
         content={IsNormalMap} /* default: False */
       />
       <Member
-        type="FrooxEngine.Sync`1[FrooxEngine.TextureWrapMode]"
+        type={`FrooxEngine.Sync\`1[FrooxEngine.TextureWrapMode]`}
         name="WrapModeU"
         content={WrapModeU} /* default: Repeat */
       />
       <Member
-        type="FrooxEngine.Sync`1[FrooxEngine.TextureWrapMode]"
+        type={`FrooxEngine.Sync\`1[FrooxEngine.TextureWrapMode]`}
         name="WrapModeV"
         content={WrapModeV} /* default: Repeat */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Single]"
+        type={`FrooxEngine.Sync\`1[System.Single]`}
         name="PowerOfTwoAlignThreshold"
         content={PowerOfTwoAlignThreshold} /* default: 0 */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="CrunchCompressed"
         content={CrunchCompressed} /* default: False */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Nullable`1[System.Int32]]"
+        type={`FrooxEngine.Sync\`1[System.Nullable\`1[System.Int32]]`}
         name="MaxSize"
         content={MaxSize} /* default: <i>null</i> */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="MipMaps"
         content={MipMaps} /* default: False */
       />
       <Member
-        type="FrooxEngine.Sync`1[CodeX.Filtering]"
+        type={`FrooxEngine.Sync\`1[CodeX.Filtering]`}
         name="MipMapFilter"
         content={MipMapFilter} /* default: Bilinear */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="Readable"
         content={Readable} /* default: False */
       />

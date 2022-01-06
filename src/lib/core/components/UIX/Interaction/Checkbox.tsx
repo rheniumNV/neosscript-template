@@ -40,22 +40,22 @@ const Checkbox: FC<CheckboxInput> = (props: CheckboxInput) => {
       updateOrder={updateOrder}
     >
       <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="Enabled"
         content={Enabled} /* default: False */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="State"
         content={State} /* default: False */
       />
       <Member
-        type="FrooxEngine.RelayRef`1[FrooxEngine.IField`1[System.Boolean]]"
+        type={`FrooxEngine.RelayRef\`1[FrooxEngine.IField\`1[System.Boolean]]`}
         name="TargetState"
         content={TargetState} /* default: ID0 */
       />
       <Member
-        type="FrooxEngine.FieldDrive`1[System.Boolean]"
+        type={`FrooxEngine.FieldDrive\`1[System.Boolean]`}
         name="CheckVisual"
         content={CheckVisual} /* default: ID0 */
       />

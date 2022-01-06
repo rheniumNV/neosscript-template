@@ -1,5 +1,5 @@
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server.js";
-import App from "./app";
+import Box from "./samples/Box";
 
-export default () => renderToStaticMarkup(<App />);
+export default () => renderToStaticMarkup(<Box />);

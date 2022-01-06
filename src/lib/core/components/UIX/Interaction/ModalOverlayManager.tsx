@@ -46,32 +46,32 @@ const ModalOverlayManager: FC<ModalOverlayManagerInput> = (
       updateOrder={updateOrder}
     >
       <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="Enabled"
         content={Enabled} /* default: False */
       />
       <Member
-        type="FrooxEngine.SyncRef`1[FrooxEngine.UIX.ModalOverlay]"
+        type={`FrooxEngine.SyncRef\`1[FrooxEngine.UIX.ModalOverlay]`}
         name="Template"
         content={Template} /* default: ID0 */
       />
       <Member
-        type="FrooxEngine.SyncDelegate`1[FrooxEngine.ModalOverlayConstructor]"
+        type={`FrooxEngine.SyncDelegate\`1[FrooxEngine.ModalOverlayConstructor]`}
         name="Constructor"
         content={Constructor} /* default: FrooxEngine.WorldDelegate */
       />
       <Member
-        type="FrooxEngine.SyncDelegate`1[System.Action`1[FrooxEngine.ModalOverlayManager]]"
+        type={`FrooxEngine.SyncDelegate\`1[System.Action\`1[FrooxEngine.ModalOverlayManager]]`}
         name="ModalOverlayRequested"
         content={ModalOverlayRequested} /* default: FrooxEngine.WorldDelegate */
       />
       <Member
-        type="FrooxEngine.SyncDelegate`1[System.Action`2[FrooxEngine.ModalOverlayManager,FrooxEngine.UIX.ModalOverlay]]"
+        type={`FrooxEngine.SyncDelegate\`1[System.Action\`2[FrooxEngine.ModalOverlayManager,FrooxEngine.UIX.ModalOverlay]]`}
         name="ModalOverlayGenerated"
         content={ModalOverlayGenerated} /* default: FrooxEngine.WorldDelegate */
       />
       <Member
-        type="FrooxEngine.SyncRef`1[FrooxEngine.Slot]"
+        type={`FrooxEngine.SyncRef\`1[FrooxEngine.Slot]`}
         name="SpawnRoot"
         content={SpawnRoot} /* default: ID0 */
       />

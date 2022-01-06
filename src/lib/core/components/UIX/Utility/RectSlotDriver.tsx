@@ -32,12 +32,12 @@ const RectSlotDriver: FC<RectSlotDriverInput> = (
       updateOrder={updateOrder}
     >
       <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="Enabled"
         content={Enabled} /* default: False */
       />
       <Member
-        type="FrooxEngine.FieldDrive`1[BaseX.float3]"
+        type={`FrooxEngine.FieldDrive\`1[BaseX.float3]`}
         name="_position"
         content={_position} /* default: ID0 */
       />

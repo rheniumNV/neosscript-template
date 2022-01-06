@@ -28,7 +28,7 @@ const ObjectRoot: FC<ObjectRootInput> = (props: ObjectRootInput) => {
       updateOrder={updateOrder}
     >
       <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="Enabled"
         content={Enabled} /* default: False */
       />

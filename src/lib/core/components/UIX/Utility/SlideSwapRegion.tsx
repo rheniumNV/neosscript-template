@@ -32,12 +32,12 @@ const SlideSwapRegion: FC<SlideSwapRegionInput> = (
       updateOrder={updateOrder}
     >
       <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="Enabled"
         content={Enabled} /* default: False */
       />
       <Member
-        type="FrooxEngine.SyncRef`1[FrooxEngine.UIX.RectTransform]"
+        type={`FrooxEngine.SyncRef\`1[FrooxEngine.UIX.RectTransform]`}
         name="_current"
         content={_current} /* default: ID0 */
       />

@@ -23,6 +23,7 @@ export interface TextInput {
   VerticalAlign?: member<any>;
   AlignmentMode?: member<any>;
   Color?: member<any>;
+  Materials?: member<any>;
   LineHeight?: member<number>;
   MaskPattern?: member<any>;
   HorizontalAutoSize?: member<boolean>;
@@ -54,6 +55,7 @@ const Text: FC<TextInput> = (props: TextInput) => {
     VerticalAlign,
     AlignmentMode,
     Color,
+    Materials,
     LineHeight,
     MaskPattern,
     HorizontalAutoSize,
@@ -78,117 +80,124 @@ const Text: FC<TextInput> = (props: TextInput) => {
       updateOrder={updateOrder}
     >
       <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="Enabled"
         content={Enabled} /* default: False */
       />
       <Member
-        type="FrooxEngine.AssetRef`1[FrooxEngine.FontSet]"
+        type={`FrooxEngine.AssetRef\`1[FrooxEngine.FontSet]`}
         name="Font"
         content={Font} /* default: ID0 */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.String]"
+        type={`FrooxEngine.Sync\`1[System.String]`}
         name="Content"
         content={Content} /* default: <i>null</i> */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="ParseRichText"
         content={ParseRichText} /* default: False */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.String]"
+        type={`FrooxEngine.Sync\`1[System.String]`}
         name="NullContent"
         content={NullContent} /* default: <i>null</i> */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Single]"
+        type={`FrooxEngine.Sync\`1[System.Single]`}
         name="Size"
         content={Size} /* default: 0 */
       />
       <Member
-        type="FrooxEngine.Sync`1[CodeX.TextHorizontalAlignment]"
+        type={`FrooxEngine.Sync\`1[CodeX.TextHorizontalAlignment]`}
         name="HorizontalAlign"
         content={HorizontalAlign} /* default: Left */
       />
       <Member
-        type="FrooxEngine.Sync`1[CodeX.TextVerticalAlignment]"
+        type={`FrooxEngine.Sync\`1[CodeX.TextVerticalAlignment]`}
         name="VerticalAlign"
         content={VerticalAlign} /* default: Top */
       />
       <Member
-        type="FrooxEngine.Sync`1[CodeX.AlignmentMode]"
+        type={`FrooxEngine.Sync\`1[CodeX.AlignmentMode]`}
         name="AlignmentMode"
         content={AlignmentMode} /* default: Geometric */
       />
       <Member
-        type="FrooxEngine.Sync`1[BaseX.color]"
+        type={`FrooxEngine.Sync\`1[BaseX.color]`}
         name="Color"
         content={Color} /* default: [0; 0; 0; 0] */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Single]"
+        type={`FrooxEngine.SyncAssetList\`1[FrooxEngine.Material]`}
+        name="Materials"
+        content={
+          Materials
+        } /* default: FrooxEngine.SyncAssetList`1[FrooxEngine.Material] */
+      />
+      <Member
+        type={`FrooxEngine.Sync\`1[System.Single]`}
         name="LineHeight"
         content={LineHeight} /* default: 0 */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.String]"
+        type={`FrooxEngine.Sync\`1[System.String]`}
         name="MaskPattern"
         content={MaskPattern} /* default: <i>null</i> */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="HorizontalAutoSize"
         content={HorizontalAutoSize} /* default: False */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="VerticalAutoSize"
         content={VerticalAutoSize} /* default: False */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Single]"
+        type={`FrooxEngine.Sync\`1[System.Single]`}
         name="AutoSizeMin"
         content={AutoSizeMin} /* default: 0 */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Single]"
+        type={`FrooxEngine.Sync\`1[System.Single]`}
         name="AutoSizeMax"
         content={AutoSizeMax} /* default: 0 */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Int32]"
+        type={`FrooxEngine.Sync\`1[System.Int32]`}
         name="CaretPosition"
         content={CaretPosition} /* default: 0 */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Int32]"
+        type={`FrooxEngine.Sync\`1[System.Int32]`}
         name="SelectionStart"
         content={SelectionStart} /* default: 0 */
       />
       <Member
-        type="FrooxEngine.Sync`1[BaseX.color]"
+        type={`FrooxEngine.Sync\`1[BaseX.color]`}
         name="CaretColor"
         content={CaretColor} /* default: [0; 0; 0; 0] */
       />
       <Member
-        type="FrooxEngine.Sync`1[BaseX.color]"
+        type={`FrooxEngine.Sync\`1[BaseX.color]`}
         name="SelectionColor"
         content={SelectionColor} /* default: [0; 0; 0; 0] */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="InteractionTarget"
         content={InteractionTarget} /* default: False */
       />
       <Member
-        type="FrooxEngine.SyncRef`1[FrooxEngine.FontMaterial]"
+        type={`FrooxEngine.SyncRef\`1[FrooxEngine.FontMaterial]`}
         name="_legacyFontMaterial"
         content={_legacyFontMaterial} /* default: ID0 */
       />
       <Member
-        type="FrooxEngine.Sync`1[BaseX.Alignment]"
+        type={`FrooxEngine.Sync\`1[BaseX.Alignment]`}
         name="_legacyAlign"
         content={_legacyAlign} /* default: TopLeft */
       />

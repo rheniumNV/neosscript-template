@@ -40,17 +40,17 @@ const RectTransformLerp: FC<RectTransformLerpInput> = (
       updateOrder={updateOrder}
     >
       <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="Enabled"
         content={Enabled} /* default: False */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Single]"
+        type={`FrooxEngine.Sync\`1[System.Single]`}
         name="Lerp"
         content={Lerp} /* default: 0 */
       />
       <Member
-        type="FrooxEngine.SyncRef`1[FrooxEngine.UIX.RectTransform]"
+        type={`FrooxEngine.SyncRef\`1[FrooxEngine.UIX.RectTransform]`}
         name="SourceRect"
         content={SourceRect} /* default: ID0 */
       />
