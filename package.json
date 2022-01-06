@@ -4,15 +4,20 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "build": "webpack && prettier --write dist/index.html && node convert.js",
-    "setup": "node ./src/lib/builder/componentSetup.cjs && prettier --write ./src/lib/core/components"
+    "setup": "node ./src/lib/builder/componentSetup.cjs && prettier --write ./src/lib/core/components",
+    "buildTs": "npx tsc",
+    "babel": "npx babel build -d dist",
+    "start": "npm run buildTs && npm run babel && node ./dist/main.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/cli": "^7.16.7",
     "@babel/core": "^7.16.7",
     "@babel/preset-react": "^7.16.7",
     "babel-loader": "^8.2.3",
+    "babel-plugin-add-import-extension": "^1.6.0",
+    "babel-plugin-module-resolver": "^4.1.0",
     "html-webpack-plugin": "^5.5.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",

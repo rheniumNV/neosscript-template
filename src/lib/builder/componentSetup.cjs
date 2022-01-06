@@ -57,7 +57,7 @@ const createFile = (outPath, filename, data) => {
 
 componentDataList.forEach(({ name, fullName, pathName, syncmembers }) => {
   const members = _(syncmembers)
-    .reject(({ name }) => name === "persistent")
+    .reject(({ name }) => name === "persistent" || name === "UpdateOrder")
     .value();
   const interfaceUnit = _(members)
     .map(({ name, type }) => {
@@ -87,14 +87,16 @@ componentDataList.forEach(({ name, fullName, pathName, syncmembers }) => {
   export interface ${name}Input {
       id?:string;
       persistentId?:string;
+      updateOrderId?:string;
+      updateOrder?:number;
       ${interfaceUnit}
   }
   
   const ${name}: FC<${name}Input> = (props: ${name}Input) => {
-    const { id, persistentId, ${propsUnit} } = props;
+    const { id, persistentId, updateOrderId, updateOrder, ${propsUnit} } = props;
   
     return (
-      <component name="${fullName}" id={id} persistentId={persistentId}>
+      <component name="${fullName}" id={id} persistentId={persistentId} updateOrderId={updateOrderId} updateOrder={updateOrder}>
       ${memberUnit}
       </component>
     );
