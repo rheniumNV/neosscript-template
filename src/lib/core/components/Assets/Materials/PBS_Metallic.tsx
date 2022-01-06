@@ -20,9 +20,9 @@ export interface PBS_MetallicInput {
   TextureOffset?: member<[number, number]>;
   DetailTextureScale?: member<[number, number]>;
   DetailTextureOffset?: member<[number, number]>;
-  AlbedoColor?: member<any>;
+  AlbedoColor?: member<[number, number, number, number]>;
   AlbedoTexture?: member<any>;
-  EmissiveColor?: member<any>;
+  EmissiveColor?: member<[number, number, number, number]>;
   EmissiveMap?: member<any>;
   NormalScale?: member<number>;
   NormalMap?: member<any>;

@@ -16,7 +16,7 @@ export interface TiledRawImageInput {
   Enabled?: member<boolean>;
   Texture?: member<any>;
   Material?: member<any>;
-  Tint?: member<any>;
+  Tint?: member<[number, number, number, number]>;
   SizeBasis?: member<any>;
   TileSize?: member<[number, number]>;
   TileOffset?: member<[number, number]>;

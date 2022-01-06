@@ -22,7 +22,7 @@ export interface TextInput {
   HorizontalAlign?: member<any>;
   VerticalAlign?: member<any>;
   AlignmentMode?: member<any>;
-  Color?: member<any>;
+  Color?: member<[number, number, number, number]>;
   Materials?: member<Array<{ ID: string; Data: string }>>;
   LineHeight?: member<number>;
   MaskPattern?: member<any>;
@@ -32,8 +32,8 @@ export interface TextInput {
   AutoSizeMax?: member<number>;
   CaretPosition?: member<number>;
   SelectionStart?: member<number>;
-  CaretColor?: member<any>;
-  SelectionColor?: member<any>;
+  CaretColor?: member<[number, number, number, number]>;
+  SelectionColor?: member<[number, number, number, number]>;
   InteractionTarget?: member<boolean>;
   _legacyFontMaterial?: member<any>;
   _legacyAlign?: member<any>;

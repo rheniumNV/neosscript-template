@@ -14,12 +14,12 @@ export interface ButtonInput {
   updateOrderId?: string;
   updateOrder?: number;
   Enabled?: member<boolean>;
-  BaseColor?: member<any>;
+  BaseColor?: member<[number, number, number, number]>;
   ColorDrivers?: member<any>;
-  __legacy_NormalColor?: member<any>;
-  __legacy_HighlightColor?: member<any>;
-  __legacy_PressColor?: member<any>;
-  __legacy_DisabledColor?: member<any>;
+  __legacy_NormalColor?: member<[number, number, number, number]>;
+  __legacy_HighlightColor?: member<[number, number, number, number]>;
+  __legacy_PressColor?: member<[number, number, number, number]>;
+  __legacy_DisabledColor?: member<[number, number, number, number]>;
   __legacy_TintColorMode?: member<any>;
   __legacy_ColorDrive?: member<any>;
   IsPressed?: member<boolean>;

@@ -16,7 +16,7 @@ export interface RawImageInput {
   Enabled?: member<boolean>;
   Texture?: member<any>;
   Material?: member<any>;
-  Tint?: member<any>;
+  Tint?: member<[number, number, number, number]>;
   UVRect?: member<any>;
   Orientation?: member<any>;
   PreserveAspect?: member<boolean>;

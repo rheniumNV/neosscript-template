@@ -18,8 +18,8 @@ export interface OutlinedArcInput {
   Offset?: member<number>;
   OuterRadiusRatio?: member<number>;
   InnerRadiusRatio?: member<number>;
-  FillColor?: member<any>;
-  OutlineColor?: member<any>;
+  FillColor?: member<[number, number, number, number]>;
+  OutlineColor?: member<[number, number, number, number]>;
   OutlineThickness?: member<number>;
   Material?: member<any>;
 }

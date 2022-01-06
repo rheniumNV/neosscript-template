@@ -16,7 +16,7 @@ export interface ImageInput {
   Enabled?: member<boolean>;
   Sprite?: member<any>;
   Material?: member<any>;
-  Tint?: member<any>;
+  Tint?: member<[number, number, number, number]>;
   PreserveAspect?: member<boolean>;
   NineSliceSizing?: member<any>;
   InteractionTarget?: member<boolean>;

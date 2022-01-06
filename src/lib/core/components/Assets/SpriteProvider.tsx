@@ -17,7 +17,7 @@ export interface SpriteProviderInput {
   HighPriorityIntegration?: member<boolean>;
   Texture?: member<any>;
   Rect?: member<any>;
-  Borders?: member<any>;
+  Borders?: member<[number, number, number, number]>;
   Scale?: member<number>;
 }
 

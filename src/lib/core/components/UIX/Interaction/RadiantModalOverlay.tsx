@@ -20,7 +20,7 @@ export interface RadiantModalOverlayInput {
   ContentRoot?: member<any>;
   CloseOnContextMenuAction?: member<boolean>;
   BlurSpread?: member<number>;
-  BackgroundColor?: member<any>;
+  BackgroundColor?: member<[number, number, number, number]>;
   ContentAnimationScaleOffset?: member<number>;
   Padding?: member<number>;
   _blur?: member<any>;

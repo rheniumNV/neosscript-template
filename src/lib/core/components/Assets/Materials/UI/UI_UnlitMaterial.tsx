@@ -28,9 +28,9 @@ export interface UI_UnlitMaterialInput {
   Texture?: member<any>;
   TextureScale?: member<[number, number]>;
   TextureOffset?: member<[number, number]>;
-  Tint?: member<any>;
+  Tint?: member<[number, number, number, number]>;
   Overlay?: member<boolean>;
-  OverlayTint?: member<any>;
+  OverlayTint?: member<[number, number, number, number]>;
   AlphaCutoff?: member<number>;
   AlphaClip?: member<boolean>;
   TextureMode?: member<any>;

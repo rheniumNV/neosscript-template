@@ -16,12 +16,12 @@ export interface DualColorImageInput {
   Enabled?: member<boolean>;
   Sprite?: member<any>;
   Material?: member<any>;
-  Tint?: member<any>;
+  Tint?: member<[number, number, number, number]>;
   PreserveAspect?: member<boolean>;
   NineSliceSizing?: member<any>;
   InteractionTarget?: member<boolean>;
   __legacyZWrite?: member<boolean>;
-  SecondaryTint?: member<any>;
+  SecondaryTint?: member<[number, number, number, number]>;
 }
 
 const DualColorImage: FC<DualColorImageInput> = (

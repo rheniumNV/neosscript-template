@@ -17,7 +17,7 @@ export interface RawGraphicInput {
   Material?: member<any>;
   PropertyBlock?: member<any>;
   FillRect?: member<any>;
-  Color?: member<any>;
+  Color?: member<[number, number, number, number]>;
   UVRect?: member<any>;
   Orientation?: member<any>;
   Normal?: member<any>;
