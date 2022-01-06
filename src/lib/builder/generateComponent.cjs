@@ -1,25 +1,51 @@
 const _ = require("lodash");
 
+const NumberType = {
+  define: "number",
+  parser: ({ value }) => value,
+};
+const Number2Type = {
+  define: "[number, number]",
+  parser: ({ value }) => [0, 0],
+};
+const Number3Type = {
+  define: "[number, number, number]",
+  parser: ({ value }) => [0, 0, 0],
+};
+const Number4Type = {
+  define: "[number, number, number, number]",
+  parser: ({ value }) => [0, 0, 0, 0],
+};
+const StringType = {
+  define: "string",
+  parser: ({ value }) => "",
+};
+
 const TypeMap = {
   "FrooxEngine.Sync`1[System.Boolean]": {
     define: "boolean",
     parser: ({ value }) => false,
   },
-  "FrooxEngine.Sync`1[System.Int32]": {
-    define: "number",
-    parser: ({ value }) => value,
-  },
-  "FrooxEngine.Sync`1[System.Single]": {
-    define: "number",
-    parser: ({ value }) => value,
-  },
-  "FrooxEngine.Sync`1[BaseX.float2]": {
-    define: "[number, number]",
-    parser: ({ value }) => [0, 0],
-  },
-  "FrooxEngine.Sync`1[BaseX.float3]": {
-    define: "[number, number, number]",
-    parser: ({ value }) => [0, 0, 0],
+  "FrooxEngine.Sync`1[System.Int16]": NumberType,
+  "FrooxEngine.Sync`1[System.Int32]": NumberType,
+  "FrooxEngine.Sync`1[System.Int64]": NumberType,
+  "FrooxEngine.Sync`1[System.UInt16]": NumberType,
+  "FrooxEngine.Sync`1[System.UInt32]": NumberType,
+  "FrooxEngine.Sync`1[System.UInt64]": NumberType,
+  "FrooxEngine.Sync`1[System.Single]": NumberType,
+  "FrooxEngine.Sync`1[System.Double]": NumberType,
+  "FrooxEngine.Sync`1[System.Decimal]": NumberType,
+  "FrooxEngine.Sync`1[BaseX.int2]": Number2Type,
+  "FrooxEngine.Sync`1[BaseX.float2]": Number2Type,
+  "FrooxEngine.Sync`1[BaseX.float3]": Number3Type,
+  "FrooxEngine.Sync`1[BaseX.float4]": Number4Type,
+  "FrooxEngine.Sync`1[BaseX.color]": Number4Type,
+  "FrooxEngine.LogiX.Input`1[BaseX.floatQ]": Number4Type,
+  "FrooxEngine.FieldDrive`1[System.String]": StringType,
+  "FrooxEngine.FieldDrive`1[System.Char]": StringType,
+  "FrooxEngine.SyncAssetList`1[FrooxEngine.Material]": {
+    define: "Array<{ID:string, Data:string}>",
+    parser: ({ value }) => [],
   },
 };
 const anyType = {

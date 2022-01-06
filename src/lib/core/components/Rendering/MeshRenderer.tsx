@@ -15,7 +15,7 @@ export interface MeshRendererInput {
   updateOrder?: number;
   Enabled?: member<boolean>;
   Mesh?: member<any>;
-  Materials?: member<any>;
+  Materials?: member<Array<{ ID: string; Data: string }>>;
   MaterialPropertyBlocks?: member<any>;
   ShadowCastMode?: member<any>;
   MotionVectorMode?: member<any>;

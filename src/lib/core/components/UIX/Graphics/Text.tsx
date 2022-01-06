@@ -23,7 +23,7 @@ export interface TextInput {
   VerticalAlign?: member<any>;
   AlignmentMode?: member<any>;
   Color?: member<any>;
-  Materials?: member<any>;
+  Materials?: member<Array<{ ID: string; Data: string }>>;
   LineHeight?: member<number>;
   MaskPattern?: member<any>;
   HorizontalAutoSize?: member<boolean>;
