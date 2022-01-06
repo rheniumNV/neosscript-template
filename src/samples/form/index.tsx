@@ -8,6 +8,8 @@ import MeshRenderer from "lib/core/components/Rendering/MeshRenderer";
 import ValueCopy_T from "lib/core/components/Transform/Drivers/ValueCopy_T";
 import PBS_Metallic from "lib/core/components/Assets/Materials/PBS_Metallic";
 import DynamicVariableSpace from "lib/core/components/Data/Dynamic/DynamicVariableSpace";
+import DVSlot from "lib/dv/DVSlot";
+import NeosType from "lib/core/types/NeosType";
 
 export default () => {
   const ItemName = "CalenderForm";
@@ -18,6 +20,14 @@ export default () => {
         <Grabbable Scalable={true} />,
         <DynamicVariableSpace SpaceName={ItemName} />,
       ]}
-    ></Slot>
+    >
+      <DVSlot
+        valueVariables={[
+          { type: NeosType.Float, name: "StartTime", value: 100 },
+          { type: NeosType.Color, name: "Main" },
+        ]}
+        referenceVariables={[{ type: NeosType.Slot, name: "Root" }]}
+      />
+    </Slot>
   );
 };

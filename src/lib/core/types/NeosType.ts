@@ -1,3 +1,4 @@
+export type NEOS_TYPE = { name: string };
 export default {
   Bool: { name: "[System.Bool, mscorlib]" },
   Float: { name: "[System.Single, mscorlib]" },

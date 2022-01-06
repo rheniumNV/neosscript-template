@@ -1,5 +1,5 @@
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server.js";
-import Box from "./samples/Box";
+import Form from "./samples/form/index";
 
-export default () => renderToStaticMarkup(<Box />);
+export default () => renderToStaticMarkup(<Form />);
