@@ -11,40 +11,46 @@ declare global {
 export interface RectSizeDriverInput {
   id?: string;
   persistentId?: string;
-  UpdateOrder?: member<number>;
+  updateOrderId?: string;
+  updateOrder?: number;
   Enabled?: member<boolean>;
   TargetSize?: member<any>;
-  Scale?: member<any>;
+  Scale?: member<[number, number]>;
 }
 
 const RectSizeDriver: FC<RectSizeDriverInput> = (
   props: RectSizeDriverInput
 ) => {
-  const { id, persistentId, UpdateOrder, Enabled, TargetSize, Scale } = props;
+  const {
+    id,
+    persistentId,
+    updateOrderId,
+    updateOrder,
+    Enabled,
+    TargetSize,
+    Scale,
+  } = props;
 
   return (
     <component
       name="FrooxEngine.UIX.RectSizeDriver"
       id={id}
       persistentId={persistentId}
+      updateOrderId={updateOrderId}
+      updateOrder={updateOrder}
     >
       <Member
-        type="FrooxEngine.Sync`1[System.Int32]"
-        name="UpdateOrder"
-        content={UpdateOrder} /* default: 0 */
-      />
-      <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="Enabled"
         content={Enabled} /* default: False */
       />
       <Member
-        type="FrooxEngine.FieldDrive`1[BaseX.float2]"
+        type={`FrooxEngine.FieldDrive\`1[BaseX.float2]`}
         name="TargetSize"
         content={TargetSize} /* default: ID0 */
       />
       <Member
-        type="FrooxEngine.Sync`1[BaseX.float2]"
+        type={`FrooxEngine.Sync\`1[BaseX.float2]`}
         name="Scale"
         content={Scale} /* default: [0; 0] */
       />

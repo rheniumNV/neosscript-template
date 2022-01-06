@@ -11,7 +11,8 @@ declare global {
 export interface ReferenceProxySourceInput {
   id?: string;
   persistentId?: string;
-  UpdateOrder?: member<number>;
+  updateOrderId?: string;
+  updateOrder?: number;
   Enabled?: member<boolean>;
   Reference?: member<any>;
 }
@@ -19,26 +20,24 @@ export interface ReferenceProxySourceInput {
 const ReferenceProxySource: FC<ReferenceProxySourceInput> = (
   props: ReferenceProxySourceInput
 ) => {
-  const { id, persistentId, UpdateOrder, Enabled, Reference } = props;
+  const { id, persistentId, updateOrderId, updateOrder, Enabled, Reference } =
+    props;
 
   return (
     <component
       name="FrooxEngine.ReferenceProxySource"
       id={id}
       persistentId={persistentId}
+      updateOrderId={updateOrderId}
+      updateOrder={updateOrder}
     >
       <Member
-        type="FrooxEngine.Sync`1[System.Int32]"
-        name="UpdateOrder"
-        content={UpdateOrder} /* default: 0 */
-      />
-      <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="Enabled"
         content={Enabled} /* default: False */
       />
       <Member
-        type="FrooxEngine.SyncRef"
+        type={`FrooxEngine.SyncRef`}
         name="Reference"
         content={Reference} /* default: ID0 */
       />

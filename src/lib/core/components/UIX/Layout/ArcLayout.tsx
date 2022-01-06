@@ -11,7 +11,8 @@ declare global {
 export interface ArcLayoutInput {
   id?: string;
   persistentId?: string;
-  UpdateOrder?: member<number>;
+  updateOrderId?: string;
+  updateOrder?: number;
   Enabled?: member<boolean>;
   Arc?: member<number>;
   Offset?: member<number>;
@@ -25,7 +26,8 @@ const ArcLayout: FC<ArcLayoutInput> = (props: ArcLayoutInput) => {
   const {
     id,
     persistentId,
-    UpdateOrder,
+    updateOrderId,
+    updateOrder,
     Enabled,
     Arc,
     Offset,
@@ -40,44 +42,41 @@ const ArcLayout: FC<ArcLayoutInput> = (props: ArcLayoutInput) => {
       name="FrooxEngine.UIX.ArcLayout"
       id={id}
       persistentId={persistentId}
+      updateOrderId={updateOrderId}
+      updateOrder={updateOrder}
     >
       <Member
-        type="FrooxEngine.Sync`1[System.Int32]"
-        name="UpdateOrder"
-        content={UpdateOrder} /* default: 0 */
-      />
-      <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="Enabled"
         content={Enabled} /* default: False */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Single]"
+        type={`FrooxEngine.Sync\`1[System.Single]`}
         name="Arc"
         content={Arc} /* default: 0 */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Single]"
+        type={`FrooxEngine.Sync\`1[System.Single]`}
         name="Offset"
         content={Offset} /* default: 0 */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Single]"
+        type={`FrooxEngine.Sync\`1[System.Single]`}
         name="Separation"
         content={Separation} /* default: 0 */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="CenterAtSeparation"
         content={CenterAtSeparation} /* default: False */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="ProportionalSize"
         content={ProportionalSize} /* default: False */
       />
       <Member
-        type="FrooxEngine.Sync`1[FrooxEngine.UIX.ArcLayout+Direction]"
+        type={`FrooxEngine.Sync\`1[FrooxEngine.UIX.ArcLayout+Direction]`}
         name="ItemDirection"
         content={ItemDirection} /* default: Clockwise */
       />

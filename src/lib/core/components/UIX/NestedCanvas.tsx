@@ -11,7 +11,8 @@ declare global {
 export interface NestedCanvasInput {
   id?: string;
   persistentId?: string;
-  UpdateOrder?: member<number>;
+  updateOrderId?: string;
+  updateOrder?: number;
   Enabled?: member<boolean>;
   TargetCanvas?: member<any>;
   _renderOffset?: member<any>;
@@ -22,7 +23,8 @@ const NestedCanvas: FC<NestedCanvasInput> = (props: NestedCanvasInput) => {
   const {
     id,
     persistentId,
-    UpdateOrder,
+    updateOrderId,
+    updateOrder,
     Enabled,
     TargetCanvas,
     _renderOffset,
@@ -34,29 +36,26 @@ const NestedCanvas: FC<NestedCanvasInput> = (props: NestedCanvasInput) => {
       name="FrooxEngine.NestedCanvas"
       id={id}
       persistentId={persistentId}
+      updateOrderId={updateOrderId}
+      updateOrder={updateOrder}
     >
       <Member
-        type="FrooxEngine.Sync`1[System.Int32]"
-        name="UpdateOrder"
-        content={UpdateOrder} /* default: 0 */
-      />
-      <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="Enabled"
         content={Enabled} /* default: False */
       />
       <Member
-        type="FrooxEngine.SyncRef`1[FrooxEngine.UIX.Canvas]"
+        type={`FrooxEngine.SyncRef\`1[FrooxEngine.UIX.Canvas]`}
         name="TargetCanvas"
         content={TargetCanvas} /* default: ID0 */
       />
       <Member
-        type="FrooxEngine.FieldDrive`1[System.Int32]"
+        type={`FrooxEngine.FieldDrive\`1[System.Int32]`}
         name="_renderOffset"
         content={_renderOffset} /* default: ID0 */
       />
       <Member
-        type="FrooxEngine.FieldDrive`1[System.Int32]"
+        type={`FrooxEngine.FieldDrive\`1[System.Int32]`}
         name="_maskDepth"
         content={_maskDepth} /* default: ID0 */
       />

@@ -11,7 +11,8 @@ declare global {
 export interface AspectRatioFitterInput {
   id?: string;
   persistentId?: string;
-  UpdateOrder?: member<number>;
+  updateOrderId?: string;
+  updateOrder?: number;
   Enabled?: member<boolean>;
   AspectRatio?: member<number>;
 }
@@ -19,26 +20,24 @@ export interface AspectRatioFitterInput {
 const AspectRatioFitter: FC<AspectRatioFitterInput> = (
   props: AspectRatioFitterInput
 ) => {
-  const { id, persistentId, UpdateOrder, Enabled, AspectRatio } = props;
+  const { id, persistentId, updateOrderId, updateOrder, Enabled, AspectRatio } =
+    props;
 
   return (
     <component
       name="FrooxEngine.UIX.AspectRatioFitter"
       id={id}
       persistentId={persistentId}
+      updateOrderId={updateOrderId}
+      updateOrder={updateOrder}
     >
       <Member
-        type="FrooxEngine.Sync`1[System.Int32]"
-        name="UpdateOrder"
-        content={UpdateOrder} /* default: 0 */
-      />
-      <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="Enabled"
         content={Enabled} /* default: False */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Single]"
+        type={`FrooxEngine.Sync\`1[System.Single]`}
         name="AspectRatio"
         content={AspectRatio} /* default: 0 */
       />

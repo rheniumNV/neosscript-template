@@ -1,0 +1,14 @@
+{
+  "plugins": [
+    "babel-plugin-add-import-extension",
+    [
+      "module-resolver",
+      {
+        "root": ["./dist"],
+        "alias": {
+          "lib": "./build/lib"
+        }
+      }
+    ]
+  ]
+}

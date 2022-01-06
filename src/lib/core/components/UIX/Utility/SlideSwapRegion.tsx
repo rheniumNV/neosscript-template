@@ -11,7 +11,8 @@ declare global {
 export interface SlideSwapRegionInput {
   id?: string;
   persistentId?: string;
-  UpdateOrder?: member<number>;
+  updateOrderId?: string;
+  updateOrder?: number;
   Enabled?: member<boolean>;
   _current?: member<any>;
 }
@@ -19,26 +20,24 @@ export interface SlideSwapRegionInput {
 const SlideSwapRegion: FC<SlideSwapRegionInput> = (
   props: SlideSwapRegionInput
 ) => {
-  const { id, persistentId, UpdateOrder, Enabled, _current } = props;
+  const { id, persistentId, updateOrderId, updateOrder, Enabled, _current } =
+    props;
 
   return (
     <component
       name="FrooxEngine.UIX.SlideSwapRegion"
       id={id}
       persistentId={persistentId}
+      updateOrderId={updateOrderId}
+      updateOrder={updateOrder}
     >
       <Member
-        type="FrooxEngine.Sync`1[System.Int32]"
-        name="UpdateOrder"
-        content={UpdateOrder} /* default: 0 */
-      />
-      <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="Enabled"
         content={Enabled} /* default: False */
       />
       <Member
-        type="FrooxEngine.SyncRef`1[FrooxEngine.UIX.RectTransform]"
+        type={`FrooxEngine.SyncRef\`1[FrooxEngine.UIX.RectTransform]`}
         name="_current"
         content={_current} /* default: ID0 */
       />

@@ -1,5 +1,5 @@
 import React from "react";
-import { renderToStaticMarkup } from "react-dom/server";
-import App from "./app";
+import { renderToStaticMarkup } from "react-dom/server.js";
+import UIXForm from "samples/form/index";
 
-export default ({ htmlWebpackPlugin }) => renderToStaticMarkup(<App />);
+export default () => renderToStaticMarkup(<UIXForm />);

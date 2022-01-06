@@ -12,6 +12,7 @@ declare global {
 }
 
 interface SlotInput {
+  id?: string;
   name: member<string>;
   tag?: member<string>;
   active?: member<boolean>;
@@ -25,6 +26,7 @@ interface SlotInput {
 }
 
 const Slot: FC<SlotInput> = ({
+  id,
   name = "",
   tag = "",
   active = true,
@@ -38,7 +40,7 @@ const Slot: FC<SlotInput> = ({
 }: SlotInput) => {
   return (
     <slot>
-      <slotData persistentId={persistentId}>
+      <slotData id={id} persistentId={persistentId}>
         <Member type="" name="Name" content={name} />
         <Member type="" name="Tag" content={tag} />
         <Member type="" name="Active" content={active} />

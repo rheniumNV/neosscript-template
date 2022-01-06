@@ -11,12 +11,13 @@ declare global {
 export interface SpriteProviderInput {
   id?: string;
   persistentId?: string;
-  UpdateOrder?: member<number>;
+  updateOrderId?: string;
+  updateOrder?: number;
   Enabled?: member<boolean>;
   HighPriorityIntegration?: member<boolean>;
   Texture?: member<any>;
   Rect?: member<any>;
-  Borders?: member<any>;
+  Borders?: member<[number, number, number, number]>;
   Scale?: member<number>;
 }
 
@@ -26,7 +27,8 @@ const SpriteProvider: FC<SpriteProviderInput> = (
   const {
     id,
     persistentId,
-    UpdateOrder,
+    updateOrderId,
+    updateOrder,
     Enabled,
     HighPriorityIntegration,
     Texture,
@@ -40,39 +42,36 @@ const SpriteProvider: FC<SpriteProviderInput> = (
       name="FrooxEngine.SpriteProvider"
       id={id}
       persistentId={persistentId}
+      updateOrderId={updateOrderId}
+      updateOrder={updateOrder}
     >
       <Member
-        type="FrooxEngine.Sync`1[System.Int32]"
-        name="UpdateOrder"
-        content={UpdateOrder} /* default: 0 */
-      />
-      <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="Enabled"
         content={Enabled} /* default: False */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="HighPriorityIntegration"
         content={HighPriorityIntegration} /* default: False */
       />
       <Member
-        type="FrooxEngine.AssetRef`1[FrooxEngine.ITexture2D]"
+        type={`FrooxEngine.AssetRef\`1[FrooxEngine.ITexture2D]`}
         name="Texture"
         content={Texture} /* default: ID0 */
       />
       <Member
-        type="FrooxEngine.Sync`1[BaseX.Rect]"
+        type={`FrooxEngine.Sync\`1[BaseX.Rect]`}
         name="Rect"
         content={Rect} /* default: [X=0; Y=0; W=0; H=0] */
       />
       <Member
-        type="FrooxEngine.Sync`1[BaseX.float4]"
+        type={`FrooxEngine.Sync\`1[BaseX.float4]`}
         name="Borders"
         content={Borders} /* default: [0; 0; 0; 0] */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Single]"
+        type={`FrooxEngine.Sync\`1[System.Single]`}
         name="Scale"
         content={Scale} /* default: 0 */
       />

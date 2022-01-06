@@ -11,9 +11,10 @@ declare global {
 export interface ScrollRectInput {
   id?: string;
   persistentId?: string;
-  UpdateOrder?: member<number>;
+  updateOrderId?: string;
+  updateOrder?: number;
   Enabled?: member<boolean>;
-  NormalizedPosition?: member<any>;
+  NormalizedPosition?: member<[number, number]>;
   HorizontalAlign?: member<any>;
   VerticalAlign?: member<any>;
   ViewportOverride?: member<any>;
@@ -24,7 +25,8 @@ const ScrollRect: FC<ScrollRectInput> = (props: ScrollRectInput) => {
   const {
     id,
     persistentId,
-    UpdateOrder,
+    updateOrderId,
+    updateOrder,
     Enabled,
     NormalizedPosition,
     HorizontalAlign,
@@ -38,39 +40,36 @@ const ScrollRect: FC<ScrollRectInput> = (props: ScrollRectInput) => {
       name="FrooxEngine.UIX.ScrollRect"
       id={id}
       persistentId={persistentId}
+      updateOrderId={updateOrderId}
+      updateOrder={updateOrder}
     >
       <Member
-        type="FrooxEngine.Sync`1[System.Int32]"
-        name="UpdateOrder"
-        content={UpdateOrder} /* default: 0 */
-      />
-      <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="Enabled"
         content={Enabled} /* default: False */
       />
       <Member
-        type="FrooxEngine.Sync`1[BaseX.float2]"
+        type={`FrooxEngine.Sync\`1[BaseX.float2]`}
         name="NormalizedPosition"
         content={NormalizedPosition} /* default: [0; 0] */
       />
       <Member
-        type="FrooxEngine.Sync`1[FrooxEngine.UIX.LayoutHorizontalAlignment]"
+        type={`FrooxEngine.Sync\`1[FrooxEngine.UIX.LayoutHorizontalAlignment]`}
         name="HorizontalAlign"
         content={HorizontalAlign} /* default: Left */
       />
       <Member
-        type="FrooxEngine.Sync`1[FrooxEngine.UIX.LayoutVerticalAlignment]"
+        type={`FrooxEngine.Sync\`1[FrooxEngine.UIX.LayoutVerticalAlignment]`}
         name="VerticalAlign"
         content={VerticalAlign} /* default: Top */
       />
       <Member
-        type="FrooxEngine.SyncRef`1[FrooxEngine.UIX.RectTransform]"
+        type={`FrooxEngine.SyncRef\`1[FrooxEngine.UIX.RectTransform]`}
         name="ViewportOverride"
         content={ViewportOverride} /* default: ID0 */
       />
       <Member
-        type="FrooxEngine.SyncRef`1[FrooxEngine.UIX.RectTransform]"
+        type={`FrooxEngine.SyncRef\`1[FrooxEngine.UIX.RectTransform]`}
         name="__legacyContent"
         content={__legacyContent} /* default: ID0 */
       />

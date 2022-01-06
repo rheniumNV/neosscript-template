@@ -11,14 +11,15 @@ declare global {
 export interface TiledRawImageInput {
   id?: string;
   persistentId?: string;
-  UpdateOrder?: member<number>;
+  updateOrderId?: string;
+  updateOrder?: number;
   Enabled?: member<boolean>;
   Texture?: member<any>;
   Material?: member<any>;
-  Tint?: member<any>;
+  Tint?: member<[number, number, number, number]>;
   SizeBasis?: member<any>;
-  TileSize?: member<any>;
-  TileOffset?: member<any>;
+  TileSize?: member<[number, number]>;
+  TileOffset?: member<[number, number]>;
   InteractionTarget?: member<boolean>;
 }
 
@@ -26,7 +27,8 @@ const TiledRawImage: FC<TiledRawImageInput> = (props: TiledRawImageInput) => {
   const {
     id,
     persistentId,
-    UpdateOrder,
+    updateOrderId,
+    updateOrder,
     Enabled,
     Texture,
     Material,
@@ -42,49 +44,46 @@ const TiledRawImage: FC<TiledRawImageInput> = (props: TiledRawImageInput) => {
       name="FrooxEngine.UIX.TiledRawImage"
       id={id}
       persistentId={persistentId}
+      updateOrderId={updateOrderId}
+      updateOrder={updateOrder}
     >
       <Member
-        type="FrooxEngine.Sync`1[System.Int32]"
-        name="UpdateOrder"
-        content={UpdateOrder} /* default: 0 */
-      />
-      <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="Enabled"
         content={Enabled} /* default: False */
       />
       <Member
-        type="FrooxEngine.AssetRef`1[FrooxEngine.ITexture2D]"
+        type={`FrooxEngine.AssetRef\`1[FrooxEngine.ITexture2D]`}
         name="Texture"
         content={Texture} /* default: ID0 */
       />
       <Member
-        type="FrooxEngine.AssetRef`1[FrooxEngine.Material]"
+        type={`FrooxEngine.AssetRef\`1[FrooxEngine.Material]`}
         name="Material"
         content={Material} /* default: ID0 */
       />
       <Member
-        type="FrooxEngine.Sync`1[BaseX.color]"
+        type={`FrooxEngine.Sync\`1[BaseX.color]`}
         name="Tint"
         content={Tint} /* default: [0; 0; 0; 0] */
       />
       <Member
-        type="FrooxEngine.Sync`1[FrooxEngine.UIX.TiledRawImage+TileSizeBasis]"
+        type={`FrooxEngine.Sync\`1[FrooxEngine.UIX.TiledRawImage+TileSizeBasis]`}
         name="SizeBasis"
         content={SizeBasis} /* default: Absolute */
       />
       <Member
-        type="FrooxEngine.Sync`1[BaseX.float2]"
+        type={`FrooxEngine.Sync\`1[BaseX.float2]`}
         name="TileSize"
         content={TileSize} /* default: [0; 0] */
       />
       <Member
-        type="FrooxEngine.Sync`1[BaseX.float2]"
+        type={`FrooxEngine.Sync\`1[BaseX.float2]`}
         name="TileOffset"
         content={TileOffset} /* default: [0; 0] */
       />
       <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="InteractionTarget"
         content={InteractionTarget} /* default: False */
       />

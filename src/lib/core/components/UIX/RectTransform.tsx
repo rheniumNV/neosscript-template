@@ -11,20 +11,22 @@ declare global {
 export interface RectTransformInput {
   id?: string;
   persistentId?: string;
-  UpdateOrder?: member<number>;
+  updateOrderId?: string;
+  updateOrder?: number;
   Enabled?: member<boolean>;
-  AnchorMin?: member<any>;
-  AnchorMax?: member<any>;
-  OffsetMin?: member<any>;
-  OffsetMax?: member<any>;
-  Pivot?: member<any>;
+  AnchorMin?: member<[number, number]>;
+  AnchorMax?: member<[number, number]>;
+  OffsetMin?: member<[number, number]>;
+  OffsetMax?: member<[number, number]>;
+  Pivot?: member<[number, number]>;
 }
 
 const RectTransform: FC<RectTransformInput> = (props: RectTransformInput) => {
   const {
     id,
     persistentId,
-    UpdateOrder,
+    updateOrderId,
+    updateOrder,
     Enabled,
     AnchorMin,
     AnchorMax,
@@ -38,39 +40,36 @@ const RectTransform: FC<RectTransformInput> = (props: RectTransformInput) => {
       name="FrooxEngine.UIX.RectTransform"
       id={id}
       persistentId={persistentId}
+      updateOrderId={updateOrderId}
+      updateOrder={updateOrder}
     >
       <Member
-        type="FrooxEngine.Sync`1[System.Int32]"
-        name="UpdateOrder"
-        content={UpdateOrder} /* default: 0 */
-      />
-      <Member
-        type="FrooxEngine.Sync`1[System.Boolean]"
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="Enabled"
         content={Enabled} /* default: False */
       />
       <Member
-        type="FrooxEngine.Sync`1[BaseX.float2]"
+        type={`FrooxEngine.Sync\`1[BaseX.float2]`}
         name="AnchorMin"
         content={AnchorMin} /* default: [0; 0] */
       />
       <Member
-        type="FrooxEngine.Sync`1[BaseX.float2]"
+        type={`FrooxEngine.Sync\`1[BaseX.float2]`}
         name="AnchorMax"
         content={AnchorMax} /* default: [0; 0] */
       />
       <Member
-        type="FrooxEngine.Sync`1[BaseX.float2]"
+        type={`FrooxEngine.Sync\`1[BaseX.float2]`}
         name="OffsetMin"
         content={OffsetMin} /* default: [0; 0] */
       />
       <Member
-        type="FrooxEngine.Sync`1[BaseX.float2]"
+        type={`FrooxEngine.Sync\`1[BaseX.float2]`}
         name="OffsetMax"
         content={OffsetMax} /* default: [0; 0] */
       />
       <Member
-        type="FrooxEngine.Sync`1[BaseX.float2]"
+        type={`FrooxEngine.Sync\`1[BaseX.float2]`}
         name="Pivot"
         content={Pivot} /* default: [0; 0] */
       />
