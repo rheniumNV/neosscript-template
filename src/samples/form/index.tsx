@@ -31,38 +31,35 @@ const UIXTextField = () => {
         />,
         <Button
           BaseColor={[0.8, 0.8, 0.8, 1]}
-          ColorDrivers={{
-            ID: generateId(),
-            Data: [
-              {
+          ColorDrivers={[
+            {
+              ID: generateId(),
+              ColorDrive: {
                 ID: generateId(),
-                ColorDriver: {
-                  ID: generateId(),
-                  Data: relay.getRefId("ImageColor"),
-                },
-                TintColorMode: {
-                  ID: generateId(),
-                  Data: "Explicit",
-                },
-                NormalColor: {
-                  ID: generateId(),
-                  Data: [1.0, 1.0, 1.0, 1.0],
-                },
-                HighlightColor: {
-                  ID: generateId(),
-                  Data: [0.8, 0.8, 0.8, 1.0],
-                },
-                PressColor: {
-                  ID: generateId(),
-                  Data: [1.2, 1.2, 1.2, 1.0],
-                },
-                DisabledColor: {
-                  ID: generateId(),
-                  Data: [0.65, 0.65, 0.65, 1.0],
-                },
+                Data: relay.getRefId("ImageColor"),
               },
-            ],
-          }}
+              TintColorMode: {
+                ID: generateId(),
+                Data: "Explicit",
+              },
+              NormalColor: {
+                ID: generateId(),
+                Data: [1.0, 1.0, 1.0, 1.0],
+              },
+              HighlightColor: {
+                ID: generateId(),
+                Data: [0.8, 0.8, 0.8, 1.0],
+              },
+              PressColor: {
+                ID: generateId(),
+                Data: [1.2, 1.2, 1.2, 1.0],
+              },
+              DisabledColor: {
+                ID: generateId(),
+                Data: [0.65, 0.65, 0.65, 1.0],
+              },
+            },
+          ]}
         />,
         <TextField
           Editor={relay.getRefId("TextEditorComponent")}
@@ -84,6 +81,56 @@ const UIXTextField = () => {
 export default () => {
   const ItemName = "CalenderForm";
   const rootSlotId = generateId();
+
+  const relay = new RelayManager();
+  return (
+    <Slot name="Test" components={[<Grabbable />]}>
+      <UIXCanvas canvas={{ Size: [1000, 700] }}>
+        <UIXElement
+          components={[
+            <Image
+              Tint={{
+                value: [0.8, 0.8, 0.8, 1],
+                id: relay.setRefId("Button.Image.Tint"),
+              }}
+            />,
+            <Button
+              ColorDrivers={[
+                {
+                  ID: generateId(),
+                  ColorDrive: {
+                    ID: generateId(),
+                    Data: relay.getRefId("Button.Image.Tint"),
+                  },
+                  TintColorMode: {
+                    ID: generateId(),
+                    Data: "Explicit",
+                  },
+                  NormalColor: {
+                    ID: generateId(),
+                    Data: [1.0, 1.0, 1.0, 1.0],
+                  },
+                  HighlightColor: {
+                    ID: generateId(),
+                    Data: [0.8, 0.8, 0.8, 1.0],
+                  },
+                  PressColor: {
+                    ID: generateId(),
+                    Data: [0.5, 0.5, 0.5, 1.0],
+                  },
+                  DisabledColor: {
+                    ID: generateId(),
+                    Data: [0.65, 0.65, 0.65, 1.0],
+                  },
+                },
+              ]}
+            />,
+          ]}
+        />
+      </UIXCanvas>
+    </Slot>
+  );
+
   return (
     <Slot
       id={rootSlotId}
@@ -123,6 +170,12 @@ export default () => {
             [75, "Min"],
             [1, "Flexible"],
           ]}
+          layout={{
+            PaddingTop: 10,
+            PaddingBottom: 10,
+            PaddingLeft: 10,
+            PaddingRight: 10,
+          }}
         >
           <UIXElement components={[<Text Content={"Event Form"} />]} />
           <UIXVertical
