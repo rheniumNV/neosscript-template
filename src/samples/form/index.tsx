@@ -20,14 +20,23 @@ import Button from "lib/core/components/UIX/Interaction/Button";
 import Image from "lib/core/components/UIX/Graphics/Image";
 import UIXBackground from "lib/uixHelper/UIXBackground";
 import { RelayManager } from "lib/util/RelayManager";
+import { CommonTexture, useTexture } from "lib/uixHelper/AssetUtil";
+import UIXHorizontal from "lib/uixHelper/UIXHorizontal";
+import VerticalLayout from "lib/core/components/UIX/Layout/VerticalLayout";
+import UI_TextUnlitMaterial from "lib/core/components/Assets/Materials/UI/Text/UI_TextUnlitMaterial";
 
 const UIXTextField = () => {
   const relay = new RelayManager();
+  const { spriteId, assets } = useTexture({
+    texture: CommonTexture.Circle,
+    sprite: { Borders: [0.33, 0.33, 0.33, 0.33], Scale: 0.05 },
+  });
   return (
     <UIXElement
       components={[
         <Image
           Tint={{ value: [0, 0, 0, 0], id: relay.setRefId("ImageColor") }}
+          Sprite={spriteId}
         />,
         <Button
           BaseColor={[0.8, 0.8, 0.8, 1]}
@@ -69,67 +78,59 @@ const UIXTextField = () => {
           id={relay.getRefId("TextEditorComponent")}
           Text={relay.getRefId("TextComponent")}
         />,
+        <VerticalLayout
+          PaddingBottom={5}
+          PaddingLeft={5}
+          PaddingRight={5}
+          PaddingTop={5}
+        />,
+        ...assets,
       ]}
     >
       <UIXElement
-        components={[<Text id={relay.setRefId("TextComponent")} />]}
+        components={[
+          <Text
+            id={relay.setRefId("TextComponent")}
+            HorizontalAlign={"Center"}
+            VerticalAlign={"Middle"}
+            HorizontalAutoSize={true}
+            VerticalAutoSize={true}
+          />,
+        ]}
       />
     </UIXElement>
+  );
+};
+
+const FiledArea = ({ title }: { title: string }) => {
+  return (
+    <UIXHorizontal
+      layout={{
+        Spacing: 10,
+      }}
+      templates={[
+        [100, "Min"],
+        [1, "Flexible"],
+      ]}
+    >
+      <UIXElement
+        components={[
+          <Text
+            Content={title}
+            VerticalAlign={"Middle"}
+            HorizontalAlign={"Center"}
+          />,
+        ]}
+      />
+      <UIXTextField />
+    </UIXHorizontal>
   );
 };
 
 export default () => {
   const ItemName = "CalenderForm";
   const rootSlotId = generateId();
-
   const relay = new RelayManager();
-  return (
-    <Slot name="Test" components={[<Grabbable />]}>
-      <UIXCanvas canvas={{ Size: [1000, 700] }}>
-        <UIXElement
-          components={[
-            <Image
-              Tint={{
-                value: [0.8, 0.8, 0.8, 1],
-                id: relay.setRefId("Button.Image.Tint"),
-              }}
-            />,
-            <Button
-              ColorDrivers={[
-                {
-                  ID: generateId(),
-                  ColorDrive: {
-                    ID: generateId(),
-                    Data: relay.getRefId("Button.Image.Tint"),
-                  },
-                  TintColorMode: {
-                    ID: generateId(),
-                    Data: "Explicit",
-                  },
-                  NormalColor: {
-                    ID: generateId(),
-                    Data: [1.0, 1.0, 1.0, 1.0],
-                  },
-                  HighlightColor: {
-                    ID: generateId(),
-                    Data: [0.8, 0.8, 0.8, 1.0],
-                  },
-                  PressColor: {
-                    ID: generateId(),
-                    Data: [0.5, 0.5, 0.5, 1.0],
-                  },
-                  DisabledColor: {
-                    ID: generateId(),
-                    Data: [0.65, 0.65, 0.65, 1.0],
-                  },
-                },
-              ]}
-            />,
-          ]}
-        />
-      </UIXCanvas>
-    </Slot>
-  );
 
   return (
     <Slot
@@ -175,9 +176,27 @@ export default () => {
             PaddingBottom: 10,
             PaddingLeft: 10,
             PaddingRight: 10,
+            Spacing: 10,
           }}
         >
-          <UIXElement components={[<Text Content={"Event Form"} />]} />
+          <UIXElement
+            components={[
+              <Text
+                Content={"Event Form"}
+                VerticalAlign={"Middle"}
+                HorizontalAlign={"Center"}
+                Materials={[
+                  {
+                    ID: generateId(),
+                    Data: relay.getRefId("UI_TextUnlitMaterial"),
+                  },
+                ]}
+              />,
+              <UI_TextUnlitMaterial
+                id={relay.setRefId("UI_TextUnlitMaterial")}
+              />,
+            ]}
+          />
           <UIXVertical
             templates={[
               [70, "Min"],
@@ -185,11 +204,14 @@ export default () => {
               [70, "Min"],
               [70, "Min"],
             ]}
+            layout={{
+              Spacing: 10,
+              ForceExpandHeight: false,
+              VerticalAlign: "Top",
+            }}
           >
-            <UIXTextField />
-            <UIXTextField />
-            <UIXTextField />
-            <UIXTextField />
+            <FiledArea title="Title" />
+            <FiledArea title="Detail" />
           </UIXVertical>
         </UIXVertical>
       </UIXCanvas>
