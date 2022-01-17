@@ -7,27 +7,27 @@
     "setup": "node ./src/lib/builder/componentSetup.cjs && prettier --write ./src/lib/core/components",
     "buildTs": "npx tsc",
     "babel": "npx babel build -d dist",
-    "start": "npm run buildTs && npm run babel && node ./dist/main.js"
+    "start": "npm run buildTs && npm run babel && node --experimental-json-modules ./dist/main.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/react": "^17.0.38",
-    "@types/react-dom": "^17.0.11",
     "@babel/cli": "^7.16.7",
     "@babel/core": "^7.16.7",
     "@babel/preset-react": "^7.16.7",
+    "@types/react": "^17.0.38",
+    "@types/react-dom": "^17.0.11",
     "babel-loader": "^8.2.3",
     "babel-plugin-add-import-extension": "^1.6.0",
     "babel-plugin-module-resolver": "^4.1.0",
+    "prettier": "^2.5.1",
     "ts-loader": "^9.2.6",
-    "typescript": "^4.5.4",
-    "prettier": "^2.5.1"
+    "typescript": "^4.5.4"
   },
   "dependencies": {
+    "lodash": "^4.17.21",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "lodash": "^4.17.21",
     "rehype-parse": "^8.0.3",
     "rehype-stringify": "^9.0.2",
     "remark-parse": "^10.0.1",
