@@ -1,13 +1,16 @@
 {
   "plugins": [
     "babel-plugin-add-import-extension",
+    ["@babel/plugin-transform-typescript", { "isTSX": true }],
+    "@babel/plugin-transform-react-jsx",
     [
       "module-resolver",
       {
         "root": ["./dist"],
         "alias": {
-          "lib": "./build/lib"
-        }
+          "lib": "./dist/lib"
+        },
+        "extensions": [".js", ".json"]
       }
     ]
   ]
