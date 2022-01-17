@@ -6,7 +6,7 @@ export default {
   Float2: { name: "[BaseX.float2, BaseX]" },
   Float3: { name: "[BaseX.float3, BaseX]" },
   String: { name: "[System.String, mscorlib]" },
-  Uri: { name: "[System.Uri, mscorlib]" },
+  Uri: { name: "[System.Uri, System]" },
   Color: { name: "[BaseX.color, BaseX]" },
   Slot: { name: "[FrooxEngine.Slot, FrooxEngine]" },
 };
