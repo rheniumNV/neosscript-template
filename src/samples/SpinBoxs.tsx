@@ -1,14 +1,14 @@
 import React from "react";
-import Slot from "lib/core/Slot";
-import { generateId } from "lib/util/util";
-import Grabbable from "lib/core/components/Transform/Interaction/Grabbable";
-import BoxCollider from "lib/core/components/Physics/Colliders/BoxCollider";
-import BoxMesh from "lib/core/components/Assets/Procedural Meshes/BoxMesh";
-import MeshRenderer from "lib/core/components/Rendering/MeshRenderer";
-import ValueCopy_T from "lib/core/components/Transform/Drivers/ValueCopy_T";
-import PBS_Metallic from "lib/core/components/Assets/Materials/PBS_Metallic";
-import NeosType from "lib/core/types/NeosType";
-import Spinner from "lib/core/components/Transform/Drivers/Spinner";
+import Slot from "lib/neoscript/core/Slot";
+import { generateId } from "lib/neoscript/util";
+import Grabbable from "lib/neoscript/core/components/Transform/Interaction/Grabbable";
+import BoxCollider from "lib/neoscript/core/components/Physics/Colliders/BoxCollider";
+import BoxMesh from "lib/neoscript/core/components/Assets/Procedural Meshes/BoxMesh";
+import MeshRenderer from "lib/neoscript/core/components/Rendering/MeshRenderer";
+import ValueCopy_T from "lib/neoscript/core/components/Transform/Drivers/ValueCopy_T";
+import PBS_Metallic from "lib/neoscript/core/components/Assets/Materials/PBS_Metallic";
+import NeosType from "lib/neoscript/core/types/NeosType";
+import Spinner from "lib/neoscript/core/components/Transform/Drivers/Spinner";
 import _ from "lodash";
 
 const Box = ({ position, size, color, speed }) => {

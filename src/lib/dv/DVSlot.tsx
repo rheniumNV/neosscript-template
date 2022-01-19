@@ -1,9 +1,9 @@
 import React, { FC } from "react";
-import Slot from "lib/core/Slot";
+import Slot from "lib/neoscript/core/Slot";
 import _ from "lodash";
-import DynamicValueVariable_T from "lib/core/components/Data/Dynamic/DynamicValueVariable_T";
-import { NEOS_TYPE } from "lib/core/types/NeosType";
-import DynamicReferenceVariable_T from "lib/core/components/Data/Dynamic/DynamicReferenceVariable_T";
+import DynamicValueVariable_T from "lib/neoscript/core/components/Data/Dynamic/DynamicValueVariable_T";
+import { NEOS_TYPE } from "lib/neoscript/core/types/NeosType";
+import DynamicReferenceVariable_T from "lib/neoscript/core/components/Data/Dynamic/DynamicReferenceVariable_T";
 
 type variable = { type: NEOS_TYPE; name: string; value?: any };
 

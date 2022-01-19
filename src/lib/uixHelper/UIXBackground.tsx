@@ -1,10 +1,10 @@
 import React, { FC } from "react";
-import Image from "lib/core/components/UIX/Graphics/Image";
-import UI_UnlitMaterial from "lib/core/components/Assets/Materials/UI/UI_UnlitMaterial";
+import Image from "lib/neoscript/core/components/UIX/Graphics/Image";
+import UI_UnlitMaterial from "lib/neoscript/core/components/Assets/Materials/UI/UI_UnlitMaterial";
 import UIXElement from "lib/uixHelper/UIXElement";
-import { generateId } from "lib/util/util";
-import SpriteProvider from "lib/core/components/Assets/SpriteProvider";
-import StaticTexture2D from "lib/core/components/Assets/StaticTexture2D";
+import { generateId } from "lib/neoscript/util";
+import SpriteProvider from "lib/neoscript/core/components/Assets/SpriteProvider";
+import StaticTexture2D from "lib/neoscript/core/components/Assets/StaticTexture2D";
 import { CommonTexture, useTexture } from "./AssetUtil";
 
 interface UIXBackgroundInput {

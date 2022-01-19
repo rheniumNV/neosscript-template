@@ -8,7 +8,7 @@
     "watch": "npx webpack --watch",
     "devServer": "npx http-server devServer -o",
     "dev": "concurrently \"npm run watch\" \"npm run devServer\"",
-    "setup": "node ./src/lib/generators/component/componentSetup.cjs && prettier --write ./src/lib/core/components"
+    "setup": "node ./src/lib/neoscript/generators/component/componentSetup.cjs && prettier --write ./src/lib/neoscript/core/components"
   },
   "author": "",
   "license": "ISC",
