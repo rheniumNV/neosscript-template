@@ -3,11 +3,11 @@ const AutoBuildPlugin = require("./auto-build-plugin.cjs");
 
 module.exports = {
   mode: "production",
-  entry: "./src/main.tsx",
+  entry: "./src/index.tsx",
   cache: true,
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "main.cjs",
+    filename: "index.cjs",
   },
   target: "node",
   module: {

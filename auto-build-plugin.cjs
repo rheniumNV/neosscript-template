@@ -8,7 +8,7 @@ module.exports = class FirstBuildPlugin {
 
   apply(compiler) {
     compiler.hooks.done.tap("FirstBuildPlugin", () => {
-      spawn("node", ["./dist/main.cjs", this.path]);
+      spawn("node", ["./dist/index.cjs", this.path]);
       notifier.notify("Converted");
     });
   }
