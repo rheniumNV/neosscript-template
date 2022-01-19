@@ -8,6 +8,8 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "index.cjs",
+    library: "NeosObject",
+    libraryTarget: "commonjs",
   },
   target: "node",
   module: {
@@ -15,10 +17,11 @@ module.exports = {
       {
         test: /\.(ts|tsx)$/,
         use: "babel-loader",
+        exclude: /(node_modules | bower_components)/,
       },
     ],
   },
-  plugins: [new AutoBuildPlugin("devServer/neosItem.json")],
+  plugins: [new AutoBuildPlugin("devServer/neosObject.json")],
   resolve: {
     extensions: [".tsx", ".ts", ".js", ".jsx"],
     modules: [path.resolve("./src"), path.resolve("./node_modules")],
