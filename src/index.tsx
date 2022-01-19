@@ -1,5 +1,5 @@
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server.js";
-import UIXForm from "samples/form/index";
+import Box from "samples/Box";
 
-export default () => renderToStaticMarkup(<UIXForm />);
+export default () => renderToStaticMarkup(<Box />);

@@ -96,7 +96,9 @@ const result = JSON.stringify(
   2
 );
 
-fs.writeFile("dist/result.json", result, (err) => {
+const path = process.argv[2];
+
+fs.writeFile(path || "dist/result.json", result, (err) => {
   if (err) throw err;
   console.log("変換が完了しました");
 });

@@ -1,17 +1,17 @@
 {
   "plugins": [
-    "babel-plugin-add-import-extension",
+    //"babel-plugin-add-import-extension",
     ["@babel/plugin-transform-typescript", { "isTSX": true }],
-    "@babel/plugin-transform-react-jsx",
-    [
-      "module-resolver",
-      {
-        "root": ["./dist"],
-        "alias": {
-          "lib": "./dist/lib"
-        },
-        "extensions": [".js", ".json"]
-      }
-    ]
+    "@babel/plugin-transform-react-jsx"
+    // [
+    //   "module-resolver",
+    //   {
+    //     "root": ["./dist"],
+    //     "alias": {
+    //       "lib": "./dist/lib"
+    //     },
+    //     "extensions": [".js", ".json"]
+    //   }
+    // ]
   ]
 }
