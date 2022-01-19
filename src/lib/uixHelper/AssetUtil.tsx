@@ -1,5 +1,5 @@
 import React from "react";
-import { generateId } from "lib/core/util";
+import { generateId } from "lib/util";
 import StaticTexture2D from "lib/core/components/Assets/StaticTexture2D";
 import SpriteProvider, {
   SpriteProviderInput,

@@ -3,7 +3,7 @@ import Slot from "lib/core/Slot";
 import _ from "lodash";
 import Canvas, { CanvasInput } from "lib/core/components/UIX/Canvas";
 import BoxCollider from "lib/core/components/Physics/Colliders/BoxCollider";
-import { generateId } from "lib/core/util";
+import { generateId } from "lib/util";
 
 interface UIXCanvasInput {
   name?: string;

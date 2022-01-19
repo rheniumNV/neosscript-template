@@ -1,6 +1,6 @@
 import React from "react";
 import Slot from "lib/core/Slot";
-import { generateId } from "lib/util/util";
+import { generateId } from "lib/util";
 import Grabbable from "lib/core/components/Transform/Interaction/Grabbable";
 import BoxCollider from "lib/core/components/Physics/Colliders/BoxCollider";
 import BoxMesh from "lib/core/components/Assets/Procedural Meshes/BoxMesh";
