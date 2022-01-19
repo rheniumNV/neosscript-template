@@ -11,7 +11,7 @@ interface UIXCanvasInput {
 }
 
 const UIXCanvas: FC<UIXCanvasInput> = ({
-  name = "UIXCanvas",
+  name = "Canvas",
   canvas,
   children,
 }) => {

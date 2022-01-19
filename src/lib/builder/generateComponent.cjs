@@ -47,6 +47,18 @@ const TypeMap = {
     define: "Array<{ID:string, Data:string}>",
     parser: ({ value }) => [],
   },
+  "FrooxEngine.SyncList`1[FrooxEngine.UIX.InteractionElement+ColorDriver]": {
+    define: `Array<{
+        ID: string;
+        ColorDrive:{ID:string; Data:string;};
+        TintColorMode:{ID:string; Data:string|'Explicit';};
+        NormalColor:{ID:string; Data:[number, number, number, number];};
+        HighlightColor:{ID:string; Data:[number, number, number, number];};
+        PressColor:{ID:string; Data:[number, number, number, number];};
+        DisabledColor:{ID:string; Data:[number, number, number, number];};
+      }>`,
+    parser: ({ value }) => [],
+  },
 };
 const anyType = {
   define: "any",

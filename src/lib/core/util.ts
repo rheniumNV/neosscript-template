@@ -1,6 +1,7 @@
 import { v4 as uuidv4 } from "uuid";
 
-export const generateId = (): string =>
+export const generateId = (): string => uuidv4();
+{
   (function () {
     var S4 = function () {
       return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
@@ -20,3 +21,4 @@ export const generateId = (): string =>
       S4()
     );
   })();
+}

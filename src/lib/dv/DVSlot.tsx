@@ -11,6 +11,7 @@ interface DVSlotInput {
   name?: string;
   valueVariables?: Array<variable>;
   referenceVariables?: Array<variable>;
+  components?: Array<JSX.Element>;
 }
 
 const generateVariable =
@@ -30,6 +31,7 @@ const DVSlot: FC<DVSlotInput> = ({
   name = "DV",
   valueVariables = [],
   referenceVariables = [],
+  components = [],
   children,
 }) => {
   return (
@@ -41,6 +43,7 @@ const DVSlot: FC<DVSlotInput> = ({
           referenceVariables,
           generateVariable(DynamicReferenceVariable_T)
         ),
+        ...components,
       ]}
     >
       {children}

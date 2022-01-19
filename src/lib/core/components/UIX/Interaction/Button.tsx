@@ -15,7 +15,17 @@ export interface ButtonInput {
   updateOrder?: number;
   Enabled?: member<boolean>;
   BaseColor?: member<[number, number, number, number]>;
-  ColorDrivers?: member<any>;
+  ColorDrivers?: member<
+    Array<{
+      ID: string;
+      ColorDrive: { ID: string; Data: string };
+      TintColorMode: { ID: string; Data: string | "Explicit" };
+      NormalColor: { ID: string; Data: [number, number, number, number] };
+      HighlightColor: { ID: string; Data: [number, number, number, number] };
+      PressColor: { ID: string; Data: [number, number, number, number] };
+      DisabledColor: { ID: string; Data: [number, number, number, number] };
+    }>
+  >;
   __legacy_NormalColor?: member<[number, number, number, number]>;
   __legacy_HighlightColor?: member<[number, number, number, number]>;
   __legacy_PressColor?: member<[number, number, number, number]>;
