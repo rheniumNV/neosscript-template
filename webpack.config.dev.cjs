@@ -1,6 +1,5 @@
 const path = require("path");
 const NodemonPlugin = require("nodemon-webpack-plugin");
-const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
 const nodeExternals = require("webpack-node-externals");
 
 const webpackConfig = {
