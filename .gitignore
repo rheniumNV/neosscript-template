@@ -4,4 +4,4 @@ build/
 .idea
 private/
 devServer/neosObject.json
-devServer/
+devServer/main.cjs
