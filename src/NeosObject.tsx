@@ -8,7 +8,7 @@ import MeshRenderer from "lib/neoscript/core/components/Rendering/MeshRenderer";
 import ValueCopy_T from "lib/neoscript/core/components/Transform/Drivers/ValueCopy_T";
 import PBS_Metallic from "lib/neoscript/core/components/Assets/Materials/PBS_Metallic";
 import NeosType from "lib/neoscript/core/types/NeosType";
-import Converter from "lib/neoscript/core/converter";
+import Converter from "lib/neoscript/core/Converter";
 
 export default Converter(({ Size = [1, 1, 1] }: any) => {
   const meshId = generateId();
