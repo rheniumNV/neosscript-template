@@ -25,8 +25,10 @@ module.exports = class AutoBuildPlugin {
           console.log("変換が完了しました");
           notifier.notify("変換が完了しました");
         });
-      } catch (e) {
-        console.log(e);
+      } catch (err) {
+        console.error("エラーが発生しました", err);
+        notifier.notify("エラーが発生しました");
+        throw err;
       }
     });
   }

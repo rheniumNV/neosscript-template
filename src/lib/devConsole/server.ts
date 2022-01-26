@@ -1,6 +1,6 @@
 import React from "react";
 import express from "express";
-import lib from "lib";
+import lib from "index";
 import _ from "lodash";
 const path = require("path");
 

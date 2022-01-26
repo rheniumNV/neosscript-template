@@ -3,5 +3,4 @@ dist/
 build/
 .idea
 private/
-devServer/neosObject.json
-devServer/main.cjs
+devServer/

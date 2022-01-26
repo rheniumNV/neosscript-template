@@ -27,7 +27,7 @@ export class RelayManager {
     }
     this.refMap = {
       ...this.refMap,
-      ...{ ...ref, ...{ setCount: setCount + 1 } },
+      ...{ [key]: { ...ref, ...{ setCount: setCount + 1 } } },
     };
 
     return { ref, set: true };
@@ -57,7 +57,7 @@ export class RelayManager {
     const { getCount } = ref;
     this.refMap = {
       ...this.refMap,
-      ...{ ...ref, ...{ getCount: getCount + 1 } },
+      ...{ [key]: { ...ref, ...{ getCount: getCount + 1 } } },
     };
     return { ref, get: true };
   }

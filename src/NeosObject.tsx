@@ -8,7 +8,6 @@ import MeshRenderer from "lib/neoscript/core/components/Rendering/MeshRenderer";
 import ValueCopy_T from "lib/neoscript/core/components/Transform/Drivers/ValueCopy_T";
 import PBS_Metallic from "lib/neoscript/core/components/Assets/Materials/PBS_Metallic";
 import NeosType from "lib/neoscript/core/types/NeosType";
-import NftFestaDV from "private/NftFestaDV";
 
 export default ({ Size = [1, 1, 1] }: any) => {
   const meshId = generateId();
@@ -16,11 +15,9 @@ export default ({ Size = [1, 1, 1] }: any) => {
   const sizeTargetId = generateId();
   const materialId = generateId();
 
-  return <NftFestaDV />;
-
   return (
     <Slot
-      name="Box2"
+      name="Box"
       components={[
         <Grabbable />,
         <BoxCollider Size={{ value: [1, 1, 1], id: sizeTargetId }} />,

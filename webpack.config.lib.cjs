@@ -3,7 +3,7 @@ const AutoBuildPlugin = require("./auto-build-plugin.cjs");
 
 module.exports = {
   mode: "production",
-  entry: "./src/lib.tsx",
+  entry: "./src/index.tsx",
   cache: true,
   output: {
     path: path.resolve(__dirname, "dist"),
