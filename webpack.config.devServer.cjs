@@ -1,15 +1,44 @@
 const path = require("path");
 const NodemonPlugin = require("nodemon-webpack-plugin");
-//const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
 const nodeExternals = require("webpack-node-externals");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-const webpackConfig = {
-  mode: "production",
+const clientConfig = {
+  mode: "development",
+  entry: "./src/lib/devConsole/main.tsx",
+  cache: true,
+  target: "web",
+  output: {
+    path: path.resolve(__dirname, "devServer/public"),
+    filename: "main.js",
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(ts|tsx)$/,
+        use: "babel-loader",
+      },
+    ],
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./src/lib/devConsole/index.html",
+      filename: "index.html",
+    }),
+  ],
+  resolve: {
+    extensions: [".tsx", ".ts", ".js", ".jsx"],
+    modules: [path.resolve("./src"), path.resolve("./node_modules")],
+  },
+};
+
+const serverConfig = {
+  mode: "development",
   entry: "./src/lib/devConsole/server.ts",
   cache: true,
   output: {
     path: path.resolve(__dirname, "devServer"),
-    filename: "main.cjs",
+    filename: "server.cjs",
   },
   target: ["node"],
   module: {
@@ -20,17 +49,7 @@ const webpackConfig = {
       },
     ],
   },
-  plugins: [
-    // new BrowserSyncPlugin(
-    //   {
-    //     host: "localhost",
-    //     port: 4000,
-    //     proxy: "http://localhost:3000/",
-    //   },
-    //   { reload: true }
-    // ),
-    new NodemonPlugin(),
-  ],
+  plugins: [new NodemonPlugin()],
   resolve: {
     extensions: [".tsx", ".ts", ".js", ".jsx"],
     modules: [path.resolve("./src"), path.resolve("./node_modules")],
@@ -56,4 +75,5 @@ const webpackConfig = {
     }),
   ],
 };
-module.exports = webpackConfig;
+
+module.exports = [clientConfig, serverConfig];

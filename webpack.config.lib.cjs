@@ -3,7 +3,7 @@ const AutoBuildPlugin = require("./auto-build-plugin.cjs");
 
 module.exports = {
   mode: "production",
-  entry: "./src/NeosObject.tsx",
+  entry: "./src/lib.tsx",
   cache: true,
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -21,7 +21,7 @@ module.exports = {
       },
     ],
   },
-  plugins: [new AutoBuildPlugin("devServer/neosObject.json")],
+  plugins: [new AutoBuildPlugin("dist/neosObject.json")],
   resolve: {
     extensions: [".tsx", ".ts", ".js", ".jsx"],
     modules: [path.resolve("./src"), path.resolve("./node_modules")],

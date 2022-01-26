@@ -18,6 +18,7 @@ export interface ValueMultiplexer_TInput {
   Target?: member<any>;
   Index?: member<number>;
   AllowWriteBack?: member<boolean>;
+  Values?: member<any>;
 }
 
 const ValueMultiplexer_T: FC<ValueMultiplexer_TInput> = (
@@ -35,6 +36,7 @@ const ValueMultiplexer_T: FC<ValueMultiplexer_TInput> = (
     Target,
     Index,
     AllowWriteBack,
+    Values,
   } = props;
 
   return (
@@ -64,6 +66,11 @@ const ValueMultiplexer_T: FC<ValueMultiplexer_TInput> = (
         type={`FrooxEngine.Sync\`1[System.Boolean]`}
         name="AllowWriteBack"
         content={AllowWriteBack} /* default: null */
+      />
+      <Member
+        type={`FrooxEngine.Sync\`1[System.Boolean]`}
+        name="Values"
+        content={Values} /* default: null */
       />
     </component>
   );

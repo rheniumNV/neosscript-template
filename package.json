@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "start": "node devServer/main.cjs",
-    "dev": "npx webpack --config webpack.config.dev.cjs --watch",
+    "dev": "npx webpack --config webpack.config.devServer.cjs --watch",
     "build": "npx webpack --config webpack.config.build.cjs",
     "build:lib": "npx webpack --config webpack.config.lib.cjs",
     "generate:component": "node ./src/lib/neoscript/generators/component/componentSetup.cjs && prettier --write ./src/lib/neoscript/core/components"
@@ -26,6 +26,7 @@
     "@types/uuid": "^8.3.4",
     "babel-loader": "^8.2.3",
     "browser-sync-webpack-plugin": "^2.3.0",
+    "html-webpack-plugin": "^5.5.0",
     "node-notifier": "^10.0.0",
     "nodemon-webpack-plugin": "^4.7.0",
     "npm-run-all": "^4.1.5",
@@ -36,6 +37,7 @@
     "webpack-node-externals": "^3.0.0"
   },
   "dependencies": {
+    "csv-parse": "^5.0.4",
     "express": "^4.17.2",
     "http-server": "^14.1.0",
     "lodash": "^4.17.21",

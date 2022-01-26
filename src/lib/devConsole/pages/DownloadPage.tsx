@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import styled from "styled-components";
+//import NeosObject from "NeosObject";
 
 const BackgroundStyle = styled.div`
   position: fixed;
@@ -107,6 +108,39 @@ const BoxStyle = styled.div`
   }
 `;
 
+// const ObjectStyle = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   children {
+//     display: flex;
+//     flex-direction: column;
+//     margin-left: 30px;
+//   }
+//   slot {
+//     > slotdata {
+//       height: 20px;
+//       width: 100px;
+//       background: gray;
+//       color: white;
+//       display: flex;
+//       flex-direction: column;
+//       margin-bottom: 2px;
+//       > member[name="Name"]::after {
+//         content: attr(value);
+//       }
+//     }
+//     ::hover {
+//       > components {
+//         display: flex;
+//         flex-direction: column;
+//         > component::after {
+//           content: attr(name);
+//         }
+//       }
+//     }
+//   }
+// `;
+
 const startedDate = new Date();
 
 const DownloadPage: FC = () => {
@@ -121,6 +155,9 @@ const DownloadPage: FC = () => {
         <BoxStyle>
           <p>{`${startedDate}`}</p>
         </BoxStyle>
+        {/* <ObjectStyle>
+          <NeosObject />
+        </ObjectStyle> */}
       </LayoutStyle>
     </>
   );
