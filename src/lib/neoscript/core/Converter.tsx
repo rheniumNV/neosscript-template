@@ -15,6 +15,14 @@ function generateId(id) {
   return id ?? uuidv4();
 }
 
+function jsonParse(value) {
+  try {
+    return JSON.parse(value);
+  } catch (e) {
+    return value;
+  }
+}
+
 function resolveSlot(slot, addAsset) {
   const { children, parentId } = slot;
   const { children: comps } =
@@ -24,7 +32,7 @@ function resolveSlot(slot, addAsset) {
   const { children: assets } =
     _.find(children, ({ tagName }) => tagName == "assets") ?? {};
   _.forEach(assets ?? [], (asset) => {
-    addAsset(asset);
+    addAsset(resolveComponent(asset));
   });
   const slotData = _.find(children, ({ tagName }) => tagName == "slotdata");
   const slotId = generateId(_.get(slotData, ["properties", "id"]));
@@ -37,7 +45,7 @@ function resolveSlot(slot, addAsset) {
       return {
         ...prev,
         ...{
-          [name]: { ID: generateId(id), Data: JSON.parse(value) },
+          [name]: { ID: generateId(id), Data: jsonParse(value) },
         },
       };
     }, {}),
@@ -61,11 +69,15 @@ function resolveComponent(component) {
       UpdateOrder: { ID: generateId(null), Data: 0 },
       Enabled: { ID: generateId(null), Data: true },
       ..._(children).reduce((prev, curr) => {
-        const { name, value, id } = _.get(curr, ["children", 0], {});
+        const { name, value, id } = _.get(
+          curr,
+          ["children", 0],
+          _.get(curr, ["properties"], {})
+        );
         return {
           ...prev,
           ...{
-            [name]: { ID: generateId(id), Data: JSON.parse(value) },
+            [name]: { ID: generateId(id), Data: jsonParse(value) },
           },
         };
       }, {}),
