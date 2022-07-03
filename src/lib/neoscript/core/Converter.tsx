@@ -51,22 +51,24 @@ function resolveSlot(slot, addAsset) {
     }, {}),
     ParentReference: parentId ? parentId : null,
     Components: { ID: generateId(null), Data: comps },
-    Children: _(chills).map((slot) => ({
-      ...slot,
-      ...{ parentId: slotId },
-    })),
+    Children: _(chills)
+      .filter(({ tagName }) => tagName === "slot")
+      .map((slot) => ({
+        ...slot,
+        ...{ parentId: slotId },
+      })),
   };
 }
 
 function resolveComponent(component) {
   const { children, properties } = component;
-  const { name, id } = properties;
+  const { name, id, persistentId } = properties;
   return {
     Type: name,
     Data: {
       ID: generateId(id),
-      "persistent-ID": generateId(null),
       UpdateOrder: { ID: generateId(null), Data: 0 },
+      "persistent-ID": persistentId,
       Enabled: { ID: generateId(null), Data: true },
       ..._(children).reduce((prev, curr) => {
         const { name, value, id } = _.get(
@@ -92,42 +94,39 @@ export function ToNeosObject(Element): Function {
     const parser = unified().use(parse, { fragment: true });
     const mdast = parser.parse(data);
 
+    const rootSlot = _.get(mdast, ["children", 0], {});
     const assets = [];
     const addAsset = (asset) => {
       assets.push(asset);
     };
 
-    const result = JSON.stringify(
-      mdast,
-      (key, value) => {
-        if (hasAllKey(value, ["type", "tagName", "children", "properties"])) {
-          const { tagName } = value;
-          if (tagName == "slot") {
-            return resolveSlot(value, addAsset);
-          } else if (tagName == "component") {
-            return resolveComponent(value);
-          }
+    const result = JSON.stringify(rootSlot, (key, value) => {
+      if (hasAllKey(value, ["type", "tagName", "children", "properties"])) {
+        const { tagName } = value;
+        if (tagName == "slot") {
+          return resolveSlot(value, addAsset);
+        } else if (tagName == "component") {
+          return resolveComponent(value);
         }
-        if (_.includes(["offset", "column", "line", "end", "position"], key)) {
-          return undefined;
-        }
-        // @ts-ignore
-        const { type } = value ? value : {};
-        if (type === "root") {
-          return {
-            Object: _(_.get(value, "children", []))
-              .filter(
-                ({ type, tagName }) => type === "element" && tagName === "slot"
-              )
-              .get(0),
-          };
-        }
-        return value;
-      },
-      2
-    );
+      }
+      if (_.includes(["offset", "column", "line", "end", "position"], key)) {
+        return undefined;
+      }
+      // @ts-ignore
+      const { type } = value ? value : {};
+      if (type === "root") {
+        return {
+          Object: _(_.get(value, "children", []))
+            .filter(
+              ({ type, tagName }) => type === "element" && tagName === "slot"
+            )
+            .get(0),
+        };
+      }
+      return value;
+    });
 
-    return result;
+    return `{"Object":${result},"Assets":${JSON.stringify(assets)}}`;
   };
 }
 

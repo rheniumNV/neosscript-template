@@ -23,7 +23,7 @@ export class RelayManager {
     }
     const { setCount } = ref;
     if (setCount > 0) {
-      throw new Error();
+      //throw new Error();
     }
     this.refMap = {
       ...this.refMap,

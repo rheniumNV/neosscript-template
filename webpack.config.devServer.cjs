@@ -4,7 +4,7 @@ const nodeExternals = require("webpack-node-externals");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const clientConfig = {
-  mode: "development",
+  mode: "production",
   entry: "./src/lib/devConsole/main.tsx",
   cache: true,
   target: "web",

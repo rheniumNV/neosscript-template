@@ -14,7 +14,7 @@ export type id<T> = string;
 export type member<T> = { value: T; id: id<T> } | T;
 
 interface MemberInput {
-  type: string;
+  type?: string;
   name: string;
   content: member<any>;
   default?: any;
