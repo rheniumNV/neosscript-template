@@ -1,9 +1,9 @@
 import React, { FC } from "react";
-import Slot from "lib/neoscript/core/Slot";
+import Slot from "lib/neosscript/core/Slot";
 import _ from "lodash";
-import Canvas, { CanvasInput } from "lib/neoscript/core/components/UIX/Canvas";
-import BoxCollider from "lib/neoscript/core/components/Physics/Colliders/BoxCollider";
-import { generateId } from "lib/neoscript/util";
+import Canvas, { CanvasInput } from "lib/neosscript/core/components/UIX/Canvas";
+import BoxCollider from "lib/neosscript/core/components/Physics/Colliders/BoxCollider";
+import { generateId } from "lib/neosscript/util";
 
 interface UIXCanvasInput {
   name?: string;

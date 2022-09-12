@@ -1,13 +1,13 @@
 import React from "react";
-import Slot from "lib/neoscript/core/Slot";
-import { generateId } from "lib/neoscript/util";
-import Grabbable from "lib/neoscript/core/components/Transform/Interaction/Grabbable";
-import BoxCollider from "lib/neoscript/core/components/Physics/Colliders/BoxCollider";
-import BoxMesh from "lib/neoscript/core/components/Assets/Procedural Meshes/BoxMesh";
-import MeshRenderer from "lib/neoscript/core/components/Rendering/MeshRenderer";
-import ValueCopy_T from "lib/neoscript/core/components/Transform/Drivers/ValueCopy_T";
-import PBS_Metallic from "lib/neoscript/core/components/Assets/Materials/PBS_Metallic";
-import NeosType from "lib/neoscript/core/types/NeosType";
+import Slot from "lib/neosscript/core/Slot";
+import { generateId } from "lib/neosscript/util";
+import Grabbable from "lib/neosscript/core/components/Transform/Interaction/Grabbable";
+import BoxCollider from "lib/neosscript/core/components/Physics/Colliders/BoxCollider";
+import BoxMesh from "lib/neosscript/core/components/Assets/Procedural Meshes/BoxMesh";
+import MeshRenderer from "lib/neosscript/core/components/Rendering/MeshRenderer";
+import ValueCopy_T from "lib/neosscript/core/components/Transform/Drivers/ValueCopy_T";
+import PBS_Metallic from "lib/neosscript/core/components/Assets/Materials/PBS_Metallic";
+import NeosType from "lib/neosscript/core/types/NeosType";
 
 export default () => {
   const meshId = generateId();
