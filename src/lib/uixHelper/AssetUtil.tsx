@@ -1,9 +1,9 @@
 import React from "react";
-import { generateId } from "lib/core/util";
-import StaticTexture2D from "lib/core/components/Assets/StaticTexture2D";
+import { generateId } from "lib/neoscript/util";
+import StaticTexture2D from "lib/neoscript/core/components/Assets/StaticTexture2D";
 import SpriteProvider, {
   SpriteProviderInput,
-} from "lib/core/components/Assets/SpriteProvider";
+} from "lib/neoscript/core/components/Assets/SpriteProvider";
 
 export const CommonTexture = {
   Circle:
