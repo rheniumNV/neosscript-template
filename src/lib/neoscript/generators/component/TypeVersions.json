@@ -1,0 +1,10 @@
+{
+  "FrooxEngine.InventoryItem": 1,
+  "FrooxEngine.Grabbable": 2,
+  "FrooxEngine.UIX.Canvas": 1,
+  "FrooxEngine.UIX.RectTransform": 1,
+  "FrooxEngine.BoxCollider": 1,
+  "FrooxEngine.UIX.Image": 1,
+  "FrooxEngine.UIX.Text": 1,
+  "FrooxEngine.UI_UnlitMaterial": 2
+}

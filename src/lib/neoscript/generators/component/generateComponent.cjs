@@ -1,5 +1,7 @@
 const _ = require("lodash");
 
+const typeVersions = require("./TypeVersions.json");
+
 const NumberType = {
   define: "number",
   parser: ({ value }) => value,
@@ -111,6 +113,8 @@ exports.generateComponent = ({ fixedName, fullName, members, types }) => {
         )}[\${[${typeNameStr}]}]\`}`
       : `"${fullName}"`;
 
+  const version = _.get(typeVersions, fullName);
+
   const data = `import React, { FC } from "react";
     import { member, Member } from "lib/neoscript/core/Member";
     
@@ -134,7 +138,9 @@ exports.generateComponent = ({ fixedName, fullName, members, types }) => {
       const {${typePropUnit} id, persistentId, updateOrderId, updateOrder, ${propsUnit} } = props;
     
       return (
-        <component name=${componentClassName} id={id} persistentId={persistentId} updateOrderId={updateOrderId} updateOrder={updateOrder}>
+        <component name=${componentClassName} id={id} persistentId={persistentId} updateOrderId={updateOrderId} updateOrder={updateOrder}${
+    version ? ` version={${version}}` : ""
+  }>
         ${memberUnit}
         </component>
       );
