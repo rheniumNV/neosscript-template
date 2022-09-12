@@ -50,6 +50,7 @@ const CylinderMesh: FC<CylinderMeshInput> = (props: CylinderMeshInput) => {
       persistentId={persistentId}
       updateOrderId={updateOrderId}
       updateOrder={updateOrder}
+      version={1}
     >
       <Member
         type={`FrooxEngine.Sync\`1[System.Boolean]`}

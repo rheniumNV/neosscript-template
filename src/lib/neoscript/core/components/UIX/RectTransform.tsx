@@ -42,6 +42,7 @@ const RectTransform: FC<RectTransformInput> = (props: RectTransformInput) => {
       persistentId={persistentId}
       updateOrderId={updateOrderId}
       updateOrder={updateOrder}
+      version={1}
     >
       <Member
         type={`FrooxEngine.Sync\`1[System.Boolean]`}

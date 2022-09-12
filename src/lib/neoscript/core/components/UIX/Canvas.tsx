@@ -66,6 +66,7 @@ const Canvas: FC<CanvasInput> = (props: CanvasInput) => {
       persistentId={persistentId}
       updateOrderId={updateOrderId}
       updateOrder={updateOrder}
+      version={1}
     >
       <Member
         type={`FrooxEngine.Sync\`1[System.Boolean]`}

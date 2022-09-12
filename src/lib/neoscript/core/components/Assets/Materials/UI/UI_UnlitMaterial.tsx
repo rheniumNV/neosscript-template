@@ -94,6 +94,7 @@ const UI_UnlitMaterial: FC<UI_UnlitMaterialInput> = (
       persistentId={persistentId}
       updateOrderId={updateOrderId}
       updateOrder={updateOrder}
+      version={2}
     >
       <Member
         type={`FrooxEngine.Sync\`1[System.Boolean]`}
