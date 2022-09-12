@@ -83,7 +83,6 @@ function resolveSlot(
 function resolveTypeVersion(typeVersion): { name: string; version: number } {
   const { properties } = typeVersion;
   const { name, version } = properties;
-  console.log(typeVersion);
   return { name, version };
 }
 
