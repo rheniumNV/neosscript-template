@@ -23,16 +23,33 @@ function jsonParse(value) {
   }
 }
 
-function resolveSlot(slot, addAsset) {
+function resolveSlot(
+  slot,
+  addAsset: (asset: any) => void,
+  addTypeVersion: (typeVersion: { name: string; version: number }) => void
+) {
   const { children, parentId } = slot;
-  const { children: comps } =
-    _.find(children, ({ tagName }) => tagName == "components") ?? {};
-  const { children: chills } =
-    _.find(children, ({ tagName }) => tagName == "children") ?? {};
-  const { children: assets } =
-    _.find(children, ({ tagName }) => tagName == "assets") ?? {};
+  const comps = _.find(
+    children,
+    ({ tagName }) => tagName == "components"
+  )?.children;
+  const chills = _.find(
+    children,
+    ({ tagName }) => tagName == "children"
+  )?.children;
+  const assets = _.find(
+    children,
+    ({ tagName }) => tagName == "assets"
+  )?.children;
   _.forEach(assets ?? [], (asset) => {
-    addAsset(resolveComponent(asset));
+    addAsset(resolveComponent(asset, addTypeVersion));
+  });
+  const typeVersions = _.find(
+    children,
+    ({ tagName }) => tagName == "typeversions"
+  )?.children;
+  _.forEach(typeVersions ?? [], (typeVersion) => {
+    addTypeVersion(resolveTypeVersion(typeVersion));
   });
   const slotData = _.find(children, ({ tagName }) => tagName == "slotdata");
   const slotId = generateId(_.get(slotData, ["properties", "id"]));
@@ -45,7 +62,10 @@ function resolveSlot(slot, addAsset) {
       return {
         ...prev,
         ...{
-          [name]: { ID: generateId(id), Data: jsonParse(value) },
+          [name]: {
+            ID: generateId(id),
+            Data: jsonParse(value),
+          },
         },
       };
     }, {}),
@@ -60,9 +80,21 @@ function resolveSlot(slot, addAsset) {
   };
 }
 
-function resolveComponent(component) {
+function resolveTypeVersion(typeVersion): { name: string; version: number } {
+  const { properties } = typeVersion;
+  const { name, version } = properties;
+  console.log(typeVersion);
+  return { name, version };
+}
+
+function resolveComponent(component, addTypeVersion) {
   const { children, properties } = component;
-  const { name, id, persistentId } = properties;
+  const { name, id, persistentId, version } = properties;
+
+  if (typeof version === "string") {
+    addTypeVersion({ name: name, version: Number(version) });
+  }
+
   return {
     Type: name,
     Data: {
@@ -71,7 +103,7 @@ function resolveComponent(component) {
       "persistent-ID": persistentId,
       Enabled: { ID: generateId(null), Data: true },
       ..._(children).reduce((prev, curr) => {
-        const { name, value, id } = _.get(
+        const { name, value, id, data } = _.get(
           curr,
           ["children", 0],
           _.get(curr, ["properties"], {})
@@ -79,7 +111,12 @@ function resolveComponent(component) {
         return {
           ...prev,
           ...{
-            [name]: { ID: generateId(id), Data: jsonParse(value) },
+            [name]: data
+              ? jsonParse(data)
+              : {
+                  ID: generateId(id),
+                  Data: jsonParse(value),
+                },
           },
         };
       }, {}),
@@ -99,21 +136,28 @@ export function ToNeosObject(Element): Function {
     const addAsset = (asset) => {
       assets.push(asset);
     };
+    let typeVersions = {};
+    const addTypeVersion = (typeVersion: { name: string; version: number }) => {
+      typeVersions = {
+        ...typeVersions,
+        ...{ [typeVersion.name]: typeVersion.version },
+      };
+    };
 
     const result = JSON.stringify(rootSlot, (key, value) => {
       if (hasAllKey(value, ["type", "tagName", "children", "properties"])) {
         const { tagName } = value;
         if (tagName == "slot") {
-          return resolveSlot(value, addAsset);
+          return resolveSlot(value, addAsset, addTypeVersion);
         } else if (tagName == "component") {
-          return resolveComponent(value);
+          return resolveComponent(value, addTypeVersion);
         }
       }
       if (_.includes(["offset", "column", "line", "end", "position"], key)) {
         return undefined;
       }
-      // @ts-ignore
-      const { type } = value ? value : {};
+
+      const type = value?.type;
       if (type === "root") {
         return {
           Object: _(_.get(value, "children", []))
@@ -126,7 +170,9 @@ export function ToNeosObject(Element): Function {
       return value;
     });
 
-    return `{"Object":${result},"Assets":${JSON.stringify(assets)}}`;
+    return `{"Object":${result},"Assets":${JSON.stringify(
+      assets
+    )},"TypeVersions": ${JSON.stringify(typeVersions)}}`;
   };
 }
 

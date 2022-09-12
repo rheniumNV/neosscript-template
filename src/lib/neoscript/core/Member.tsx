@@ -5,6 +5,9 @@ declare global {
     interface IntrinsicElements {
       component: any;
       member: any;
+      assets: any;
+      typeVersions: any;
+      typeVersion: any;
     }
   }
 }
@@ -31,4 +34,13 @@ export const Member: FC<MemberInput> = ({ type, name, content }) => {
   return (
     <member id={id} name={name} type={type} value={JSON.stringify(value)} />
   );
+};
+
+interface TypeVersionInput {
+  key: string;
+  version: number;
+}
+
+export const TypeVersion: FC<TypeVersionInput> = ({ key, version }) => {
+  return <typeVersion name={key} version={version} />;
 };
