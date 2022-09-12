@@ -37,10 +37,10 @@ export const Member: FC<MemberInput> = ({ type, name, content }) => {
 };
 
 interface TypeVersionInput {
-  key: string;
+  name: string;
   version: number;
 }
 
-export const TypeVersion: FC<TypeVersionInput> = ({ key, version }) => {
-  return <typeVersion name={key} version={version} />;
+export const TypeVersion: FC<TypeVersionInput> = ({ name, version }) => {
+  return <typeVersion name={name} version={version} />;
 };
