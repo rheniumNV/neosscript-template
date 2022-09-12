@@ -1,0 +1,23 @@
+{
+  "FrooxEngine.InventoryItem": 1,
+  "FrooxEngine.Grabbable": 2,
+  "FrooxEngine.BoxCollider": 1,
+  "FrooxEngine.TextRenderer": 5,
+  "FrooxEngine.MeshCollider": 2,
+  "FrooxEngine.ConvexHullCollider": 1,
+  "FrooxEngine.QuadMesh": 1,
+  "FrooxEngine.CylinderCollider": 1,
+  "FrooxEngine.UIX.Canvas": 1,
+  "FrooxEngine.UIX.RectTransform": 1,
+  "FrooxEngine.UIX.Image": 1,
+  "FrooxEngine.UIX.TextField": 1,
+  "FrooxEngine.UIX.Text": 1,
+  "FrooxEngine.CylinderMesh": 1,
+  "FrooxEngine.Rig": 1,
+  "FrooxEngine.MeshRendererMaterialRelay": 1,
+  "FrooxEngine.CapsuleCollider": 2,
+  "FrooxEngine.SphereMesh": 1,
+  "FrooxEngine.SphereCollider": 1,
+  "FrooxEngine.UI_UnlitMaterial": 2,
+  "FrooxEngine.XiexeToonMaterial": 1
+}
