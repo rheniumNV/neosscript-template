@@ -22,6 +22,7 @@ interface SlotInput {
   scale?: member<[number, number, number]>;
   orderOffset?: member<number>;
   components?: JSX.Element | Array<JSX.Element>;
+  assets?: Array<JSX.Element>;
   children?: ReactNode | JSX.Element | Array<JSX.Element>;
 }
 
@@ -37,6 +38,7 @@ const Slot: FC<SlotInput> = ({
   orderOffset = 0,
   children = [],
   components = [],
+  assets = [],
 }: SlotInput) => {
   return (
     <slot>
@@ -51,6 +53,7 @@ const Slot: FC<SlotInput> = ({
       </slotData>
       <components>{components}</components>
       <children>{children}</children>
+      <assets>{assets}</assets>
     </slot>
   );
 };
