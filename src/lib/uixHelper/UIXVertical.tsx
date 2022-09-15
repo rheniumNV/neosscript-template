@@ -1,10 +1,10 @@
 import React, { FC } from "react";
-import Slot from "lib/core/Slot";
+import Slot from "lib/neosscript/core/Slot";
 import _ from "lodash";
-import LayoutElement from "lib/core/components/UIX/Layout/LayoutElement";
+import LayoutElement from "lib/neosscript/core/components/UIX/Layout/LayoutElement";
 import VerticalLayout, {
   VerticalLayoutInput,
-} from "lib/core/components/UIX/Layout/VerticalLayout";
+} from "lib/neosscript/core/components/UIX/Layout/VerticalLayout";
 
 type space = [number, "Min"] | [number, "Preferred"] | [number, "Flexible"];
 
