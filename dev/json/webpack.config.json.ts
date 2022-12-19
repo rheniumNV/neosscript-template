@@ -1,5 +1,5 @@
-const path = require("path");
-const AutoBuildPlugin = require("./auto-build-plugin.cjs");
+import path from "path";
+import AutoBuildPlugin from "./auto-build-plugin";
 
 module.exports = {
   mode: "production",
@@ -7,7 +7,7 @@ module.exports = {
   cache: true,
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "index.cjs",
+    filename: "index.js",
     library: "NeosObject",
     libraryTarget: "commonjs",
   },
@@ -21,7 +21,9 @@ module.exports = {
       },
     ],
   },
-  plugins: [new AutoBuildPlugin("dist/neosObject.json")],
+  plugins: [
+    new AutoBuildPlugin(path.resolve(__dirname, "dist/neosObject.json")),
+  ],
   resolve: {
     extensions: [".tsx", ".ts", ".js", ".jsx"],
     modules: [path.resolve("./src"), path.resolve("./node_modules")],

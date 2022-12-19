@@ -1,4 +1,3 @@
-import React from "react";
 import express from "express";
 import lib from "index";
 import _ from "lodash";
